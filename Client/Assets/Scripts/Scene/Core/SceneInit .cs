@@ -5,8 +5,8 @@ using System;
 
 public sealed class SceneInit : IScene
 {
-    public override void InitWindows()
+    public override IEnumerator OpenWindows()
     {
-
+        yield return null;
     }
 }

@@ -38,12 +38,11 @@ public class GTConfigManager : GTSingleton<GTConfigManager>
 
         ReadCfgCopy.                  Read("Text/Data/Data_Copy");
         ReadCfgScene.                 Read("Text/Data/Data_Scene");
+        ReadCfgSceneObj.              Read("Text/Data/Data_SceneObj");
 
         ReadCfgEffect.                Read("Text/Data/Data_Effect");
-        ReadCfgBuff.                  Read("Text/Data/Data_Buff");
-        ReadCfgBuffAttr.              Read("Text/Data/Data_BuffAttr");
         ReadCfgRelics.                Read("Text/Data/Data_Relics");
-
+        ReadCfgMachine.               Read("Text/Data/Data_Machine");
 
         ReadCfgActorGroup.            Read("Text/Data/Data_ActorGroup");
         ReadCfgActor.                 Read("Text/Data/Data_Actor");
@@ -69,7 +68,18 @@ public class GTConfigManager : GTSingleton<GTConfigManager>
         ReadCfgSkillTalent.           Read("Text/Data/Data_SkillTalent");
         ReadCfgMine.                  Read("Text/Data/Data_Mine");
         ReadCfgSkill.                 Read("Text/Data/Data_Skill");
+        ReadCfgVideo.                 Read("Text/Data/Data_Video");
+
         ReadCfgCurve.                 Read("Text/Curve/Data_Curve");
         ActBuffSystem.                Read("Text/Buff/Buff");
+    }
+
+    public          void InitEditor()
+    {
+        if (ReadCfgLocalString.Count > 0)
+        {
+            return;
+        }
+        Init();
     }
 }

@@ -134,8 +134,8 @@ public class UIHome : GTWindow
             tab.maskSprite.gameObject.SetActive(false);
             mSkillBtns.Add((ESkillPos)i, tab);
         }
-        mNGUIJoystick = mBottomLeft.GetComponent<EJoystick>();
-        mMapTexture = mTopRight.Find("Map/Texture").GetComponent<UITexture>();
+        mNGUIJoystick = mBottomLeft.FindChild("Joystick").GetComponent<EJoystick>();
+        mMapTexture = mTopRight.FindChild("Map/Texture").GetComponent<UITexture>();
 
         mBar1 = mTopLeft.Find("Bar_1").GetComponent<UISlider>();
         mBar2 = mTopLeft.Find("Bar_2").GetComponent<UISlider>();
@@ -239,6 +239,7 @@ public class UIHome : GTWindow
         GTEventCenter.AddHandler(GTEventID.TYPE_CHANGE_HEROEXP, OnUpdateAvatarExp);
 
         GTUpdate.Instance.AddListener(OnUpdate);
+        GTWorld.Instance.Bie.AddGuideListener("ButtonName", btnBag.transform);
     }
 
     protected override void OnDelHandler()
@@ -426,7 +427,7 @@ public class UIHome : GTWindow
     private void OnAutoClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        CharacterManager.Main.ChangeAutoFight(!CharacterManager.Main.IsAutoFight);
+        CharacterManager.Main.EnableAI(!CharacterManager.Main.IsAIEnabled);
         OnUpdateAutoFightState();
     }
 
@@ -676,12 +677,12 @@ public class UIHome : GTWindow
 
     private void OnUpdateAutoFightState()
     {
-        menuAutoFight.value = CharacterManager.Main.IsAutoFight;
+        menuAutoFight.value = CharacterManager.Main.IsAIEnabled;
     }
 
     private void OnUpdateRideState()
     {
-        GameObject highLight = btnRide.transform.Find("HighLight").gameObject;
+        GameObject highLight = btnRide.transform.FindChild("HighLight").gameObject;
         highLight.SetActive(CharacterManager.Main.IsRide);
     }
 }

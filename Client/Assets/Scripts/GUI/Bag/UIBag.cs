@@ -128,16 +128,12 @@ public class UIBag : GTWindow
         mBagCells.Clear();
         mBagMenus.Clear();
         mShow = EBagType.NONE;
-        GuideManager.Instance.DelListener("Btn_Grid0");
-        GuideManager.Instance.DelListener("Btn_BagReturn");
     }
 
     IEnumerator OpenFirstView()
     {
         yield return null;
         ShowBagView(EBagType.ITEM);
-        GuideManager.Instance.AddListener("Btn_Grid0", mBagCells[0].itemBtn.transform);
-        GuideManager.Instance.AddListener("Btn_BagReturn", btnReturn.transform);
     }
 
     private void SetBagToggleGroup()

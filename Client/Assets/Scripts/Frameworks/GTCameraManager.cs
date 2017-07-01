@@ -21,9 +21,9 @@ public class GTCameraManager : GTMonoSingleton<GTCameraManager>
     public const int DEPTH_CAM_2DUICAMERA = 6;
     public const int DEPTH_CAM_MINIMAP    = 4;
 
-    public override void SetDontDestroyOnLoad(Transform parent)
+    public override void SetRoot(Transform parent)
     {
-        base.SetDontDestroyOnLoad(parent);
+        base.SetRoot(parent);
         this.CreateMainCamera(null);
         this.RevertMainCamera();
         this.AddRoot();
@@ -55,7 +55,7 @@ public class GTCameraManager : GTMonoSingleton<GTCameraManager>
         this.CameraCtrl.SetTarget(trans);
     }
 
-    public void CreateMinimapCamera(Transform target)
+    public void CreateMiniCamera(Transform target)
     {
         MinimapCamera = CreateCamera("MiniMapCamera");
         MinimapCamera.transform.parent = target;

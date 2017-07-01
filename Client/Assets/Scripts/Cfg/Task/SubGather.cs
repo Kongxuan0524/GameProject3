@@ -19,8 +19,8 @@ namespace CFG
         public override void Read(XmlElement os)
         {
             base.Read(os);
-            this.ID    = os.GetInt("ID");
-            this.Count = os.GetInt("Count");
+            this.ID    = os.GetInt32("ID");
+            this.Count = os.GetInt32("Count");
             foreach (var current in GetChilds(os))
             {
                 switch (current.Name)

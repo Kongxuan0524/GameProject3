@@ -19,7 +19,7 @@ namespace CFG
         public override void Read(XmlElement os)
         {
             base.Read(os);
-            this.ID = os.GetInt("ID");
+            this.ID = os.GetInt32("ID");
         }
 
         public override void Write(XmlDocument doc, XmlElement os)

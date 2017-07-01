@@ -22,14 +22,14 @@ namespace CFG
     
         public override void Read(XmlElement os)
         {
-            this.NpcID          = os.GetInt("NpcID");
-            this.Role           = (ETaskDialogRole)os.GetInt("Role");
-            this.Pos            = (ETaskDialogPos)os.GetInt("Pos");
-            this.Action         = (ETaskDialogAction)os.GetInt("Action");
-            this.ContentShow    = (ETaskDialogContent)os.GetInt("ContentShow");
+            this.NpcID          = os.GetInt32("NpcID");
+            this.Role           = (ETaskDialogRole)os.GetInt32("Role");
+            this.Pos            = (ETaskDialogPos)os.GetInt32("Pos");
+            this.Action         = (ETaskDialogAction)os.GetInt32("Action");
+            this.ContentShow    = (ETaskDialogContent)os.GetInt32("ContentShow");
             this.Content        = os.GetString("Content");
             this.NpcAnim        = os.GetString("NpcAnim");
-            this.VoiceID        = os.GetInt("VoiceID");
+            this.VoiceID        = os.GetInt32("VoiceID");
             this.Delay          = os.GetFloat("Delay");
         }
 

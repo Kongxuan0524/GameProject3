@@ -102,7 +102,7 @@ public class UIMainRaid : GTWindow
 
     protected override void OnEnable()
     {
-        GuideManager.Instance.AddListener("Btn_Copy1", mCopyItems[0].item.transform);
+
     }
 
     protected override void OnDelHandler()
@@ -114,7 +114,6 @@ public class UIMainRaid : GTWindow
     {
         mCopyItems.Clear();
         mCurCopyType = ECopyType.TYPE_EASY;
-        GuideManager.Instance.DelListener("Btn_Copy1");
     }
 
 
@@ -143,13 +142,13 @@ public class UIMainRaid : GTWindow
         mChapterName.text = chapterDB.Name;
         GTItemHelper.ShowTexture(mMapTexture, chapterDB.Map);
         int enterIndex = RaidModule.Instance.GetMaxCanEnterCopyIndex(mCurCopyType, chapterID);
-        for(int i=0;i<mCopyItems.Count;i++)
+        for (int i = 0; i < mCopyItems.Count; i++)
         {
             ItemCopy item = mCopyItems[i];
-            if (i<copysNum)
+            if (i < copysNum)
             {
                 item.item.SetActive(true);
-                item.Show(i < enterIndex);                
+                item.Show(i < enterIndex);
                 int copyID = chapterDB.Copys[i];
                 DCopy db = ReadCfgCopy.GetDataById(copyID);
                 int starNum = RaidModule.Instance.GetCopyStarNumById(copyID);
@@ -161,11 +160,11 @@ public class UIMainRaid : GTWindow
             {
                 mCopyItems[i].item.SetActive(false);
             }
-            if(i==enterIndex-1)
+            if (i == enterIndex - 1)
             {
                 mLight.gameObject.SetActive(false);
                 mLight.transform.parent = item.item.transform;
-                mLight.transform.localPosition =Vector3.zero;
+                mLight.transform.localPosition = Vector3.zero;
             }
         }
     }
@@ -193,10 +192,9 @@ public class UIMainRaid : GTWindow
 
         public void Show(bool isPass)
         {
-
             Color color = isPass ? Color.white : Color.black;
-            icon.color = color;
-            for(int i=0;i<stars.Length;i++)
+            GTItemHelper.ShowImageBlack(icon,! isPass);
+            for (int i = 0; i < stars.Length; i++)
             {
                 stars[i].color = color;
             }

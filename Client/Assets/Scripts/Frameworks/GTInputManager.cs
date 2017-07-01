@@ -5,9 +5,9 @@ using System;
 
 public class GTInputManager : GTMonoSingleton<GTInputManager>
 {
-    public override void SetDontDestroyOnLoad(Transform parent)
+    public override void SetRoot(Transform parent)
     {
-        base.SetDontDestroyOnLoad(parent);
+        base.SetRoot(parent);
     }
 
     float mX;

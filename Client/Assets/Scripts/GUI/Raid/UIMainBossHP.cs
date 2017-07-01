@@ -15,9 +15,9 @@ public class UIMainBossHP : GTWindow
 
     protected override void OnAwake()
     {
-        Transform pivot = transform.Find("Pivot");
-        m_HPSlider   = pivot.Find("HPSlider").GetComponent<UISlider>();
-        m_HPHeadIcon = pivot.Find("HPHead/Icon").GetComponent<UISprite>();
+        Transform pivot = transform.FindChild("Pivot");
+        m_HPSlider   = pivot.FindChild("HPSlider").GetComponent<UISlider>();
+        m_HPHeadIcon = pivot.FindChild("HPHead/Icon").GetComponent<UISprite>();
     }
 
     protected override void OnEnable()

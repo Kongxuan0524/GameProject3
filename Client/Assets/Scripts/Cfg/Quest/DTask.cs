@@ -7,9 +7,9 @@ using System.Xml;
 public enum ETaskType
 {
     NONE,
-    THREAD=1,   //主线任务
-    BRANCH=2,   //支线任务
-    DAILY =3,   //日常任务
+    THREAD = 1,   //主线任务
+    BRANCH = 2,   //支线任务
+    DAILY  = 3,   //日常任务
 }
 
 public enum ETaskTargetType
@@ -75,27 +75,23 @@ public class DTask : DObj<int>
 
     public override void Read(XmlElement element)
     {
-        this.Id             = element.GetInt("Id");
+        this.Id             = element.GetInt32("Id");
         this.Name           = element.GetString("Name");
         this.Desc           = element.GetString("Desc");
-        this.Type           = (ETaskType)element.GetInt("Type");
-        this.Cycle          = (ETaskCycleType)element.GetInt("Cycle");
-        this.TargetType     = (ETaskTargetType)element.GetInt("TargetType");
+        this.Type           = (ETaskType)element.GetInt32("Type");
+        this.Cycle          = (ETaskCycleType)element.GetInt32("Cycle");
+        this.TargetType     = (ETaskTargetType)element.GetInt32("TargetType");
         this.TargetArgs     = element.GetString("TargetArgs");
         this.Script         = element.GetString("Script");
-        this.Condition      = element.GetInt("Condition");
-        this.MinRquireLevel = element.GetInt("MinRquireLevel");
-        this.MaxRquireLevel = element.GetInt("MaxRquireLevel");
-        this.RewardMoneyNum = element.GetInt("RewardMoneyNum");
-        this.RewardExpNum   = element.GetInt("RewardExpNum");
-        this.AwardID        = element.GetInt("AwardID");
+        this.Condition      = element.GetInt32("Condition");
+        this.MinRquireLevel = element.GetInt32("MinRquireLevel");
+        this.MaxRquireLevel = element.GetInt32("MaxRquireLevel");
+        this.RewardMoneyNum = element.GetInt32("RewardMoneyNum");
+        this.RewardExpNum   = element.GetInt32("RewardExpNum");
+        this.AwardID        = element.GetInt32("AwardID");
         this.Desc           = element.GetString("Desc");
         this.Icon           = element.GetString("Icon");
     }
-
-    public const int TASK_THREAD = 1;
-    public const int TASK_BRANCH = 2;
-    public const int TASK_DAILY  = 3;
 }
 
 public class ReadCfgTask : DReadBase<int, DTask>

@@ -5,8 +5,9 @@ using System;
 
 public sealed class SceneWorld : IScene
 {
-    public override void InitWindows()
+    public override IEnumerator OpenWindows()
     {
         GTWindowManager.Instance.OpenWindow(EWindowID.UI_HOME);
+        yield return null;
     }
 }

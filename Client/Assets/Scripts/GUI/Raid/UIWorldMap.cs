@@ -103,7 +103,6 @@ public class UIWorldMap : GTWindow
         ShowResView();
     }
 
-
     private void ShowInitView()
     {
         transform.Find("Center").gameObject.SetActive(true);
@@ -149,8 +148,6 @@ public class UIWorldMap : GTWindow
         GTEventCenter.DelHandler(GTEventID.TYPE_MOUSE_BUTTON, OnMouseButton);
         GTEventCenter.DelHandler(GTEventID.TYPE_MOUSE_BUTTON_UP, OnMouseButtonUp);
     }
-
- 
 
     private void JudgeAreaByColor(Color32 wColor)
     {
@@ -251,7 +248,6 @@ public class UIWorldMap : GTWindow
         ShowView();
         GameObject btn1 = mAreas[0].area.gameObject;
         UIEventListener.Get(btn1).onClick = (GameObject go) => { OnGuideClickChapter(0); };
-        GuideManager.Instance.AddListener("Btn_Chapter1", btn1.transform);
     }
 
     private void OnGuideClickChapter(int index)
@@ -268,6 +264,5 @@ public class UIWorldMap : GTWindow
     {
         mAreas.Clear();
         mAreaIndex = -1;
-        GuideManager.Instance.DelListener("Btn_Chapter1");
     }
 }

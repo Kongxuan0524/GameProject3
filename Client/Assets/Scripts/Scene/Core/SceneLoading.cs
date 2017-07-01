@@ -71,6 +71,7 @@ public sealed class SceneLoading : IScene
 
     void OnSceneWasFadeOut()
     {
+        GTLauncher.CurSceneID = mLoadingSceneId;
         GTWindowManager.Instance.CloseWindow(EWindowID.UI_LOADING);
     }
 

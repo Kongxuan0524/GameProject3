@@ -19,12 +19,12 @@ public class DRole : DObj<int>
 
     public override void Read(XmlElement element)
     {
-        this.Id         = element.GetInt("Id");
+        this.Id         = element.GetInt32("Id");
         this.CarrerName = element.GetString("CarrerName ");
-        this.Star1      = element.GetInt("Star1");
-        this.Star2      = element.GetInt("Star2");
-        this.Star3      = element.GetInt("Star3");
-        this.Star4      = element.GetInt("Star4");
+        this.Star1      = element.GetInt32("Star1");
+        this.Star2      = element.GetInt32("Star2");
+        this.Star3      = element.GetInt32("Star3");
+        this.Star4      = element.GetInt32("Star4");
     }
 }
 

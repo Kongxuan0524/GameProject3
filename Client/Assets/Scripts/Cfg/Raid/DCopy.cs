@@ -7,19 +7,19 @@ using System.Xml;
 public enum ECopyType
 {
     TYPE_WORLD = 0,
-    TYPE_EASY = 1,
-    TYPE_ELITE,
-    TYPE_EPIC,
-    TYPE_DAILY,
-    TYPE_ARENA
+    TYPE_EASY  = 1,
+    TYPE_ELITE = 2,
+    TYPE_EPIC  = 3,
+    TYPE_DAILY = 4,
+    TYPE_ARENA = 5
 }
 
 
 public enum EStarCondition
 {
-    TYPE_PASSCOPY,
-    TYPE_MAIN_HEALTH,
-    TYPE_TIME_LIMIT,
+    TYPE_PASSCOPY     = 0,
+    TYPE_MAIN_HEALTH  = 1,
+    TYPE_TIME_LIMIT   = 2,
 }
 
 public class DCopy : DObj<int>
@@ -53,28 +53,28 @@ public class DCopy : DObj<int>
 
     public override void Read(XmlElement element)
     {
-        this.Id                 = element.GetInt("Id");
-        this.CopyType           = (ECopyType)element.GetInt("CopyType");
+        this.Id                 = element.GetInt32("Id");
+        this.CopyType           = (ECopyType)element.GetInt32("CopyType");
         this.Name               = element.GetString("Name");
-        this.CostActionId       = element.GetInt("CostActionId");
-        this.CostActionNum      = element.GetInt("CostActionNum");
-        this.AwardId            = element.GetInt("AwardId");
-        this.FirstAwardId       = element.GetInt("FirstAwardId");
-        this.DropBoxAwardId     = element.GetInt("DropBoxAwardId");
-        this.SceneId            = element.GetInt("SceneId");
-        this.GetMoneyId         = element.GetInt("GetMoneyId");
-        this.GetMoneyRatio      = element.GetInt("GetMoneyRatio");
-        this.GetExpRatio        = element.GetInt("GetExpRatio");
-        this.BattleTimes        = element.GetInt("BattleTimes");
-        this.UnlockLevel        = element.GetInt("UnlockLevel");
+        this.CostActionId       = element.GetInt32("CostActionId");
+        this.CostActionNum      = element.GetInt32("CostActionNum");
+        this.AwardId            = element.GetInt32("AwardId");
+        this.FirstAwardId       = element.GetInt32("FirstAwardId");
+        this.DropBoxAwardId     = element.GetInt32("DropBoxAwardId");
+        this.SceneId            = element.GetInt32("SceneId");
+        this.GetMoneyId         = element.GetInt32("GetMoneyId");
+        this.GetMoneyRatio      = element.GetInt32("GetMoneyRatio");
+        this.GetExpRatio        = element.GetInt32("GetExpRatio");
+        this.BattleTimes        = element.GetInt32("BattleTimes");
+        this.UnlockLevel        = element.GetInt32("UnlockLevel");
         this.FightValue         = element.GetString("FightValue");
         this.Desc               = element.GetString("Desc");
         this.Texture            = element.GetString("Texture");
         this.Icon               = element.GetString("Icon");
         for (int i = 1; i <= 3; i++)
         {
-            this.StarValues[i - 1] = element.GetInt("StarValue" + i);
-            this.StarConditions[i - 1] = (EStarCondition)element.GetInt("StarCondition" + i);
+            this.StarValues[i - 1] = element.GetInt32("StarValue" + i);
+            this.StarConditions[i - 1] = (EStarCondition)element.GetInt32("StarCondition" + i);
         }
     }
 }

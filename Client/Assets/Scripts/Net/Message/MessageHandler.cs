@@ -2,5 +2,5 @@
 using System.Collections;
 using Protocol;
 
-public delegate void NetworkHandler(MessageRecv obj );
+public delegate void NetworkHandler(MessageRecv obj, MessageRetCode retCode);
 

@@ -26,7 +26,7 @@ public class GTLauncher : MonoBehaviour
     public Int32         TestActorID;
     [HideInInspector]
     public bool          MusicDisable = true;
-   [HideInInspector]
+    [HideInInspector]
     public bool          UseGuide = true;
 
     private IStateMachine<GTLauncher, ESceneType> mStateMachine;
@@ -58,20 +58,19 @@ public class GTLauncher : MonoBehaviour
     void LoadManager()
     {
         NetworkManager.       Instance.Init();
-        NetworkManager.       Instance.Start("127.0.0.1", 5678);
+        NetworkManager.       Instance.Start("127.0.0.1", 3001);
 
-        GTCoroutinueManager.  Instance.SetDontDestroyOnLoad(transform);
-        GTResourceManager.    Instance.SetDontDestroyOnLoad(transform);
-        GTAudioManager.       Instance.SetDontDestroyOnLoad(transform);
-        GTCameraManager.      Instance.SetDontDestroyOnLoad(transform);
+        GTCoroutinueManager.  Instance.SetRoot(transform);
+        GTAudioManager.       Instance.SetRoot(transform);
+        GTCameraManager.      Instance.SetRoot(transform);
+        GTInputManager.       Instance.SetRoot(transform);
+
+        GTResourceManager.    Instance.Init();
         GTConfigManager.      Instance.Init();
-
         GTWindowManager.      Instance.Init();
-        GTInputManager.       Instance.SetDontDestroyOnLoad(transform);
-        GTWorld.              Instance.SetDontDestroyOnLoad(transform);
+        GTWorld.              Instance.Init();
         GTWorld.              Instance.EnterWorld(GTSceneKey.SCENE_LAUNCHER);
-        GTTouchEffect.        Instance.SetDontDestroyOnLoad(transform);
-
+        GTTouchEffect.        Instance.SetRoot(transform);
         GTTimerManager.       Instance.AddListener(1, SecondTick, 0);
         GTCtrl.               Instance.AddLoginCtrl();
     }
@@ -160,6 +159,7 @@ public class GTLauncher : MonoBehaviour
                     {
                         GTCtrl.Instance.AddAllCtrls();
                         DataManager.Instance.LoadRoleData(CurPlayerID);
+                        GTWorld.Instance.EnterGuide();
                         DataTimer.Instance.Init();
                     }
                 }
@@ -171,6 +171,7 @@ public class GTLauncher : MonoBehaviour
                     {
                         DataManager.Instance.LoadRoleData(CurPlayerID);
                         DataTimer.Instance.Init();
+                        GTWorld.Instance.EnterGuide();
                     }
                 }
                 break;
@@ -198,7 +199,6 @@ public class GTLauncher : MonoBehaviour
     public AsyncOperation LoadLevelById(int id)
     {
         DScene db = ReadCfgScene.GetDataById(id);
-        CurSceneID = db.Id;
         if (string.IsNullOrEmpty(db.SceneName))
         {
             return null;
@@ -228,6 +228,7 @@ public class GTLauncher : MonoBehaviour
         GTTimerManager.  Instance.Execute();
         GTUpdate.        Instance.Execute();
         NetworkManager.  Instance.Execute();
+        GTWorld.         Instance.Execute();
     }
 
     void FixedUpdate()
@@ -262,7 +263,7 @@ public class GTLauncher : MonoBehaviour
     public static Int32     CurSceneID
     {
         get;
-        private set;
+        set;
     }
 
     public static Int32     CurPlayerID

@@ -23,8 +23,6 @@ public class UIRole : GTWindow
     private Vector3         mRoleModelEuler = new Vector3(0, 180, 0);
     private List<int>       mRoleDBList;
 
-    UInt64 mSelectRoleID;
-
 
     public UIRole()
     {
@@ -102,7 +100,8 @@ public class UIRole : GTWindow
     private void OnEnterGameClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        LoginService.Instance.TryEnterGame(mSelectRoleID);
+        int id = mRoleDBList[mRoleIndex];
+        LoginService.Instance.TryEnterGame(id);
     }
 
     private void OnRollClick(GameObject go)

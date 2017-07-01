@@ -15,7 +15,7 @@ public class DActorModel : DObj<int>
 
     public override void Read(XmlElement element)
     {
-        this.Id    = element.GetInt("Id");
+        this.Id    = element.GetInt32("Id");
         this.Model = element.GetString("Model");
     }
 }

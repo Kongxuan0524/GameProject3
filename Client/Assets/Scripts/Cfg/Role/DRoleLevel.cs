@@ -17,12 +17,12 @@ public class DRoleLevel : DObj<int>
 
     public override void Read(XmlElement element)
     {
-        this.Level      = element.GetInt("Level");
-        this.RequireExp = element.GetInt("RequireExp");
-        this.NextLevel  = element.GetInt("NextLevel");
+        this.Level      = element.GetInt32("Level");
+        this.RequireExp = element.GetInt32("RequireExp");
+        this.NextLevel  = element.GetInt32("NextLevel");
         for (int i = 1; i <= 10; i++)
         {
-            int value = element.GetInt("P" + i);
+            int value = element.GetInt32("P" + i);
             this.Propertys.Add((EAttr)i, value);
         }
     }

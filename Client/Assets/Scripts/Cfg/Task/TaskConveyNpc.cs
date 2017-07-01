@@ -14,7 +14,7 @@ namespace CFG
 
         public override void Read(XmlElement os)
         {
-            this.NpcID = os.GetInt("NpcID");
+            this.NpcID = os.GetInt32("NpcID");
         }
 
         public override void Write(XmlDocument doc, XmlElement os)

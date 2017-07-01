@@ -39,12 +39,12 @@ public class DAward : DObj<int>
 
     public override void Read(XmlElement element)
     {
-        this.Id         = element.GetInt("Id");
+        this.Id         = element.GetInt32("Id");
         this.Name       = element.GetString("Name");
-        this.DropType   = (EDropType)element.GetInt("DropType");
-        this.RecvType   = (ERecvType)element.GetInt("RecvType");
+        this.DropType   = (EDropType)element.GetInt32("DropType");
+        this.RecvType   = (ERecvType)element.GetInt32("RecvType");
         this.DropItems  = element.GetString("DropItems");
-        this.MaxDropNum = element.GetInt("MaxDropNum");
+        this.MaxDropNum = element.GetInt32("MaxDropNum");
     }
 }
 

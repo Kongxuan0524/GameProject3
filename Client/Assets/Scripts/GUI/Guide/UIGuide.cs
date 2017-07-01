@@ -1,34 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using BIE;
 
 public class UIGuide : GTWindow
 {
-
-    private Transform mClick;
-    private Transform mDrag;
-    private Transform mTip;
-    private UILabel   mTipContent;
-    private Transform mPivot;
-
-    private Transform mSrcTarget;
-    private Transform mNewTarget;
-    private Callback  mCallback;
+    private GameObject m_Mask;
+    private Transform  m_Pivot;
+    private Transform  m_Hand;
+    private UISprite   m_AreaCircle;
+    private UISprite   m_AreaRect;
+    private UISprite   m_AreaRow;
+    private Transform  m_TipTransform;
+    private UILabel    m_TipText;
 
     public UIGuide()
     {
-        mResident = true;
         mResPath = "Guide/UIGuide";
+        mResident = false;
         Type = EWindowType.MASKED;
     }
 
     protected override void OnAwake()
     {
-        mPivot = transform.Find("Pivot");
-        mClick = transform.Find("Pivot/Click");
-        mTip = transform.Find("Pivot/Tip");
-        mTipContent = transform.Find("Pivot/Tip/Content").GetComponent<UILabel>();
-        mDrag = transform.Find("Pivot/Drag");
+        m_Mask          = transform.Find("Mask").gameObject;
+        m_Pivot         = transform.Find("Pivot");
+        m_Hand          = m_Pivot.Find("Hand");
+        m_AreaCircle    = m_Pivot.Find("Area_Circle").GetComponent<UISprite>();
+        m_AreaRect      = m_Pivot.Find("Area_Rect").GetComponent<UISprite>();
+        m_AreaRow       = m_Pivot.Find("Area_Row").GetComponent<UISprite>();
+        m_TipTransform  = m_Pivot.Find("Tip");
+        m_TipText       = m_TipTransform.Find("Content").GetComponent<UILabel>();
+        m_Hand.gameObject.SetActive(false);
+        m_AreaCircle.gameObject.SetActive(false);
+        m_AreaRect.gameObject.SetActive(false);
+        m_AreaRow.gameObject.SetActive(false);
+        m_TipTransform.gameObject.SetActive(false);
+        m_TipText.text = string.Empty;
+    }
+
+    protected override void OnEnable()
+    {
+        
     }
 
     protected override void OnAddButtonListener()
@@ -38,17 +51,7 @@ public class UIGuide : GTWindow
 
     protected override void OnAddHandler()
     {
-        GTUpdate.Instance.AddListener(OnGuideUpdate);
-    }
-
-    protected override void OnEnable()
-    {
         
-    }
-
-    protected override void OnDelHandler()
-    {
-        GTUpdate.Instance.DelListener(OnGuideUpdate);
     }
 
     protected override void OnClose()
@@ -56,93 +59,95 @@ public class UIGuide : GTWindow
         
     }
 
-    private void OnGuideUpdate()
+    protected override void OnDelHandler()
     {
-        if (mNewTarget == null || mSrcTarget == null)
-        {
-            return;
-        }
-        mNewTarget.transform.position = mSrcTarget.position;
-        mClick.transform.position = mNewTarget.position;
+        
     }
 
-    private void OnExitGuide()
+    public void ShowViewByGuideBaseData(GuideBase data)
     {
-        if (mNewTarget != null)
-        {
-            GameObject.DestroyImmediate(mNewTarget.gameObject);
-            mNewTarget = null;
-        }
+        m_Mask.SetActive(data.IsLocked);
+        m_TipText.text = data.TipText;
+        m_TipTransform.gameObject.SetActive(true);
+        m_TipTransform.transform.localPosition = data.TipPosition;
     }
 
-    private void OnHandPress(GameObject go, bool state)
+    public void DoGuideForClick(Transform target, GuideUIClick data)
     {
-        if(mCallback!=null)
+        GameObject btn = null;
+        DoGuideInstantie(target, ref btn);
+        UIEventListener.Get(btn).onClick = (go) =>
         {
-            mCallback();
-        }
-        if (mSrcTarget == null)
-        {
-            return;
-        }
-        UIEventListener.BoolDelegate pOnPress = UIEventListener.Get(mSrcTarget.gameObject).onPress;
-        if (pOnPress != null)
-        {
-            pOnPress(mSrcTarget.gameObject, state);
+            UIEventListener ul = target.GetComponent<UIEventListener>();
+            if (ul != null && ul.onClick != null)
+            {
+                ul.onClick(go);
+            }
+            data.Finish();
+            UnityEngine.GameObject.DestroyImmediate(btn);
         };
     }
 
-    private void OnHandDoubleClick(GameObject go)
+    public void DoGuideForDoubleClick(Transform target, GuideUIDoubleClick data)
     {
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        if (mCallback != null)
+        GameObject btn = null;
+        DoGuideInstantie(target, ref btn);
+        UIEventListener.Get(btn).onDoubleClick = (go) =>
         {
-            mCallback();
-        }
-        if (mSrcTarget == null)
-        {
-            return;
-        }
-        UIEventListener.VoidDelegate pOnDoubleClick = UIEventListener.Get(mSrcTarget.gameObject).onDoubleClick;
-        if (pOnDoubleClick != null)
-        {
-            pOnDoubleClick(mSrcTarget.gameObject);
+            UIEventListener ul = target.GetComponent<UIEventListener>();
+            if (ul != null && ul.onDoubleClick != null)
+            {
+                ul.onDoubleClick(go);
+            }
+            data.Finish();
+            UnityEngine.GameObject.DestroyImmediate(btn);
         };
     }
 
-    private void OnHandClick(GameObject go)
+    public void DoGuideInstantie(Transform target ,ref GameObject btn)
     {
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        if (mCallback != null)
-        {
-            mCallback();
-        }
-        if (mSrcTarget == null)
+        if (target == null)
         {
             return;
         }
-        UIEventListener.VoidDelegate pOnClick = UIEventListener.Get(mSrcTarget.gameObject).onClick;
-        if (pOnClick != null)
-        {
-            pOnClick(mSrcTarget.gameObject);
-        };
-    }
-
-    private void OnHandDrag(GameObject go,Vector2 delta)
-    {
-        if (mCallback != null)
-        {
-            mCallback();
-        }
-        if (mSrcTarget == null)
+        BoxCollider collider = target.GetComponent<BoxCollider>();
+        if (collider == null)
         {
             return;
         }
-        UIEventListener.VectorDelegate pOnDrag = UIEventListener.Get(mSrcTarget.gameObject).onDrag;
-        if (pOnDrag != null)
+        btn = NGUITools.AddChild(transform.gameObject, target.gameObject);
+        btn.transform.position = target.transform.position;
+    }
+
+    public void DoGuideForPress(Transform target, GuideUIPress data)
+    {
+        GameObject btn = null;
+        DoGuideInstantie(target, ref btn);
+        UIEventListener.Get(btn).onPress = (go, state) =>
         {
-            pOnDrag(mSrcTarget.gameObject,delta);
+            UIEventListener ul = target.GetComponent<UIEventListener>();
+            if (ul != null && ul.onPress != null)
+            {
+                ul.onPress(go, state);
+            }
+            data.Finish();
+            UnityEngine.GameObject.DestroyImmediate(btn);
         };
     }
 
+    public void DoGuideForSwap(Transform target, GuideUISwap data)
+    {
+        GameObject btn = null;
+        DoGuideInstantie(target, ref btn);
+        UIEventListener.Get(btn).onDrag = (go, delta) =>
+        {
+            UIEventListener ul = target.GetComponent<UIEventListener>();
+            if (ul != null && ul.onDrag != null)
+            {
+                ul.onDrag(go, delta);
+            }
+            data.Finish();
+            UnityEngine.GameObject.DestroyImmediate(btn);
+        };
+    }
 }

@@ -12,9 +12,9 @@ public class GTTouchEffect : GTMonoSingleton<GTTouchEffect>
     private bool             mActive = false;
     private bool             mIsLoop = false;
 
-    public override void SetDontDestroyOnLoad(Transform parent)
+    public override void SetRoot(Transform parent)
     {
-        base.SetDontDestroyOnLoad(parent);
+        base.SetRoot(parent);
         this.mTouchEffect = GTWorld.Instance.Ect.LoadEffectObj(GTEffectKey.EFFECT_TOUCH);
         if (mTouchEffect == null)
         {

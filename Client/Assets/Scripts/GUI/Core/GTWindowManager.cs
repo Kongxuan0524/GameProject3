@@ -89,7 +89,7 @@ public class GTWindowManager : GTSingleton<GTWindowManager>
         RegisterWindow(EWindowID.UI_TASKTALK, new UITaskTalk());
         RegisterWindow(EWindowID.UI_WORLDMAP, new UIWorldMap());
 
-        RegisterWindow(EWindowID.UI_PLOTCUTSCENE, new UIPlotCutscene());
+        RegisterWindow(EWindowID.UI_PLOTCUTSCENE, new UIPlot());
         RegisterWindow(EWindowID.UI_GUIDE, new UIGuide());
 
         RegisterWindow(EWindowID.UI_ADVENTURE, new UIAdventure());
@@ -122,7 +122,7 @@ public class GTWindowManager : GTSingleton<GTWindowManager>
 
         List<UIPanel> aList = new List<UIPanel>();
         List<GTWindow> windows = mOpenWindows[type];
-        for(int i=0;i<windows.Count;i++)
+        for (int i = 0; i < windows.Count; i++)
         {
             FindPanels(windows[i], ref aList);
         }
@@ -252,6 +252,18 @@ public class GTWindowManager : GTSingleton<GTWindowManager>
     {
         mToggleGroupId++;
         return mToggleGroupId;
+    }
+
+    public void LockNGUI(bool lockNGUI)
+    {
+        if(lockNGUI)
+        {
+            GTCameraManager.Instance.NGUICamera.GetComponent<UICamera>().eventReceiverMask = (1 << GTLayer.LAYER_DEFAULT);
+        }
+        else
+        {
+            GTCameraManager.Instance.NGUICamera.GetComponent<UICamera>().eventReceiverMask = (1 << GTLayer.LAYER_UI);
+        }
     }
 
     public void Release()

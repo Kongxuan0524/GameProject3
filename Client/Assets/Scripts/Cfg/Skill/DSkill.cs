@@ -22,15 +22,15 @@ public class DSkill : DObj<int>
 
     public override void Read(XmlElement element)
     {
-        this.Id              = element.GetInt("Id");
+        this.Id              = element.GetInt32("Id");
         this.Name            = element.GetString("Name");
         this.Icon            = element.GetString("Icon");
         this.Desc            = element.GetString("Desc");
-        this.SkillType       = (ESkillType)element.GetInt("SkillType");
-        this.Priority        = element.GetInt("Priority");
+        this.SkillType       = (ESkillType)element.GetInt32("SkillType");
+        this.Priority        = element.GetInt32("Priority");
         this.CountDown       = element.GetFloat("CountDown");
-        this.SkillCostType   = (ESkillCostType)element.GetInt("SkillCostType");
-        this.SkillCostNum    = element.GetInt("SkillCostNum");
+        this.SkillCostType   = (ESkillCostType)element.GetInt32("SkillCostType");
+        this.SkillCostNum    = element.GetInt32("SkillCostNum");
     }
 }
 

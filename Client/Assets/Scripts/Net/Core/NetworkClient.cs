@@ -13,15 +13,7 @@ public class NetworkClient
     private int             mPort;
     private bool            mIsConnect = false;
     private Thread          mRecvThread;
-
-    private int PacketHeaderSize = 28;
-
-    private int m_RecvLen = 0;
-    private int m_DataLen = 0;
-
-    private byte[] m_RecvBuffer = new byte[8192];
-    private byte[] m_DataBuffer = new byte[16384];
-
+    private byte[]          mByteBuffer = new byte[4096];
     private EventWaitHandle mAllDone;
 
     public NetworkClient(string ip, int port)
@@ -40,7 +32,7 @@ public class NetworkClient
     {
         if(mIsConnect==false)
         {
-            OnError(MessageRetCode.MRC_DISCONNECT);
+            OnError(MessageRetCode.TYPE_DISCONNECT);
             return;
         }
         try
@@ -62,12 +54,12 @@ public class NetworkClient
     {
         if (mTcp.Client == null)
         {
-            OnError(MessageRetCode.MRC_DISCONNECT);
+            OnError(MessageRetCode.TYPE_DISCONNECT);
             return;
         }
         if (!mTcp.Client.Connected)
         {
-            OnError(MessageRetCode.MRC_DISCONNECT);
+            OnError(MessageRetCode.TYPE_DISCONNECT);
             return;
         }
         mIsConnect = true;
@@ -83,71 +75,31 @@ public class NetworkClient
             Thread.Sleep(20);
             if (mTcp == null || mTcp.Connected == false)
             {
-                OnError(MessageRetCode.MRC_DISCONNECT);
+                OnError(MessageRetCode.TYPE_DISCONNECT);
                 return;
             }
             NetworkStream stream = mTcp.GetStream();
             if (stream.CanRead)
             {
-                stream.BeginRead(m_RecvBuffer, 0, m_RecvBuffer.Length, new AsyncCallback(OnAsyncRead), stream);
+                stream.BeginRead(mByteBuffer, 0, mByteBuffer.Length, new AsyncCallback(OnAsyncRead), stream);
                 mAllDone.WaitOne();
             }
         }
     }
 
-    bool MakeRealPacket()
-    {
-        if (m_DataLen < PacketHeaderSize)
-        {
-            return false;
-        }
-
-        Byte CheckCode = m_DataBuffer[0];
-
-        int nPacketSize = BitConverter.ToUInt16(m_DataBuffer, 8);
-
-        if (nPacketSize > m_DataLen)
-        {
-            //暂时这样处理
-            return false;
-        }
-
-        byte[] realPacket = new byte[nPacketSize];
-
-        Array.Copy(m_DataBuffer, 0, realPacket, 0, nPacketSize);
-
-        Array.Copy(m_DataBuffer, nPacketSize, m_DataBuffer, 0, m_DataLen - nPacketSize);
-
-        m_DataLen = m_DataLen - nPacketSize;
-
-        NetworkManager.Recv(this, realPacket);
-
-        return true;
-    }
-
     void OnAsyncRead(IAsyncResult ar)
     {
         NetworkStream stream = (NetworkStream)ar.AsyncState;
-        m_RecvLen = stream.EndRead(ar);
-        if (m_RecvLen <= 0)
-        {
-            return;
-        }
-
-        Array.Copy(m_RecvBuffer, 0, m_DataBuffer, m_DataLen, m_RecvLen);
-
-        m_DataLen += m_RecvLen;
-
-        m_RecvLen = 0;
-
-        while(MakeRealPacket());
-
+        int len = stream.EndRead(ar);
+        byte[] bytes = new byte[len];
+        Array.Copy(mByteBuffer, bytes, len);
+        NetworkManager.Recv(this, bytes);
         mAllDone.Set();
     }
 
     void OnError(MessageRetCode retCode)
     {
-        if (retCode == MessageRetCode.MRC_SUCCESS)
+        if(retCode == MessageRetCode.TYPE_OK)
         {
             return;
         }
@@ -168,11 +120,6 @@ public class NetworkClient
             mTcp.Close();
         }
         mTcp = null;
-    }
-
-    public bool IsConnectOK()
-    {
-        return mIsConnect;
     }
 
 }

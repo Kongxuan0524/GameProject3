@@ -14,7 +14,7 @@
 namespace Protocol
 {
   [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"ReqStrengthGem")]
-    public partial class ReqStrengthGem : global::ProtoBuf.IExtensible
+  public partial class ReqStrengthGem : global::ProtoBuf.IExtensible
   {
     public ReqStrengthGem() {}
     

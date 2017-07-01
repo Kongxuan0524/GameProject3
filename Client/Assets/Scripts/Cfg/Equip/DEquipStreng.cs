@@ -16,13 +16,13 @@ public class DEquipStreng : DObj<int>
 
     public override void Read(XmlElement element)
     {
-        this.Id = element.GetInt("Id");
+        this.Id = element.GetInt32("Id");
         for (int i = 1; i <= 6; i++)
         {
             KStrengthValue data = new KStrengthValue();
-            data.Property    = (EAttr)element.GetInt("PropertyId" + i);
-            data.Value       = element.GetInt("PropertyNum" + i);
-            data.UnlockLevel = element.GetInt("PropertyLevel" + i);
+            data.Property    = (EAttr)element.GetInt32("PropertyId" + i);
+            data.Value       = element.GetInt32("PropertyNum" + i);
+            data.UnlockLevel = element.GetInt32("PropertyLevel" + i);
             this.Propertys.Add(data);
         }
     }

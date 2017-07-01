@@ -166,12 +166,6 @@ public enum EWeatherType
 
 
 
-//触发器条件之间的关系
-public enum ECR
-{
-    AND = 0,
-    OR  = 1,
-}
 
 
 public enum EBattleCamp

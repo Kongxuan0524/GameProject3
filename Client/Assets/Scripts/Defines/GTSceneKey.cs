@@ -11,4 +11,5 @@ public class GTSceneKey
     public const int SCENE_CITY_2    = 4;
     public const int SCENE_CITY_3    = 5;
     public const int SCENE_CITY_4    = 6;
+    public const int SCENE_MAP_WROLD = 20001;
 }

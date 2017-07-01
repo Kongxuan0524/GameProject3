@@ -13,7 +13,7 @@ using ProtoBuf;
 public class NetworkManager : GTSingleton<NetworkManager>
 {
     private NetworkClient                                mClient;
-    private bool                                         mAlone = false;
+    private bool                                         mAlone = true;//单机版
     private static Dictionary<MessageID, NetworkHandler> mMessageDispatchs = new Dictionary<MessageID, NetworkHandler>();
     private static List<MessageRecv>                     mRecvPackets = new List<MessageRecv>();
     private static List<MessageSend>                     mSendPackets = new List<MessageSend>();
@@ -60,17 +60,17 @@ public class NetworkManager : GTSingleton<NetworkManager>
         mClient.Connect();
     }
 
-    public void Send<T>(MessageID messageID, T obj, UInt64 u64TargetID, UInt32 dwUserData)
+    public void Send<T>(MessageID messageID, T obj)
     {
         if(mAlone)
         {
             byte[] bytes = null;
-            Pack(messageID, obj, u64TargetID, dwUserData, ref bytes);
+            Pack(messageID, obj, ref bytes);
             Recv(mClient, bytes);
         }
         else
         {
-            Send(mClient, messageID, obj, u64TargetID, dwUserData);
+            Send(mClient, messageID, obj);
         }
     }
 
@@ -86,13 +86,10 @@ public class NetworkManager : GTSingleton<NetworkManager>
     public static void Recv(NetworkClient client, byte[] bytes)
     {
         MemoryStream ms = new MemoryStream(bytes);
-
+        MessagePacket pack = Serializer.Deserialize<MessagePacket>(ms);
         MessageRecv evet = new MessageRecv();
-        evet.Data = bytes;
+        evet.Packet = pack;
         evet.Client = client;
-        evet.MsgID = (MessageID)BitConverter.ToInt32(bytes, 4);
-        evet.UesrData = BitConverter.ToUInt32(bytes, 24);
-        evet.TargetID = BitConverter.ToUInt64(bytes, 16);
         lock (mRecvPackets)
         {
             mRecvPackets.Add(evet);
@@ -126,96 +123,40 @@ public class NetworkManager : GTSingleton<NetworkManager>
     static void DispatchPacket(MessageRecv recv)
     {
         NetworkHandler handle = null;
-        mMessageDispatchs.TryGetValue(recv.MsgID, out handle);
+        mMessageDispatchs.TryGetValue(recv.Packet.ID, out handle);
         if (handle != null)
         {
-            handle.Invoke(recv);
+            handle.Invoke(recv, recv.Packet.RetCode);
         }
     }
-
-    public IEnumerator WatiConnctOK()  
-    {
-        while (!mClient.IsConnectOK())
-        {
-            yield return 0;
-        }
-   
-        Debug.Log("connect is Ok!");  
-    }  
-
 
     static void Send(MessageSend msg)
     {
         msg.Client.Send(msg.Bytes);
     }
 
-    static void Send<T>(NetworkClient client, MessageID messageID, T obj, UInt64 u64TargetID, UInt32 dwUserData)
+    static void Send<T>(NetworkClient client, MessageID messageID, T obj)
     {
         byte[] bytes = null;
-        Pack<T>(messageID, obj, u64TargetID, dwUserData , ref bytes);
+        Pack<T>(messageID, obj, ref bytes);
         MessageSend tab = new MessageSend(client, bytes);
         mSendPackets.Add(tab);
     }
 
-    static public void WriteUint32(UInt32 v)
-    {
-        for (int i = 0; i < 4; i++)
-        {
-            m_PacketHeader[m_nWritePos++] = (Byte)(v >> i * 8 & 0xff);
-        }
-    }
-
-    static public void WriteUint64(UInt64 v)
-    {
-        byte[] getdata = BitConverter.GetBytes(v);
-        for (int i = 0; i < getdata.Length; i++)
-        {
-            m_PacketHeader[m_nWritePos++] = getdata[i];
-        }
-    }
-
-
-    static public int m_nWritePos = 0;
-    static public byte[] m_PacketHeader = new byte[28];
-
-    static public bool MakePacketHeader(MessageID messageID, UInt64 u64Target, UInt32 dwUserData)
-    {
-        m_nWritePos = 0;
-
-        UInt32 CheckCode = 0x88;
-        UInt32 dwMsgID = (UInt32)messageID;
-        UInt32 dwSize = 3;
-        UInt32 dwPacketNo = 0;	//生成序号 = wCommandID^dwSize+index(每个包自动增长索引); 还原序号 = pHeader->dwPacketNo - pHeader->wCommandID^pHeader->dwSize;
-
-        WriteUint32(CheckCode);
-        WriteUint32(dwMsgID);
-        WriteUint32(dwSize);
-        WriteUint32(dwPacketNo);
-        WriteUint64(u64Target);
-        WriteUint32(dwUserData);
-        return true;
-    }
-
-
-    static void Pack<T>(MessageID messageID, T obj, UInt64 u64TargetID, UInt32 dwUserData, ref byte[] bytes)
+    static void Pack<T>(MessageID messageID, T obj, ref byte[] bytes)
     {
         MemoryStream byteMs = new MemoryStream();
-
-        MakePacketHeader(messageID, u64TargetID, dwUserData);
-
-        byteMs.Write(m_PacketHeader, 0, 28);
-
         Serializer.Serialize<T>(byteMs, obj);
+        byteMs.Seek(0, SeekOrigin.Begin);
 
-        bytes = byteMs.ToArray();
+        MessagePacket pack = new MessagePacket();
+        pack.ID = messageID;
+        pack.Data = byteMs.ToArray();
+        pack.Auth = string.Empty;
+        pack.RetCode = 0;
+        MemoryStream ms = new MemoryStream();
+        Serializer.Serialize(ms, pack);
 
-        UInt32 nLen = (UInt32)bytes.Length;
-        int nPos = 8;
-        for (int i = 0; i < 4; i++)
-        {
-            bytes[nPos++] = (Byte)(nLen >> i * 8 & 0xff);
-        }
-
+        bytes = ms.ToArray();
     }
-
 }

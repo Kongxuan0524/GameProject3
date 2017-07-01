@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Xml;
 using System.IO;
 
-public class GTResourceManager : GTMonoSingleton<GTResourceManager>
+public class GTResourceManager : GTSingleton<GTResourceManager>
 {
     public Dictionary<string, GTResourceUnit>    Units          = new Dictionary<string, GTResourceUnit>();   //以AssetName为Key，保存Asset
     public Dictionary<string, GTResourceBundle>  Bundles        = new Dictionary<string, GTResourceBundle>(); //保存所有的AssetBundle
@@ -248,7 +248,7 @@ public class GTResourceManager : GTMonoSingleton<GTResourceManager>
         task.Parent = parentTask;
         task.AssetName = assetName;
         task.AssetCallback = callback;
-        StartCoroutine(LoadAsyncBundle(task));
+        GTCoroutinueManager.Instance.StartCoroutine(LoadAsyncBundle(task));
     }
 
     public IEnumerator LoadMainAssetBundleManifest()

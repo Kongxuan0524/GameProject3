@@ -17,7 +17,7 @@ namespace CFG
 
         public override void Read(XmlElement os)
         {
-            this.MapID    = os.GetInt("MapID");
+            this.MapID    = os.GetInt32("MapID");
             this.Pos      = os.GetVector3("Pos");
             this.Euler    = os.GetVector3("Euler");
         }

@@ -75,7 +75,7 @@ public class UIMainGate : GTWindow
 
     protected override void OnEnable()
     {
-        GuideManager.Instance.AddListener("Btn_EnterCopy", btnEnter.transform);
+
     }
 
     protected override void OnDelHandler()
@@ -86,7 +86,6 @@ public class UIMainGate : GTWindow
     protected override void OnClose()
     {
         items.Clear();
-        GuideManager.Instance.DelListener("Btn_EnterCopy");
     }
 
 

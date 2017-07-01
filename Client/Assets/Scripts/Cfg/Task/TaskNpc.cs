@@ -15,8 +15,8 @@ namespace CFG
 
         public override void Read(XmlElement os)
         {
-            this.NpcID    = os.GetInt("NpcID");
-            this.LifeTime = os.GetInt("LifeTime");
+            this.NpcID    = os.GetInt32("NpcID");
+            this.LifeTime = os.GetInt32("LifeTime");
             foreach (var current in GetChilds(os))
             {
                 switch(current.Name)

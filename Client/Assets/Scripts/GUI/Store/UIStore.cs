@@ -184,9 +184,6 @@ public class UIStore : GTWindow
     {
         StoreModule.Instance.Clear();
         RefreshView();
-        GuideManager.Instance.AddListener("Btn_WeaponStore", bottomGrid.GetChild(7).transform);
-        GuideManager.Instance.AddListener("Btn_BuyWeapon", mStoreList[0].btnBuy.transform);
-        GuideManager.Instance.AddListener("Btn_StoreReturn",btnReturn.transform);
     }
 
     protected override void OnDelHandler()
@@ -198,8 +195,8 @@ public class UIStore : GTWindow
     {
         mStoreList.Clear();
         mStoreType = 1;
-        GuideManager.Instance.DelListener("Btn_WeaponStore");
-        GuideManager.Instance.DelListener("Btn_BuyWeapon");
-        GuideManager.Instance.DelListener("Btn_StoreReturn");
+        GTWorld.Instance.Bie.DelGuideListener("Btn_WeaponStore");
+        GTWorld.Instance.Bie.DelGuideListener("Btn_BuyWeapon");
+        GTWorld.Instance.Bie.DelGuideListener("Btn_StoreReturn");
     }
 }

@@ -14,7 +14,7 @@ namespace CFG
 
         public override void Read(XmlElement os)
         {
-            this.Func = (ETaskSubFuncType)os.GetInt("Func");
+            this.Func = (ETaskSubFuncType)os.GetInt32("Func");
             this.Desc = os.GetString("Desc");
         }
 

@@ -10,6 +10,8 @@ public interface IEntiny : IObj
     void       Destroy();
     void       Execute();
     void       Release();
+    void       BecameVisable();
+    void       BecameInVisable();
     void       Pause(bool pause);
     bool       IsDead();
     bool       IsDestroy();

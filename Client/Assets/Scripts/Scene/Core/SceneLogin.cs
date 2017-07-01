@@ -5,8 +5,9 @@ using System;
 
 public sealed class SceneLogin : IScene
 {
-    public override void InitWindows()
+    public override IEnumerator OpenWindows()
     {
         GTWindowManager.Instance.OpenWindow(EWindowID.UI_LOGIN);
+        yield return null;
     }
 }

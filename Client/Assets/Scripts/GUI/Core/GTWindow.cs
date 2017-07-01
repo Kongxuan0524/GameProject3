@@ -9,7 +9,6 @@ using DG.Tweening.Core;
 public abstract class GTWindow
 {
     protected Transform   transform;
-    protected bool        mVisable   = false;
     protected bool        mResident  = false;
     protected string      mResPath   = string.Empty;
 
@@ -30,7 +29,7 @@ public abstract class GTWindow
 
     public bool IsVisable()
     {
-        return mVisable;
+        return transform == null ? false : transform.gameObject.activeSelf;
     }
 
     public bool IsResident()
@@ -90,7 +89,6 @@ public abstract class GTWindow
             OnAddHandler();
             OnEnable();
         }
-        mVisable = true;
     }
 
     public void Hide()
@@ -102,7 +100,6 @@ public abstract class GTWindow
     {
         if (transform)
         {
-            mVisable = false;
             OnDelHandler();
             if (mResident)
             {
@@ -125,7 +122,6 @@ public abstract class GTWindow
         {           
             GTResourceManager.Instance.Destroy(transform.gameObject);
         }
-        mVisable = false;
     }
 
     public void SetParent(GTWindow parent)

@@ -24,9 +24,9 @@ public class GTAudioManager : GTMonoSingleton<GTAudioManager>
     private GameObject musicSource;
     private GameObject soundSource;
 
-    public override void SetDontDestroyOnLoad(Transform parent)
+    public override void SetRoot(Transform parent)
     {
-        base.SetDontDestroyOnLoad(parent);
+        base.SetRoot(parent);
         musicSource = new GameObject("MusicSource");
         soundSource = new GameObject("SoundSource");
         musicSource.transform.parent = transform;
@@ -46,7 +46,7 @@ public class GTAudioManager : GTMonoSingleton<GTAudioManager>
         SoundActive = soundActive == 1 ? true : false;
 
         EffectAudioSourceQueue = new Queue<AudioSource>();
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
             AudioSource ad = soundSource.AddComponent<AudioSource>();
             EffectAudioSourceQueue.Enqueue(ad);

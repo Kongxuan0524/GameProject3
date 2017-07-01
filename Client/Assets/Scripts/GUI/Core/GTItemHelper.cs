@@ -358,7 +358,7 @@ public class GTItemHelper
         {
             return;
         }
-        sprite.color = black ? Color.black : Color.white;
+        sprite.color = black ? new Color(0, 255, 255) : Color.white;
     }
 
     public static void ShowItemDialogById(int itemID)

@@ -23,15 +23,15 @@ namespace CFG
 
         public override void Read(XmlElement os)
         {
-            this.Id                  = os.GetInt("Id");
+            this.Id                  = os.GetInt32("Id");
             this.Name                = os.GetString("Name");
-            this.Type                = (ETaskType)os.GetInt("Type");
+            this.Type                = (ETaskType)os.GetInt32("Type");
             this.CanbeCancle         = os.GetBool("CanbeCancle");
             this.CanbeSearch         = os.GetBool("CanbeSearch");
             this.IsAutoPathFind      = os.GetBool("IsAutoPathFind");
             this.IsFinishedTaskCount = os.GetBool("IsFinishedTaskCount");
             this.IsAutoFinish        = os.GetBool("IsAutoFinish");
-            this.PreTaskID           = os.GetInt("PreTaskID");
+            this.PreTaskID           = os.GetInt32("PreTaskID");
             foreach (var current in GetChilds(os))
             {
                 switch (current.Name)

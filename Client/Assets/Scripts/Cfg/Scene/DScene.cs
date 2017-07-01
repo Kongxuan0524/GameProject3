@@ -19,9 +19,9 @@ public class DScene : DObj<int>
 
     public override void Read(XmlElement element)
     {
-        this.Id         = element.GetInt("Id");
+        this.Id         = element.GetInt32("Id");
         this.SceneName  = element.GetString("SceneName");
-        this.SceneType  = (ESceneType)element.GetInt("SceneType");
+        this.SceneType  = (ESceneType)element.GetInt32("SceneType");
         this.SceneMusic = element.GetString("SceneMusic");
     }
 }

@@ -24,15 +24,15 @@ public class DWorld : DObj<int>
 
     public override void Read(XmlElement element)
     {
-        this.Id           = element.GetInt("Id");
+        this.Id           = element.GetInt32("Id");
         this.Name         = element.GetString("Name");
         this.Icon         = element.GetString("Icon");
         this.Map          = element.GetString("Map");
-        this.CopyType     = (ECopyType)element.GetInt("Type");
+        this.CopyType     = (ECopyType)element.GetInt32("Type");
         this.Desc         = element.GetString("Desc");
 
-        int stCopyId    = element.GetInt("StCopyId");
-        int edCopyId    = element.GetInt("EdCopyId");
+        int stCopyId    = element.GetInt32("StCopyId");
+        int edCopyId    = element.GetInt32("EdCopyId");
         int copyNum     = edCopyId - stCopyId + 1;
         this.Copys        = new int[copyNum];
         this.CopyPosArray = new Vector2[copyNum];
@@ -50,8 +50,8 @@ public class DWorld : DObj<int>
         {
             string s1    = "Star" + (i + 1);
             string s2    = "AwardId" + (i + 1);
-            this.Stars[i]  = element.GetInt(s1);
-            this.Awards[i] = element.GetInt(s2);
+            this.Stars[i]  = element.GetInt32(s1);
+            this.Awards[i] = element.GetInt32(s2);
         }
     }
 

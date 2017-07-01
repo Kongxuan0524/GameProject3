@@ -182,13 +182,11 @@ public class UIEquipInfo : GTWindow
     protected override void OnClose()
     {
         mCurMenuBtnName = string.Empty;
-        GuideManager.Instance.DelListener("Btn_DressWeapon");
     }
 
     protected override void OnEnable()
     {
         InitToggleView();
-        GuideManager.Instance.AddListener("Btn_DressWeapon", btnDress.transform);
     }
 
     private UILabel equipName;

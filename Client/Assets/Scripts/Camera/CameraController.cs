@@ -68,9 +68,7 @@ public class CameraController : MonoBehaviour
 
     void OnWindowInput()
     {
-        mX = Input.GetAxis("Mouse X");
-        mY = Input.GetAxis("Mouse Y");
-        mSW = Input.GetAxis("Mouse ScrollWheel");
+
     }
 
     void OnMobileInput()
@@ -185,7 +183,7 @@ public class CameraController : MonoBehaviour
             case RuntimePlatform.WindowsPlayer:
             case RuntimePlatform.WindowsEditor:
                 {
-                   
+                    OnWindowInput();
                 }
                 break;
         }
