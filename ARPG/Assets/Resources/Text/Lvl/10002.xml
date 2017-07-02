@@ -1,0 +1,16 @@
+<Root Id="10002" Delay="0.00" LvlName="" AllowRide="1" AllowPK="1" AllowTrade="1" AllowFight="1">
+  <Borns>
+    <LvlBorn Camp="0" Pos="(0.00,0.51,0.00)" Euler="(0.00,0.00,0.00)" />
+  </Borns>
+  <Barriers />
+  <Portals />
+  <Regions />
+  <RegionMonsters />
+  <RegionMines />
+  <RegionWaves />
+  <Npcs />
+  <Objs />
+  <Monsters />
+  <Paths />
+  <Mines />
+</Root>

@@ -1,0 +1,181 @@
+﻿ <Root>
+     <Buff ID="201001" Lv="1"  Name="天生神力"     Icon="201001" EdTime="12.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="12秒内增加20%攻击力">
+          <ActAddAttr      StTime="0.000"  EdTime="12.00"  AttrID="2"  AttrPercentRefer="2"   Percent="0.200"/>
+          <ActBuffEffect   StTime="0.000"  EdTime="12.00"  ID="68001"  Bind="2"  Retain="true"/>
+    </Buff>
+     
+     <Buff ID="201002" Lv="1"  Name="守护天使之力"  Icon="201002" EdTime="12.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="12秒内增加500点防御值">
+         <ActAddAttr      StTime="0.000"  EdTime="12.00"   AttrID="3"  FixValue="500"/>
+         <ActBuffEffect   StTime="0.000"  EdTime="12.00"   ID="68001"  Bind="2"  Retain="true"/>        
+    </Buff>
+
+     <Buff ID="201003" Lv="1"  Name="圣光护体"     Icon="201003" EdTime="6.000"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="6秒内增加30%防御值">
+         <ActAddAttr      StTime="0.000"  EdTime="6.000"   AttrID="3"  AttrPercentRefer="3"  Percent="0.300"/>
+         <ActBuffEffect   StTime="0.000"  EdTime="6.000"   ID="68001"  Bind="2"  Retain="true"/>
+    </Buff>
+
+     <Buff ID="201004" Lv="1"  Name="嗜血"        Icon="201004"  EdTime="15.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="15秒内增加30%攻击,15%爆击,15%爆击伤害">
+         <ActAddAttr      StTime="0.000"  EdTime="15.00"   AttrID="2"  AttrPercentRefer="2"  Percent="0.300"/>
+         <ActAddAttr      StTime="0.000"  EdTime="15.00"   AttrID="4"  AttrPercentRefer="4"  Percent="0.150"/>
+         <ActAddAttr      StTime="0.000"  EdTime="15.00"   AttrID="5"  AttrPercentRefer="5"  Percent="0.150"/>
+         <ActBuffEffect   StTime="0.000"  EdTime="15.00"   ID="68007"  Bind="2"  Retain="true"/>
+    </Buff>
+
+     <Buff ID="201005" Lv="1"  Name="英勇"        Icon="201005"  EdTime="15.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="15秒内增加15%攻击,30%爆击,30%爆击伤害">
+         <ActAddAttr      StTime="0.000"  EdTime="15.00"   AttrID="2"  AttrPercentRefer="2"  Percent="0.150"/>
+         <ActAddAttr      StTime="0.000"  EdTime="15.00"   AttrID="4"  AttrPercentRefer="4"  Percent="0.300"/>
+         <ActAddAttr      StTime="0.000"  EdTime="15.00"   AttrID="5"  AttrPercentRefer="5"  Percent="0.300"/>
+         <ActBuffEffect   StTime="0.000"  EdTime="15.00"   ID="68007"  Bind="2"  Retain="true"/>
+    </Buff>
+
+     <Buff ID="201006" Lv="1"  Name="迅捷"        Icon="201006"  EdTime="6.000"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="6秒内提高70%移动速度">
+         <ActAddAttr      StTime="0.000"  EdTime="6.000"   AttrID="16"  AttrPercentRefer="16"  Percent="0.700"/>
+         <ActBuffEffect   StTime="0.000"  EdTime="6.000"   ID="68015"  Bind="2"  Retain="true"/>
+    </Buff>
+
+     <Buff ID="201007" Lv="1"  Name="灼烧"        Icon="201007"  EdTime="15.00"  Type="2"  DestroyType="3" OverlayType="3"  MaxOverlayNum="5"  Desc="15秒内每2秒造成512点火焰伤害">
+         <ActBuffEffect   StTime="0.000"  EdTime="15.00"   ID="68012"  Bind="2"  Retain="true"/>
+         <ActDot          StTime="0.000"  EdTime="15.00"   PlayOnTrigger="true" TickInterval="2.000"  Type="1"  TickPercent="0.200"  TickFixValue="15"  IgnoreDefense="false"/>
+    </Buff>
+
+     <Buff ID="201008" Lv="1"  Name="中毒"        Icon="201008"  EdTime="15.00"  Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="15秒内每2秒造成485点自然伤害">
+         <ActBuffEffect   StTime="0.000"  EdTime="15.00"   ID="68003"  Bind="2"  Retain="true"/>
+         <ActDot          StTime="0.000"  EdTime="15.00"   PlayOnTrigger="true" TickInterval="2.000"  Type="1"  TickPercent="0.200"  TickFixValue="15"  IgnoreDefense="false"/>
+    </Buff>
+
+     <Buff ID="201009" Lv="1"  Name="腐烂"        Icon="201009"  EdTime="10.00"  Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="10秒内每2秒造成485点暗影伤害">
+         <ActBuffEffect   StTime="0.000"  EdTime="10.00"   ID="68014"  Bind="2"  Retain="true"/>
+         <ActDot          StTime="0.000"  EdTime="10.00"   PlayOnTrigger="true" TickInterval="2.000"  Type="1"  TickPercent="0.200"  TickFixValue="15"  IgnoreDefense="false"/>
+    </Buff>
+
+     <Buff ID="201010" Lv="1"  Name="流血"        Icon="201010"  EdTime="10.00"  Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="10秒内每2秒造成185点物理伤害">
+         <ActBuffEffect   StTime="0.000"  EdTime="10.00"   ID="68014"  Bind="2"  Retain="true"/>
+         <ActDot          StTime="0.000"  EdTime="10.00"   PlayOnTrigger="true" TickInterval="2.000"  Type="1"  TickPercent="0.000"  TickFixValue="185"  IgnoreDefense="false"/>
+    </Buff>
+
+     <Buff ID="201011" Lv="1"  Name="铜墙铁壁"     Icon="201011" EdTime="6.000"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"   Desc="6秒内增加50%防御力">
+         <ActAddAttr      StTime="0.000"  EdTime="6.000"  AttrID="3"  AttrPercentRefer="3"   Percent="0.200"/>
+         <ActBuffEffect   StTime="0.000"  EdTime="6.000"  ID="68018"  Bind="2"  Retain="true"/>
+    </Buff>
+  
+     <Buff ID="201012" Lv="1"  Name="法力之潮"     Icon="201012" EdTime="15.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"   Desc="15秒内每2秒治疗2%法力值">
+         <ActBuffEffect   StTime="0.000"  EdTime="15.00"   ID="68006"  Bind="2"  Retain="true"/>
+         <ActHot          StTime="0.000"  EdTime="15.00"   PlayOnTrigger="true" TickInterval="2.000"  Type="1"  TickPercent="0.200"  TickFixValue="0"/>
+    </Buff>
+
+     <Buff ID="201013" Lv="1"  Name="愈合"        Icon="201013" EdTime="15.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"   Desc="15秒内每2秒治疗2%生命值">
+         <ActBuffEffect   StTime="0.000"  EdTime="15.00"   ID="68006"  Bind="2"  Retain="true"/>
+         <ActHot          StTime="0.000"  EdTime="15.00"   PlayOnTrigger="true" TickInterval="2.000"  Type="0"  TickPercent="0.200"  TickFixValue="0"/>
+     </Buff>
+
+     <Buff ID="201014" Lv="1"  Name="回春"        Icon="201014" EdTime="10.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"   Desc="10秒内每2秒治疗3%生命值">
+         <ActBuffEffect   StTime="0.000"  EdTime="10.00"   ID="68006"  Bind="2"  Retain="true"/>
+         <ActHot          StTime="0.000"  EdTime="10.00"   PlayOnTrigger="true" TickInterval="2.000"  Type="0"  TickPercent="0.300"  TickFixValue="0"/>
+    </Buff>
+     
+     <Buff ID="201015" Lv="1"  Name="蛮力"        Icon="201015" EdTime="12.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="12秒内增加10%攻击力">
+          <ActAddAttr      StTime="0.000"  EdTime="12.00"  AttrID="2"  AttrPercentRefer="2"   Percent="0.100"/>
+          <ActBuffEffect   StTime="0.000"  EdTime="12.00"  ID="68001"  Bind="2"  Retain="true"/>
+    </Buff>
+
+     <Buff ID="201016" Lv="1"  Name="恶魔变身"     Icon="201016" EdTime="30.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="30秒内变身一个恶魔，提高30%攻击力">
+         <ActAddAttr      StTime="0.000"  EdTime="30.00"  AttrID="2"  AttrPercentRefer="2"   Percent="0.300"/>
+    </Buff>
+
+     <Buff ID="201017" Lv="1"  Name="天神下凡"     Icon="201017" EdTime="30.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="30秒内变身一个天神，提高30%攻击力">
+         <ActAddAttr      StTime="0.000"  EdTime="30.00"  AttrID="2"  AttrPercentRefer="2"   Percent="0.300"/>
+    </Buff>
+
+     <Buff ID="201018" Lv="1"  Name="绿巨人"       Icon="201018" EdTime="30.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="30秒内变身一个绿巨人，提高30%攻击力">
+         <ActAddAttr      StTime="0.000"  EdTime="30.00"  AttrID="2"  AttrPercentRefer="2"   Percent="0.300"/>
+         <ActScale        StTime="0.000"  EdTime="30.00"  FadeTime="1.000"  Size="1.500"/>
+    </Buff>
+
+     <Buff ID="201019" Lv="1"  Name="隐身"         Icon="201019" EdTime="30.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="30秒内变身一个绿巨人，提高30%攻击力">
+         <ActStealth      StTime="0.000"  EdTime="30.00"/>
+    </Buff>
+
+     <Buff ID="201020" Lv="1"  Name="无敌"         Icon="201020" EdTime="6.000"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="8秒免疫任何攻击">
+         <ActDivive       StTime="0.000"  EdTime="6.000"/>
+         <ActBuffEffect   StTime="0.000"  EdTime="6.000"   ID="68019"  Bind="2"  Retain="true"/>
+    </Buff>
+
+     <Buff ID="201021" Lv="1"  Name="恐惧"         Icon="201021" EdTime="4.000"  Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1">
+         <ActBuffEffect   StTime="0.000"  EdTime="4.000"   ID="68010"  Bind="2"  Offset="(0,2.5,0)"  Retain="true"/>
+         <ActFear         StTime="0.000"  EdTime="4.000"/>
+    </Buff>
+
+     <Buff ID="201022" Lv="1"  Name="定身"         Icon="201022" EdTime="8.000"  Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1">
+         <ActBuffEffect   StTime="0.000"  EdTime="8.000"   ID="68004"  Bind="2"  Retain="true"  World="true"/>
+         <ActFixBody      StTime="0.000"  EdTime="8.000"/>
+    </Buff>
+
+     <Buff ID="201023" Lv="1"  Name="沉默"         Icon="201023" EdTime="4.000"  Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1">
+         <ActSilent       StTime="0.000"  EdTime="4.000"/>
+    </Buff>
+     
+     <Buff ID="201024" Lv="1"  Name="昏迷"         Icon="201024" EdTime="4.000"  Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1">
+         <ActBuffEffect   StTime="0.000"  EdTime="4.000"   ID="68010"  Bind="2"  Offset="(0,2.5,0)"  Retain="true"/> 
+         <ActStun         StTime="0.000"  EdTime="4.000"/>
+    </Buff>
+
+     <Buff ID="201025" Lv="1"  Name="冻结"         Icon="201025" EdTime="4.000"  Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1">
+         <ActBuffEffect   StTime="0.000"  EdTime="4.000"   ID="68004"  Bind="2"  Retain="true"/>
+         <ActFrozen       StTime="0.000"  EdTime="4.000"/>
+    </Buff>
+
+     <Buff ID="201026" Lv="1"  Name="致盲"         Icon="201026" EdTime="4.000"  Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1">
+         <ActBuffEffect   StTime="0.000"  EdTime="4.000"   ID="68010"  Bind="2"  Offset="(0,2.5,0)"  Retain="true"/>
+         <ActBlind        StTime="0.000"  EdTime="4.000"/>
+     </Buff>
+
+     <Buff ID="201027" Lv="1"  Name="狂暴"         Icon="201027" EdTime="60.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="60秒内增加900%攻击">
+         <ActAddAttr      StTime="0.000"  EdTime="60.00"   AttrID="2"  AttrPercentRefer="2"  Percent="9.000"/>
+         <ActBuffEffect   StTime="0.000"  EdTime="60.00"   ID="68005"  Bind="2"  Retain="true"/>
+    </Buff>
+
+     <Buff ID="201028" Lv="1"  Name="虚弱"         Icon="201028" EdTime="20.00"  Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="60秒内增加900%攻击">
+         <ActSubAttr      StTime="0.000"  EdTime="20.00"   AttrID="3"  AttrPercentRefer="3"  Percent="0.300"/>
+         <ActBuffEffect   StTime="0.000"  EdTime="20.00"   ID="68008"  Bind="2"  Retain="true"/>
+     </Buff>
+
+     <Buff ID="201029" Lv="1"  Name="魔法罩"       Icon="201029" EdTime="10.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="60秒内增加900%攻击">
+         <ActAbsorb       StTime="0.000"  EdTime="10.00"   />
+         <ActBuffEffect   StTime="0.000"  EdTime="10.00"   ID="68002"  Bind="2"  Retain="true"/>
+    </Buff>
+
+     <Buff ID="201030" Lv="1"  Name="死神降临"     Icon="201030" EdTime="10.00"   Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="60秒内增加900%攻击">
+         <ActAddAttr      StTime="0.000"  EdTime="10.00"   AttrID="2"  AttrPercentRefer="2"  Percent="0.1000"/>
+         <ActBuffEffect   StTime="0.000"  EdTime="10.00"   ID="68022"  Bind="2"  Retain="true"/>
+    </Buff>
+
+     <Buff ID="201031" Lv="1"  Name="强力回春术"    Icon="201031" EdTime="10.00"  Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"   Desc="10秒内每2秒治疗3%生命值">
+         <ActBuffEffect   StTime="0.000"  EdTime="10.00"   ID="68006"  Bind="2"  Retain="true"/>
+         <ActBlendHot     StTime="0.000"  EdTime="10.00"   PlayOnTrigger="true"  TickInterval="2.000"  Type="0"  TickPercents="0.300~0.350~0.400~0.450~0.500"  TickFixValues="30~35~40~45~50"/>
+    </Buff>
+
+     <Buff ID="201032" Lv="1"  Name="末日诅咒"      Icon="201032" EdTime="10.00"  Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"   Desc="10秒内每2秒治疗3%生命值">
+         <ActBuffEffect   StTime="0.000"  EdTime="10.00"   ID="68014"  Bind="2"  Retain="true"/>
+         <ActBlendDot     StTime="0.000"  EdTime="10.00"   PlayOnTrigger="true"  TickInterval="2.000"  Type="0"  TickPercents="0.300~0.350~0.400~0.450~0.500"  TickFixValues="30~35~40~45~50"/>
+    </Buff>
+
+     <Buff ID="201033" Lv="1"  Name="不屈意志"     Icon="201033" EdTime="10.00"   Type="1"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="10秒内">
+         <ActBlendAddAttr StTime="0.000"  EdTime="10.00"   AttrID="2"  AttrPercentRefer="2"   PlayOnTrigger="true"  TickInterval="2.000" TickPercents="0.300~0.350~0.400~0.450~0.500"/>
+         <ActBuffEffect   StTime="0.000"  EdTime="10.00"   ID="68020"  Bind="2"  Retain="false"/>
+    </Buff>
+
+     <Buff ID="201034" Lv="1"  Name="减速"        Icon="201034" EdTime="10.00"   Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="10秒内">
+         <ActBlendSubAttr StTime="0.000"  EdTime="10.00"   AttrID="16" AttrPercentRefer="16"  PlayOnTrigger="true"  TickInterval="2.000" TickPercents="0.500~0.600~0.700~0.800~0.900"/>
+         <ActBuffEffect   StTime="0.000"  EdTime="10.00"   ID="68009"  Bind="2"  Retain="true"/>
+    </Buff>
+
+     <Buff ID="201035" Lv="1"  Name="烈焰之王"     Icon="201035" EdTime="30.00"   Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="30秒内持有烈焰光环，对周围敌人施加灼烧效果">     
+         <ActBuffEffect   StTime="0.000"  EdTime="30.00"   ID="68005"  Bind="2"  Retain="true"/>
+         <ActAuraDamage   StTime="0.000"  EdTime="30.00"   Radius="5"  Affect="2"  Type="1"  FixValue="250"/>
+    </Buff>
+
+     <Buff ID="201036" Lv="1"  Name="烈焰形态"     Icon="201036" EdTime="30.00"   Type="2"  DestroyType="3" OverlayType="2"  MaxOverlayNum="1"  Desc="30秒内持有烈焰光环，对周围敌人施加灼烧效果">
+         <ActBuffEffect   StTime="0.000"  EdTime="30.00"   ID="68005"  Bind="2"  Retain="true"/>
+         <ActAddAttr      StTime="0.000"  EdTime="30.00"   AttrID="2"  AttrPercentRefer="2"  Percent="0.300"/>
+    </Buff>
+ </Root>

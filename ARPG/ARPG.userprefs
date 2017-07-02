@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="ARPG.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Flyword\FlywordSystem.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Extend\EEffectRenderQueue.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Extend\EFPS.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Extend\EJoystick.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Frameworks\GTEventCenter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Flyword\FlywordSystem.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,0 +1,8 @@
+﻿<Root ActorID="50011">
+    <Skill ID="5001101" Lv="1"  Name="攻击"  CastDist="30.00"  EdTime="0.200" CD="1"  CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActMissile          StTime="0.100"  EdTime="3.100"   ID="62025"  CasterBind="2"   Offset ="(0, 5, 0)"  Retain="true"  World="true"  MoveSpeed="30" MoveVAngle ="30" MoveHAngle="0" MoveType="3"  Affect="2"  MoveToward="0">
+            <ActDamage       Type="0"   Percent="0.550"  FixValue="110"  SelectTarget="2"/>
+       </ActMissile>
+   </Skill>
+</Root>

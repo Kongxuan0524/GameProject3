@@ -1,0 +1,156 @@
+<Root ActorID="1">
+    <Skill ID="1001" Lv="1" Name="连环斩1" CastDist="3"  EdTime="0.367" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.367"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.000"  EdTime="0.367"   ClipName="Sound/Sound/sound_attack1_shengwushi_01"/>
+        <ActEffect           StTime="0.000"  EdTime="0.367"   ID="61009"  CasterBind="2"  Retain="false"  />
+        <ActScopeCylinder    StTime="0.200"  Affect="2"  MaxDis="3.000"  HAngle="180"  Height="2.000">  
+            <ActDamage       Type="0"    Percent="0.320"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+            <ActShake        StTime="0.000"  EdTime="0.160"/>
+       </ActScopeCylinder>
+
+        <ActHeal             StTime="0.200"  Type="1"   Percent="0.200"  FixValue="59"  SelectTarget="0"/>      
+   </Skill>
+
+    <Skill ID="1002" Lv="1" Name="连环斩2" CastDist="3"  EdTime="0.333" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="attack_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.000"  EdTime="0.333"   ClipName="Sound/Sound/sound_attack1_shengwushi_02"/>
+        <ActEffect           StTime="0.000"  EdTime="0.333"   ID="61010"  CasterBind="2"  Retain="false"/>
+        <ActScopeCylinder    StTime="0.200"  Affect="2"  MaxDis="3.000"  HAngle="180"  Height="2.000">
+            <ActDamage           Type="0"    Percent="0.350"  FixValue="80"  SelectTarget="2"/>
+            <ActHit           SelectTarget="2"/>
+            <ActShake        StTime="0.000"  EdTime="0.120"/>
+       </ActScopeCylinder>
+        <ActHeal             StTime="0.200"  Type="1"   Percent="0.200"  FixValue="59"  SelectTarget="0"/>
+    </Skill>
+
+    <Skill ID="1003" Lv="1" Name="连环斩3" CastDist="3"  EdTime="0.367" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.367"   AnimName="attack_03"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.000"  EdTime="0.367"   ClipName="Sound/Sound/sound_attack1_shengwushi_03"/>
+        <ActEffect           StTime="0.000"  EdTime="0.367"   ID="61011"  CasterBind="2"  Retain="false"/>
+        <ActScopeCylinder    StTime="0.200"  Affect="2"  MaxDis="3.000"  HAngle="180"  Height="2.000">
+            <ActDamage           Type="0"    Percent="0.378"  FixValue="92"  SelectTarget="2"/>
+            <ActHit           SelectTarget="2"/>
+            <ActShake        StTime="0.000"  EdTime="0.160"/>
+        </ActScopeCylinder>
+        <ActHeal             StTime="0.200"  Type="1"   Percent="0.200"  FixValue="59"  SelectTarget="0"/>
+    </Skill>
+
+    <Skill ID="1004" Lv="1" Name="连环斩4" CastDist="3"  EdTime="1.167" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="1.167"   AnimName="attack_04"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.000"  EdTime="1.167"   ClipName="Sound/Sound/sound_attack1_shengwushi_04"/>
+        <ActEffect           StTime="0.000"  EdTime="1.167"   ID="61012" CasterBind="2"  Retain="false"/>
+        <ActScopeCylinder    StTime="0.600"  Affect="2"  MaxDis="3.000"  HAngle="180"  Height="2.000">
+            <ActDamage           Type="0"   Percent="0.414"  FixValue="110"  SelectTarget="2"/>
+            <ActHit           SelectTarget="2"/>
+            <ActShake        StTime="0.000"  EdTime="0.500"/>
+        </ActScopeCylinder>
+         <ActHeal            StTime="0.600"  Type="1"   Percent="0.200"  FixValue="59"  SelectTarget="0"/>
+    </Skill>
+
+    <Skill ID="1005" Lv="1" Name="半月斩"  CastDist="3"  EdTime="2.333" CD="14" CostType="1" CostNum="100" Type="0" Pos="1">
+        <ActAnim             StTime="0.000"  EdTime="1.233"   AnimName="xuli_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="1.233"  EdTime="2.333"   AnimName="xuli_02"  IsLooped="false"  PlaySpeed="1.0"/>     
+        <ActAudio            StTime="0.000"  EdTime="1.233"   ClipName="Sound/Sound/sound_roar_shengwushi_01"/>
+        <ActAudio            StTime="1.233"  EdTime="2.333"   ClipName="Sound/Sound/sound_roar_shengwushi_02"/>     
+        <ActEffect           StTime="0.000"  EdTime="1.167"   ID="61020"  CasterBind="2"  Retain="true"/>
+        <ActEffect           StTime="1.167"  EdTime="2.300"   ID="64054"  CasterBind="2"  Retain="true"/>
+        <ActAudio            StTime="1.233"  EdTime="0.000"   ClipName="Sound/Sound/sound_explosion"/>
+        <ActScopeCylinder    StTime="1.233"  EdTime="0.000"   MaxCount="10" Affect="2"  MaxDis="7.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"   Percent="0.414"  FixValue="110"  SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActShake            StTime="1.233"  EdTime="2.033"/>
+   </Skill>
+
+    <Skill ID="1006" Lv="1" Name="神威斩"  CastDist="4"    EdTime="2.233" CD="10" CostType="1" CostNum="20"  Type="0"  Pos="2">
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_shenweizhan_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="2.233"   AnimName="skill_shenweizhan_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActEffect           StTime="0.333"  EdTime="2.233"   ID="61018"  CasterBind="2"  Retain="false"/>
+        <ActAudio            StTime="0.000"  EdTime="2.233"   ClipName="Sound/Sound/sound_skill_shengwushi_shenweizhan"/>
+        <ActShake            StTime="0.833"  EdTime="1.400"/>
+        <ActScopeBox         StTime="0.833"  EdTime="2.233"   MaxCount="10" Affect="2"  L="5.000"  W="2.000"  H="2.000">
+            <ActDamage       Type="0"    Percent="3.200"  FixValue="110"  SelectTarget="2"/>
+       </ActScopeBox>
+        <ActScopeCylinder    StTime="0.833"  EdTime="2.233"   MaxCount="10" Affect="1"  MaxDis="5.000"  HAngle="360"  Height="2.000">
+            <ActHeal             Type="1"    Percent="2.500"  FixValue="110"  SelectTarget="2"/>
+       </ActScopeCylinder>
+    </Skill>
+    
+    <Skill ID="1007" Lv="1" Name="守护天使"  CastDist="4"  EdTime="1.433" CD="15" CostType="1" CostNum="20"  Type="0"  Pos="3">
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_shouhutianshi_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="1.433"   AnimName="skill_shouhutianshi_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.000"  EdTime="1.433"   ClipName="Sound/Sound/sound_skill_shengwushi_shouhutianshi1"/>
+        <ActAudio            StTime="0.333"  EdTime="1.433"   ClipName="Sound/Sound/sound_skill_shengwushi_shouhutianshi2"/>
+        <ActEffect           StTime="0.333"  EdTime="1.433"   ID="61019"  Offset="( 0, 0,  0)"  CasterBind="2"  World="true"  Retain="false"/>
+        <ActEffect           StTime="0.500"  EdTime="0.900"   ID="64001"  Offset="( 2, 0,  2)"  CasterBind="2"  World="true"  Retain="false"/>
+        <ActEffect           StTime="0.700"  EdTime="1.100"   ID="64001"  Offset="( 2, 0, -2)"  CasterBind="2"  World="true"  Retain="false"/>
+        <ActEffect           StTime="0.900"  EdTime="1.300"   ID="64001"  Offset="(-2, 0,  2)"  CasterBind="2"  World="true"  Retain="false"/>
+        <ActEffect           StTime="1.100"  EdTime="1.433"   ID="64001"  Offset="(-2, 0, -2)"  CasterBind="2"  World="true"  Retain="false"/>
+        
+        <ActAudio            StTime="0.500"  ClipName="Sound/Sound/sound_explosion"/>
+        <ActAudio            StTime="0.700"  ClipName="Sound/Sound/sound_explosion"/>
+        <ActAudio            StTime="0.900"  ClipName="Sound/Sound/sound_explosion"/>
+        <ActAudio            StTime="1.100"  ClipName="Sound/Sound/sound_explosion"/>
+        
+        <ActScopeCylinder    StTime="0.500"  MaxCount="10" Affect="2"  MaxDis="4.0"  HAngle="360"  Height="3">
+            <ActDamage       Type="1"   Percent="0.555"  FixValue="160"  SelectTarget="2"/>
+        </ActScopeCylinder>
+        <ActScopeCylinder    StTime="0.700"  MaxCount="10" Affect="2"  MaxDis="4.0"  HAngle="360"  Height="3">
+            <ActDamage       Type="1"   Percent="0.555"  FixValue="160"  SelectTarget="2"/>
+        </ActScopeCylinder>
+        <ActScopeCylinder    StTime="0.900"  MaxCount="10" Affect="2"  MaxDis="4.0"  HAngle="360"  Height="3">
+            <ActDamage       Type="1"   Percent="0.555"  FixValue="160"  SelectTarget="2"/>
+        </ActScopeCylinder>
+        <ActScopeCylinder    StTime="1.100"  MaxCount="10" Affect="2"  MaxDis="4.0"  HAngle="360"  Height="3">
+            <ActDamage       Type="1"   Percent="0.555"  FixValue="160"  SelectTarget="2"/>
+        </ActScopeCylinder>
+
+         <ActAddBuff         StTime="1.100"  BuffID="201002"  Probably="1"  SelectTarget="0"/>
+         <ActShake           StTime="0.400"  EdTime="1.200"/>  
+        
+    </Skill>
+    
+    <Skill ID="1008" Lv="1" Name="燎原之光"  CastDist="4"  EdTime="1.766" CD="25" CostType="1" CostNum="20"  Type="0"  Pos="4">
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_chengjiezitai_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="0.433"   AnimName="skill_chengjiezitai_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.433"  EdTime="1.433"   AnimName="skill_chengjiezitai_03"  IsLooped="true"   PlaySpeed="1.0"/>
+        <ActAnim             StTime="1.433"  EdTime="1.766"   AnimName="skill_chengjiezitai_04"  IsLooped="false"  PlaySpeed="1.0"/>        
+        <ActAudio            StTime="0.000"  EdTime="1.766"   ClipName="Sound/Sound/sound_skill_shengwushi_chengjiezitai1"/>
+        <ActAudio            StTime="0.333"  EdTime="1.766"   ClipName="Sound/Sound/sound_skill_shengwushi_chengjiezitai2"/>
+        <ActAudio            StTime="0.433"  EdTime="1.766"   ClipName="Sound/Sound/sound_explosion"/>                     
+        <ActEffect           StTime="0.433"  EdTime="1.766"   ID="61017"  CasterBind="2"  Retain="false"/>
+        <ActEffect           StTime="0.433"  EdTime="1.766"   ID="64054"  CasterBind="2"  Retain="false"/>     
+        <ActScopeCylinder    StTime="0.500"  EdTime="1.766"   MaxCount="10" Affect="2"  MaxDis="7.000"  HAngle="360"  Height="2.000">
+            <ActDamage           Type="0"    Percent="2.100"  FixValue="50"  SelectTarget="2"/>
+            <ActAddBuff      BuffID="201024"  Probably="1"  SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActShake            StTime="0.500"  EdTime="1.700"/>
+    </Skill>
+    
+    <Skill ID="1009" Lv="1" Name="破邪斩"  CastDist="4"  EdTime="2.066" CD="20" CostType="1" CostNum="20"  Type="0"  Pos="5">
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_poxiezhan_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="2.066"   AnimName="skill_poxiezhan_02"  IsLooped="false"  PlaySpeed="1.0"/>        
+        <ActAudio            StTime="0.000"  EdTime="2.066"   ClipName="Sound/Sound/sound_skill_shengwushi_poxiezhan"/>   
+        <ActEffect           StTime="0.333"  EdTime="2.066"   ID="61016"  CasterBind="2"  Retain="false"/>
+        <ActScopeCylinder    StTime="0.833"  EdTime="2.066"   MaxCount="10" Affect="2"  MaxDis="5.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.785"  FixValue="50"  SelectTarget="2"/>
+            <ActBeatDown     SelectTarget="2"/>
+       </ActScopeCylinder>
+    </Skill>
+
+
+    <Skill ID="1010" Lv="1"     Name="冲锋"   CastDist="10"  EdTime="1.100" CD="5" CostType="1" CostNum="20"  Type="0"  Pos="6">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="1.100"   AnimName="chong_a_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActMove             StTime="0.000"  EdTime="0.300"   Type="1" /> 
+        <ActEffect           StTime="0.000"  EdTime="1.100"   ID="61016"  CasterBind="2"  Retain="false"/>
+        <ActScopeCylinder    StTime="0.400"  MaxCount="10"    Affect="2"  MaxDis="4.000"  HAngle="360"  Height="2.000">
+            <ActDamage           Type="0"    Percent="0.785"  FixValue="50"  SelectTarget="2"/>
+        </ActScopeCylinder>
+   </Skill>
+   
+</Root>

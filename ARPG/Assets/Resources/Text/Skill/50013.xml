@@ -1,0 +1,24 @@
+﻿
+<Root ActorID="50013">
+
+    <Skill ID="5001301" Lv="1" Name="普攻"  CastDist="3.000"  EdTime="1.333" CD="2" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />
+        <ActAnim         StTime="0.000"  EdTime="1.333"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActScopeCylinder    StTime="0.680"  Affect="2"  MaxDis="3.000"  HAngle="180"  Height="2.000">
+            <ActDamage       StTime="0.000"  Type="1"   Percent="0.155"  FixValue="30"  SelectTarget="1"/>
+       </ActScopeCylinder>
+        <ActEffect       StTime="0.000"  EdTime="1.333"   ID="61074"  CasterBind="2"  Retain="false"  />
+        <ActAudio        StTime="0.400"  EdTime="1.333"   ClipName="Sound/Sound/sound_attack1_shengwushi_01"/>
+   </Skill>
+
+    <Skill ID="5001302" Lv="1" Name="普攻"  CastDist="5.000"  EdTime="1.333" CD="2" CostType="0" CostNum="0" Type="0" Pos="1">
+        <ActFaceToTarget     />
+        <ActAnim         StTime="0.000"  EdTime="1.333"   AnimName="skill_xieeliliang_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActEffect       StTime="0.400"  EdTime="1.333"   ID="64024"  CasterBind="2"  Retain="true"  />
+        <ActScopeCylinder    StTime="0.400"  Affect="2"  MaxDis="4.000"  HAngle="360"  Height="2.000">
+            <ActDamage       StTime="0.000"  Type="1"   Percent="0.255"  FixValue="36"  SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActAudio        StTime="0.400"  EdTime="1.333"   ClipName="Sound/Sound/sound_roar_kuangzhanshi_02"/>
+    </Skill>
+    
+</Root>

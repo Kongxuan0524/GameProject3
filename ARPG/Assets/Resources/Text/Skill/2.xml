@@ -1,0 +1,236 @@
+<Root ActorID="2">
+    <Skill ID="2001" Lv="1"  Name="攻击1"  CastDist="10.00"  EdTime="0.267" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.267"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.167"  EdTime="0.267"   ClipName="Sound/Sound/sound_firebomb"/>
+        <ActMissile          StTime="0.167"  EdTime="1.167"   ID="62010" CasterBind="1"   Retain="true"  World="true"  MoveSpeed="20"   MoveType="0"  Affect="2"  MoveToward="0">
+            <ActDamage       Type="0"   Percent="0.300"  FixValue="80"  SelectTarget="1"/>
+            <ActHeal         Type="1"   Percent="0.100"  FixValue="50"  SelectTarget="0"/>
+            <ActAddBuff      BuffID="201007"  Probably="0.20"           SelectTarget="1"/>            
+       </ActMissile>   
+   </Skill>
+    
+    <Skill ID="2002" Lv="1"  Name="攻击2"  CastDist="10.00"  EdTime="0.433" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.433"   AnimName="attack_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.200"  EdTime="0.433"   ClipName="Sound/Sound/sound_firebomb"/>        
+        <ActMissile          StTime="0.200"  EdTime="1.200"   ID="62010" CasterBind="1"   Retain="true"  World="true"  MoveSpeed="20" MoveType="0"  Affect="2"  MoveToward="0">
+            <ActDamage       Type="0"   Percent="0.322"  FixValue="90"  SelectTarget="1"/>
+            <ActHeal         Type="1"   Percent="0.100"  FixValue="50"  SelectTarget="0"/>
+            <ActAddBuff      BuffID="201007"  Probably="0.20"           SelectTarget="1"/>
+       </ActMissile>
+    </Skill>
+
+    <Skill ID="2003" Lv="1"  Name="攻击3"  CastDist="10.00"  EdTime="0.267" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.267"   AnimName="attack_03"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.167"  EdTime="0.267"   ClipName="Sound/Sound/sound_firebomb"/>
+        <ActMissile          StTime="0.167"  EdTime="1.167"   ID="62010"  CasterBind="1"  Retain="true"  World="true"  MoveSpeed="20" MoveType="0"  Affect="2"  MoveToward="0">
+            <ActDamage       Type="0"   Percent="0.350"  FixValue="110"  SelectTarget="1"/>
+            <ActHeal         Type="1"   Percent="0.100"  FixValue="50"  SelectTarget="0"/>
+            <ActAddBuff      BuffID="201007"  Probably="0.20"           SelectTarget="1"/>            
+        </ActMissile>
+    </Skill>
+
+    <Skill ID="2006" Lv="1"  Name="龙息术"  CastDist="6.00"  EdTime="2.432" CD="7" CostType="1" CostNum="10" Type="0" Pos="1">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_longxi_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="2.065"   AnimName="skill_longxi_03"  IsLooped="true"   PlaySpeed="1.0"/>
+        <ActAnim             StTime="2.065"  EdTime="2.432"   AnimName="skill_longxi_04"  IsLooped="false"  PlaySpeed="1.0"/>      
+        <ActAudio            StTime="0.333"  EdTime="2.065"   ClipName="Sound/Sound/sound_longxi"/>
+        <ActEffect           StTime="0.333"  EdTime="2.065"   ID="64004"  CasterBind="2"  Retain="true"/>
+        
+        <ActScopeBox         StTime="0.500"  EdTime="2.065"   MaxCount="10" Affect="2"  L="10.0"  W="2.0"  H="2.0">
+            <ActDamage       StTime="0.000"   Type="1"   Percent="0.555"  FixValue="260"  SelectTarget="2"/>
+       </ActScopeBox>
+        
+        <ActScopeBox         StTime="0.950"  EdTime="2.065"   MaxCount="10" Affect="2"  L="10.0"  W="2.0"  H="2.0">
+            <ActDamage       StTime="0.000"   Type="1"   Percent="0.555"  FixValue="260"  SelectTarget="2"/>
+       </ActScopeBox>
+        
+        <ActScopeBox         StTime="1.400"  EdTime="2.065"   MaxCount="10" Affect="2"  L="10.0"  W="2.0"  H="2.0">
+            <ActDamage       StTime="0.000"   Type="1"   Percent="0.555"  FixValue="260"  SelectTarget="2"/>
+       </ActScopeBox>
+        
+        <ActScopeBox         StTime="1.850"  EdTime="2.065"   MaxCount="10" Affect="2"  L="10.0"  W="2.0"  H="2.0">
+            <ActDamage       StTime="0.000"   Type="1"   Percent="0.555"  FixValue="260"  SelectTarget="2"/>
+       </ActScopeBox>
+    </Skill>
+
+    <Skill ID="2007" Lv="1"  Name="能量脉冲"  CastDist="30.00"  EdTime="2.432" CD="12" CostType="1" CostNum="50"  Type="0" Pos="2">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_longxi_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="2.065"   AnimName="skill_longxi_03"  IsLooped="true"   PlaySpeed="1.0"/>
+        <ActAnim             StTime="2.065"  EdTime="2.432"   AnimName="skill_longxi_04"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.333"  EdTime="2.065"   ClipName="Sound/Skill/weapon_energy_beam_006"/>
+        <ActBeam             StTime="0.333"  EdTime="1.800"   ID="66001"  CasterBind="3"  TargetBind="1"  Retain="true">
+            <ActDamage       StTime="0.000"  Type="1"        Percent="0.210"  FixValue="33"  SelectTarget="2"/>
+            <ActDamage       StTime="0.333"  Type="1"        Percent="0.210"  FixValue="33"  SelectTarget="2"/>
+            <ActDamage       StTime="0.667"  Type="1"        Percent="0.210"  FixValue="33"  SelectTarget="2"/>
+            <ActDamage       StTime="1.000"  Type="1"        Percent="0.210"  FixValue="33"  SelectTarget="2"/>
+            <ActDamage       StTime="1.333"  Type="1"        Percent="0.210"  FixValue="33"  SelectTarget="1"/>
+        </ActBeam>
+    </Skill>
+
+
+
+    <Skill ID="2008" Lv="1"  Name="冰霜风暴"  CastDist="9.00"  EdTime="3.200" CD="30" CostType="1" CostNum="10" Type="0" Pos="3">
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_bingshuangfengbao_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="0.533"   AnimName="skill_bingshuangfengbao_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.533"  EdTime="1.000"   AnimName="skill_bingshuangfengbao_03"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="1.000"  EdTime="3.200"   AnimName="skill_bingshuangfengbao_04"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActEffect           StTime="0.000"  EdTime="2.000"   ID="64053"  Offset="(0,0,0)" CasterBind="2"  Retain="true"/>
+        <ActEffect           StTime="1.700"  EdTime="3.000"   ID="64023"  Offset="(0,2,0)" CasterBind="2"  Retain="true"/>
+        <ActAudio            StTime="1.700"  EdTime="3.000"   ClipName="Sound/Sound/sound_explosion"/>
+        <ActScopeCylinder    StTime="1.700"  MaxCount="10"    Affect="2"  MaxDis="9.0"  HAngle="360"  Height="3">
+            <ActDamage       Type="1"   Percent="1.555"  FixValue="260"  SelectTarget="2"/>
+            <ActAddBuff      BuffID="201025"  Probably="1"  SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActShake            StTime="1.700"  EdTime="2.800"/>
+    </Skill>
+
+       
+    <Skill ID="2009" Lv="1"  Name="地火攻击"  CastDist="9.00"  EdTime="5.236" CD="30" CostType="1" CostNum="10" Type="0" Pos="4">     
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_dihuogongji_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="0.533"   AnimName="skill_dihuogongji_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.533"  EdTime="4.736"   AnimName="skill_dihuogongji_03"  IsLooped="true"   PlaySpeed="1.0"/>
+        <ActAnim             StTime="4.736"  EdTime="5.236"   AnimName="skill_dihuogongji_04"  IsLooped="false"  PlaySpeed="1.0"/>
+
+        <ActEffect           StTime="0.600"  EdTime="1.200"   ID="64039"  Offset="(2, 0, 1)"   CasterBind="2"  World="true"  Retain="true">
+            <ActScopeCylinder    StTime="0.200"  MaxCount="10" Affect="2"  MaxDis="3.0"  HAngle="360"  Height="3">
+                <ActDamage       Type="1"   Percent="1.555"  FixValue="260"  SelectTarget="2"/>
+                <ActAddBuff      BuffID="201007"  Probably="0.20"  SelectTarget="2"/>
+           </ActScopeCylinder>
+       </ActEffect>
+
+        <ActEffect           StTime="1.100"  EdTime="1.700"   ID="64039"  Offset="(2, 0, -3)"  CasterBind="2"  World="true"  Retain="true">
+            <ActScopeCylinder    StTime="0.200"  MaxCount="10" Affect="2"  MaxDis="3.0"  HAngle="360"  Height="3">
+                <ActDamage       Type="1"   Percent="1.555"  FixValue="260"  SelectTarget="2"/>
+                <ActAddBuff      BuffID="201007"  Probably="0.20"  SelectTarget="2"/>
+           </ActScopeCylinder>
+       </ActEffect>
+
+        <ActEffect           StTime="1.600"  EdTime="2.200"   ID="64039"  Offset="(-4, 0, 1)"  CasterBind="2"  World="true"  Retain="true">
+            <ActScopeCylinder    StTime="0.200"  MaxCount="10" Affect="2"  MaxDis="3.0"  HAngle="360"  Height="3">
+                <ActDamage       Type="1"   Percent="1.555"  FixValue="260"  SelectTarget="2"/>
+                <ActAddBuff      BuffID="201007"  Probably="0.20"  SelectTarget="2"/>
+           </ActScopeCylinder>
+       </ActEffect>
+
+        <ActEffect           StTime="2.100"  EdTime="2.700"   ID="64039"  Offset="(-2, 0,-2)"  CasterBind="2"  World="true"  Retain="true">
+            <ActScopeCylinder    StTime="0.200"  MaxCount="10" Affect="2"  MaxDis="3.0"  HAngle="360"  Height="3">
+                <ActDamage       Type="1"   Percent="1.555"  FixValue="260"  SelectTarget="2"/>
+                <ActAddBuff      BuffID="201007"  Probably="0.20"  SelectTarget="2"/>
+            </ActScopeCylinder>
+        </ActEffect>
+
+        <ActEffect           StTime="2.600"  EdTime="3.200"   ID="64039"  Offset="(2,  0,  2)" CasterBind="2"  World="true"  Retain="true">
+            <ActScopeCylinder    StTime="0.200"  MaxCount="10" Affect="2"  MaxDis="3.0"  HAngle="360"  Height="3">
+                <ActDamage       Type="1"   Percent="1.555"  FixValue="260"  SelectTarget="2"/>
+                <ActAddBuff      BuffID="201007"  Probably="0.20"  SelectTarget="2"/>
+           </ActScopeCylinder>
+       </ActEffect>
+        <ActEffect           StTime="3.100"  EdTime="3.700"   ID="64039"  Offset="(2, 0,  -3)" CasterBind="2"  World="true"  Retain="true">
+            <ActScopeCylinder    StTime="0.200"  MaxCount="10" Affect="2"  MaxDis="3.0"  HAngle="360"  Height="3">
+                <ActDamage       Type="1"   Percent="1.555"  FixValue="260"  SelectTarget="2"/>
+                <ActAddBuff      BuffID="201007"  Probably="0.20"  SelectTarget="2"/>
+           </ActScopeCylinder>
+       </ActEffect>
+
+        <ActEffect           StTime="3.600"  EdTime="4.200"   ID="64039"  Offset="(-3, 0,  2)" CasterBind="2"  World="true"  Retain="true">
+            <ActScopeCylinder    StTime="0.200"  MaxCount="10" Affect="2"  MaxDis="3.0"  HAngle="360"  Height="3">
+                <ActDamage       Type="1"   Percent="1.555"  FixValue="260"  SelectTarget="2"/>
+                <ActAddBuff      BuffID="201007"  Probably="0.20"  SelectTarget="2"/>
+           </ActScopeCylinder>
+       </ActEffect>
+
+        <ActEffect           StTime="4.100"  EdTime="4.700"   ID="64039"  Offset="(3,  0, -1)" CasterBind="2"  World="true"  Retain="true">
+            <ActScopeCylinder    StTime="0.200"  MaxCount="10" Affect="2"  MaxDis="3.0"  HAngle="360"  Height="3">
+                <ActDamage       Type="1"   Percent="1.555"  FixValue="260"  SelectTarget="2"/>
+                <ActAddBuff      BuffID="201007"  Probably="0.20"  SelectTarget="2"/>
+           </ActScopeCylinder>
+       </ActEffect>
+
+        <ActEffect           StTime="4.600"  EdTime="5.200"   ID="64039"  Offset="(-3, 0,  2)" CasterBind="2"  World="true"  Retain="true">
+            <ActScopeCylinder    StTime="0.200"  MaxCount="10" Affect="2"  MaxDis="3.0"  HAngle="360"  Height="3">
+                <ActDamage       Type="1"   Percent="1.555"  FixValue="260"  SelectTarget="2"/>
+                <ActAddBuff      BuffID="201007"  Probably="0.20"  SelectTarget="2"/>
+           </ActScopeCylinder>
+       </ActEffect>      
+        
+        <ActAudio            StTime="0.800"  ClipName="Sound/Sound/sound_explosion"/>
+        <ActAudio            StTime="1.300"  ClipName="Sound/Sound/sound_explosion"/>
+        <ActAudio            StTime="1.800"  ClipName="Sound/Sound/sound_explosion"/>
+        <ActAudio            StTime="2.300"  ClipName="Sound/Sound/sound_explosion"/>
+        <ActAudio            StTime="2.800"  ClipName="Sound/Sound/sound_explosion"/>
+        <ActAudio            StTime="3.300"  ClipName="Sound/Sound/sound_explosion"/>
+        <ActAudio            StTime="3.800"  ClipName="Sound/Sound/sound_explosion"/>
+        <ActAudio            StTime="4.300"  ClipName="Sound/Sound/sound_explosion"/>
+        <ActAudio            StTime="4.800"  ClipName="Sound/Sound/sound_explosion"/>
+        
+        <ActShake            StTime="0.800"  EdTime="5.200"/>
+    </Skill>
+
+    <Skill ID="2010" Lv="1"  Name="冰阴之花"  CastDist="10.00"  EdTime="1.667" CD="25" CostType="1" CostNum="75"  Type="0" Pos="5">
+        <ActAnim             StTime="0.000"  EdTime="1.000"   AnimName="xuli_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="1.000"  EdTime="1.667"   AnimName="xuli_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActEffect           StTime="0.000"  EdTime="1.000"   ID="64053"  CasterBind="2"  Retain="true"/>   
+        <ActAudio            StTime="0.000"  ClipName="Sound/Sound/sound_roar_fashi_01"/>
+        <ActAudio            StTime="1.000"  ClipName="Sound/Sound/sound_roar_fashi_02"/>
+        <ActTrigger          StTime="1.000"  EdTime="5.000"   ID="64028"  Bind="2"  Retain="false"  World="true"  SelectTarget="1">
+            <ActAudio             StTime="2.500"  ClipName="Sound/Sound/sound_explosion"/>
+            <ActScopeCylinder     StTime="2.500"  MaxCount="10"    Affect="2"  MaxDis="5.0"  HAngle="360"  Height="3">
+                  <ActDamage       Type="1"        Percent="3.555"  FixValue="560"  SelectTarget="2"/>           
+           </ActScopeCylinder>
+       </ActTrigger>
+    </Skill>
+
+    <Skill ID="2011" Lv="1"  Name="环形飞弹"     CastDist="50.00"  EdTime="0.267" CD="50"  CostType="0" CostNum="0"  Type="0" Pos="6">
+        <ActAnim             StTime="0.000"  EdTime="0.267"    AnimName="attack_03"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnnular          StTime="0.167"  EdTime="5.167"    ID="62011"  PassBody="true" CasterBind="2"   Offset="(3, 1, 3)"   Retain="true" Affect="2" MoveSpeed="100"  MoveToward="1" World="false">
+            <ActDamage       Type="0"   Percent="0.350"  FixValue="110"  SelectTarget="2"/>
+            <ActAudio        StTime="0.000"  EdTime="0.000"   ClipName="Sound/Sound/sound_firebomb"/>
+        </ActAnnular>
+        <ActAnnular          StTime="0.167"  EdTime="5.167"    ID="62011"  PassBody="true" CasterBind="2"   Offset="(3, 1,-3)"   Retain="true" Affect="2" MoveSpeed="100"  MoveToward="1" World="false">
+            <ActDamage       Type="0"   Percent="0.350"  FixValue="110"  SelectTarget="2"/>
+            <ActAudio        StTime="0.000"  EdTime="0.000"   ClipName="Sound/Sound/sound_firebomb"/>
+        </ActAnnular>
+        <ActAnnular          StTime="0.167"  EdTime="5.167"    ID="62011"  PassBody="true" CasterBind="2"   Offset="(-3,1,-3)"   Retain="true" Affect="2" MoveSpeed="100"  MoveToward="1" World="false">
+            <ActDamage       Type="0"   Percent="0.350"  FixValue="110"  SelectTarget="2"/>
+            <ActAudio        StTime="0.000"  EdTime="0.000"   ClipName="Sound/Sound/sound_firebomb"/>
+        </ActAnnular>
+        <ActAnnular          StTime="0.167"  EdTime="5.167"    ID="62011"  PassBody="true" CasterBind="2"   Offset="(-3,1, 3)"   Retain="true" Affect="2" MoveSpeed="100"  MoveToward="1" World="false">
+            <ActDamage       Type="0"   Percent="0.350"  FixValue="110"  SelectTarget="2"/>
+            <ActAudio        StTime="0.000"  EdTime="0.000"   ClipName="Sound/Sound/sound_firebomb"/>
+        </ActAnnular>
+    </Skill>
+
+    <Skill ID="2012" Lv="1"  Name="射线"      CastDist="0"  EdTime="0.267" CD="0"  CostType="0" CostNum="0"  Type="0" Pos="7">
+        <ActAnim             StTime="0.000"  EdTime="0.267"    AnimName="attack_03"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActRay              StTime="0.167"  MaxDis="50" Bind="1"  Affect="2"  HitEffectID="64009">
+            <ActDamage       Type="0"   Percent="0.350"  FixValue="110"  SelectTarget="2"/>
+            <ActShake        StTime="0.000"  EdTime="0.100"/>
+        </ActRay>
+    </Skill>
+
+    <Skill ID="2013" Lv="1"  Name="幽冥离火"  CastDist="10.00"  EdTime="1.500" CD="8" CostType="1" CostNum="10" Type="0" Pos="8">
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_hanbingqiu_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="1.500"   AnimName="skill_hanbingqiu_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.333"  EdTime="1.500"   ClipName="Sound/Sound/sound_icebomb"/>
+        <ActMissile          StTime="0.200"  EdTime="2.000"   ID="62014"  CasterBind="1"   Euler="(0,-10,0)" Retain="true"  World="true"  MoveSpeed="20" MoveType="0"  Affect="2"  MoveToward="1">
+            <ActDamage       Type="1"   Percent="0.388"  FixValue="160"  SelectTarget="2"/>
+       </ActMissile>
+        <ActMissile          StTime="0.200"  EdTime="2.000"   ID="62014"  CasterBind="1"   Euler="(0,-5,0)"  Retain="true"  World="true"  MoveSpeed="20" MoveType="0"  Affect="2"  MoveToward="1">
+            <ActDamage       Type="1"   Percent="0.388"  FixValue="160"  SelectTarget="2"/>
+       </ActMissile>
+        <ActMissile          StTime="0.200"  EdTime="2.000"   ID="62014"  CasterBind="1"   Euler="(0,0,0)"   Retain="true"  World="true"  MoveSpeed="20" MoveType="0"  Affect="2"  MoveToward="1">
+            <ActDamage       Type="1"   Percent="0.388"  FixValue="160"  SelectTarget="2"/>
+       </ActMissile>
+        <ActMissile          StTime="0.200"  EdTime="2.000"   ID="62014"  CasterBind="1"   Euler="(0,5,0)"   Retain="true"  World="true"  MoveSpeed="20" MoveType="0"  Affect="2"  MoveToward="1">
+            <ActDamage       Type="1"   Percent="0.388"  FixValue="160"  SelectTarget="2"/>
+       </ActMissile>
+        <ActMissile          StTime="0.200"  EdTime="2.000"   ID="62014"  CasterBind="1"   Euler="(0,10,0)"  Retain="true"  World="true"  MoveSpeed="20" MoveType="0"  Affect="2"  MoveToward="1">
+            <ActDamage       Type="1"   Percent="0.388"  FixValue="160"  SelectTarget="2"/>
+        </ActMissile>
+    </Skill> 
+</Root>

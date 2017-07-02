@@ -1,0 +1,5 @@
+<Root ActorID="1">
+    <Skill ID="101" Lv="1" Name="" CastDist="3"  EdTime="0.367" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+     
+   </Skill>
+</Root>

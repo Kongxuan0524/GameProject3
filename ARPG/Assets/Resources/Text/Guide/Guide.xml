@@ -1,0 +1,8 @@
+ <Root>
+      <Guide  Id="1"  TypeName="GuidePathTask"             IsLocked="false"  IsPause="false"  IsShowSkip="false"  IsSavePoint="false"  TipSound="" TipText="" TipPosition="(0.00,-2.16,0.00)" TriggerConditionRelation="0"  TargetPos="(0,-2.16,0)"  TargetScale="(5,5,5)">
+          <CheckScene SceneID="6"/>
+     </Guide>
+      <Guide  Id="2"  TypeName="GuideUIClick"              />      
+      <Guide  Id="3"  TypeName="GuideUIDoubleClick"        />
+      <Guide  Id="4"  TypeName="GuideUIPress"              />
+</Root>

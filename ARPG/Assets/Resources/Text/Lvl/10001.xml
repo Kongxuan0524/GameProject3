@@ -1,0 +1,88 @@
+<Root Id="10001" Delay="0.00" LvlName="" AllowRide="1" AllowPK="1" AllowTrade="1" AllowFight="1">
+  <Borns>
+    <LvlBorn Camp="0" Pos="(-22.94,21.21,27.06)" Euler="(0.00,0.00,0.00)" />
+  </Borns>
+  <Barriers>
+    <LvlBarrier Id="1" Width="20.00" Pos="(-14.56,20.86,0.00)" Euler="(0.00,0.00,0.00)" />
+    <LvlBarrier Id="2" Width="14.00" Pos="(-12.77,20.86,-30.60)" Euler="(0.00,0.00,0.00)" />
+    <LvlBarrier Id="3" Width="14.00" Pos="(-12.77,18.96,-61.66)" Euler="(0.00,0.00,0.00)" />
+  </Barriers>
+  <Portals />
+  <Regions>
+    <LvlRegion Id="1" Name="" Pos="(-19.35,21.00,11.92)" Euler="(0.00,0.00,0.00)" Scale="(25.00,2.00,20.00)" AwakeActive="1">
+      <Events>
+        <LvlEvent Id="1" Type="1" Show="1" TriggerCondition="1" />
+        <LvlEvent Id="1" Type="5" Show="1" TriggerCondition="1" />
+      </Events>
+    </LvlRegion>
+    <LvlRegion Id="2" Name="" Pos="(-14.39,21.00,-17.76)" Euler="(0.00,0.00,0.00)" Scale="(20.00,2.00,20.00)" AwakeActive="0">
+      <Events>
+        <LvlEvent Id="2" Type="1" Show="1" TriggerCondition="1" />
+        <LvlEvent Id="2" Type="5" Show="1" TriggerCondition="1" />
+      </Events>
+    </LvlRegion>
+    <LvlRegion Id="3" Name="" Pos="(-12.75,19.33,-64.78)" Euler="(0.00,0.00,0.00)" Scale="(15.00,2.00,5.00)" AwakeActive="0">
+      <Events>
+        <LvlEvent Id="3" Type="1" Show="1" TriggerCondition="1" />
+        <LvlEvent Id="3" Type="5" Show="1" TriggerCondition="1" />
+      </Events>
+    </LvlRegion>
+  </Regions>
+  <RegionMonsters />
+  <RegionMines />
+  <RegionWaves>
+    <LvlRegionWave Id="1">
+      <Waves>
+        <LvlWave Id="1" IndexName="第1波" Delay="0.00" Spawn="0" AddBuffID="0">
+          <Monsters>
+            <LvlMonster Id="50006" Pos="(-12.51,20.85,5.01)" Euler="(0.00,0.00,0.00)" />
+            <LvlMonster Id="50006" Pos="(-26.04,21.00,4.47)" Euler="(0.00,0.00,0.00)" />
+            <LvlMonster Id="50006" Pos="(-27.57,21.00,10.43)" Euler="(0.00,0.00,0.00)" />
+            <LvlMonster Id="50006" Pos="(-14.58,20.85,9.93)" Euler="(0.00,0.00,0.00)" />
+            <LvlMonster Id="50006" Pos="(-20.18,20.85,6.64)" Euler="(0.00,0.00,0.00)" />
+          </Monsters>
+        </LvlWave>
+      </Waves>
+      <Events>
+        <LvlEvent Id="1" Type="5" Show="0" TriggerCondition="3" />
+        <LvlEvent Id="2" Type="6" Show="1" TriggerCondition="3" />
+      </Events>
+    </LvlRegionWave>
+    <LvlRegionWave Id="2">
+      <Waves>
+        <LvlWave Id="1" IndexName="第1波" Delay="0.00" Spawn="0" AddBuffID="0">
+          <Monsters>
+            <LvlMonster Id="50006" Pos="(-8.73,20.87,-26.07)" Euler="(0.00,0.00,0.00)" />
+            <LvlMonster Id="50006" Pos="(-15.48,20.87,-26.07)" Euler="(0.00,0.00,0.00)" />
+            <LvlMonster Id="50006" Pos="(-21.81,20.87,-26.07)" Euler="(0.00,0.00,0.00)" />
+            <LvlMonster Id="50006" Pos="(-21.81,20.87,-21.78)" Euler="(0.00,0.00,0.00)" />
+            <LvlMonster Id="50006" Pos="(-15.48,20.87,-21.78)" Euler="(0.00,0.00,0.00)" />
+            <LvlMonster Id="50006" Pos="(-8.73,20.87,-21.78)" Euler="(0.00,0.00,0.00)" />
+          </Monsters>
+        </LvlWave>
+      </Waves>
+      <Events>
+        <LvlEvent Id="2" Type="5" Show="0" TriggerCondition="3" />
+        <LvlEvent Id="3" Type="6" Show="1" TriggerCondition="3" />
+      </Events>
+    </LvlRegionWave>
+    <LvlRegionWave Id="3">
+      <Waves>
+        <LvlWave Id="1" IndexName="第1波" Delay="0.00" Spawn="0" AddBuffID="0">
+          <Monsters>
+            <LvlMonster Id="50016" Pos="(-13.14,19.03,-87.25)" Euler="(0.00,0.00,0.00)" />
+          </Monsters>
+        </LvlWave>
+      </Waves>
+      <Events>
+        <LvlEvent Id="3" Type="5" Show="0" TriggerCondition="3" />
+        <LvlEvent Id="0" Type="7" Show="1" TriggerCondition="3" />
+      </Events>
+    </LvlRegionWave>
+  </RegionWaves>
+  <Npcs />
+  <Objs />
+  <Monsters />
+  <Paths />
+  <Mines />
+</Root>

@@ -1,0 +1,96 @@
+﻿<Root ActorID="4">
+    
+    <Skill ID="9001501" Lv="1" Name="攻击1" CastDist="3"  EdTime="0.400" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="0.400"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.000"  EdTime="0.400"   ClipName="Sound/Sound/sound_attack1_kuangzhanshi_01"/>        
+        <ActEffect           StTime="0.000"  EdTime="0.400"   ID="61065"  CasterBind="2"  Retain="false"  />        
+        <ActScopeCylinder    StTime="0.260"  MaxCount="10"   Affect="2"  MaxDis="3.000"  HAngle="180"  Height="2.000">
+            <ActDamage           Type="0"    Percent="0.320"  FixValue="59"  SelectTarget="2"/>
+            <ActShake        StTime="0.000"  EdTime="0.100"/>
+        </ActScopeCylinder>
+   </Skill>
+
+    <Skill ID="9001502" Lv="1" Name="攻击2" CastDist="3"  EdTime="0.400" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="0.400"   AnimName="attack_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.000"  EdTime="0.400"   ClipName="Sound/Sound/sound_attack1_kuangzhanshi_02"/>
+        <ActEffect           StTime="0.000"  EdTime="0.400"   ID="61066"  CasterBind="2"  Retain="false"  />        
+        <ActScopeCylinder    StTime="0.300"  MaxCount="10"   Affect="2"  MaxDis="3.000"  HAngle="180"  Height="2.000">
+            <ActDamage           Type="0"    Percent="0.320"  FixValue="59"  SelectTarget="2"/>
+            <ActShake        StTime="0.000"  EdTime="0.050"/>        
+       </ActScopeCylinder>
+   </Skill>
+
+    <Skill ID="9001503" Lv="1" Name="攻击3" CastDist="3"  EdTime="0.967" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="0.967"   AnimName="attack_03"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.000"  EdTime="0.967"   ClipName="Sound/Sound/sound_attack1_kuangzhanshi_03"/>
+        <ActEffect           StTime="0.000"  EdTime="0.967"   ID="61067"  CasterBind="2"  Retain="false"  />
+        <ActScopeCylinder    StTime="0.490"  MaxCount="10"   Affect="2"  MaxDis="3.000"  HAngle="180"  Height="2.000">
+            <ActDamage           Type="0"    Percent="0.320"  FixValue="59"  SelectTarget="2"/>
+            <ActShake        StTime="0.000"  EdTime="0.300"/>
+        </ActScopeCylinder>
+    </Skill>
+
+    <Skill ID="9001504" Lv="1" Name="狮心连斩" CastDist="3"  EdTime="2.267" CD="25" CostType="0" CostNum="0" Type="0" Pos="1">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_shixinlianzhan_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="0.600"   AnimName="skill_shixinlianzhan_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.600"  EdTime="0.867"   AnimName="skill_shixinlianzhan_03"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.867"  EdTime="1.167"   AnimName="skill_shixinlianzhan_04"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="1.167"  EdTime="2.267"   AnimName="skill_shixinlianzhan_05"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActEffect           StTime="0.000"  EdTime="2.267"   ID="61068"  CasterBind="2"  Retain="false"  />
+
+        <ActAudio            StTime="0.200"  EdTime="0.500"   ClipName="Sound/Sound/sound_attack1_kuangzhanshi_01"/>
+        <ActAudio            StTime="0.550"  EdTime="0.850"   ClipName="Sound/Sound/sound_attack1_kuangzhanshi_02"/>
+        <ActAudio            StTime="1.000"  EdTime="1.300"   ClipName="Sound/Sound/sound_attack1_kuangzhanshi_03"/>
+        <ActAudio            StTime="1.400"  EdTime="1.700"   ClipName="Sound/Sound/sound_attack1_kuangzhanshi_04"/>
+
+        <ActScopeCylinder    StTime="0.200"  Affect="2"  MaxCount="10"   MaxDis="5.000"  HAngle="360"  Height="2.000">
+            <ActDamage           Type="0"    Percent="0.320"  FixValue="59"  SelectTarget="2"/>
+        </ActScopeCylinder>
+
+        <ActScopeCylinder    StTime="0.550"  Affect="2"  MaxCount="10"   MaxDis="5.000"  HAngle="360"  Height="2.000">
+            <ActDamage           Type="0"    Percent="0.320"  FixValue="59"  SelectTarget="2"/>
+        </ActScopeCylinder>
+
+        <ActScopeCylinder    StTime="0.870"  Affect="2"  MaxCount="10"   MaxDis="5.000"  HAngle="360"  Height="2.000">
+            <ActDamage           Type="0"    Percent="0.320"  FixValue="59"  SelectTarget="2"/>
+        </ActScopeCylinder>
+
+        <ActScopeCylinder    StTime="1.220"  Affect="2"  MaxCount="10"   MaxDis="5.000"  HAngle="360"  Height="2.000">
+            <ActDamage           Type="0"    Percent="0.320"  FixValue="59"  SelectTarget="2"/>
+        </ActScopeCylinder>
+    </Skill>
+
+    <Skill ID="9001505" Lv="1" Name="嗜血杀戮" CastDist="3"    EdTime="1.267" CD="25" CostType="0" CostNum="0" Type="0" Pos="2">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="1.267"   AnimName="skill_shixueshalu"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActEffect           StTime="0.000"  EdTime="1.267"   ID="61069"  CasterBind="2"  Retain="false"  />
+        <ActAudio            StTime="0.000"  EdTime="1.200"   ClipName="Sound/Sound/sound_skill_kuangzhanshi_baoleizhixin"/>
+    </Skill>
+
+    <Skill ID="9001506" Lv="1" Name="爆裂重击" CastDist="7.0"  EdTime="1.600" CD="20" CostType="0" CostNum="0" Type="0" Pos="3">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />        
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_baoliezhongji_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="1.600"   AnimName="skill_baoliezhongji_02"  IsLooped="false"  PlaySpeed="1.0"/>  
+        <ActEffect           StTime="0.333"  EdTime="1.400"   ID="64043"  CasterBind="2"  Retain="false"  />
+        <ActScopeBox         StTime="1.000"  MaxCount="10" Affect="2"  L="7.0"  W="4.0"  H="2.0">
+            <ActDamage       StTime="0.000"   Type="1"   Percent="0.855"  FixValue="260"  SelectTarget="2"/>
+       </ActScopeBox>
+        <ActAudio            StTime="1.000"  EdTime="1.766"   ClipName="Sound/Sound/sound_explosion"/>
+        <ActShake            StTime="1.000"  EdTime="1.500"/>
+   </Skill>
+
+    <Skill ID="9001507" Lv="1" Name="原始咆哮" CastDist="3"  EdTime="1.467" CD="20" CostType="0" CostNum="0" Type="0" Pos="4">
+        <ActAnim             StTime="0.000"  EdTime="0.567"   AnimName="skill_yuanshipaoxiao_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.567"  EdTime="1.467"   AnimName="skill_yuanshipaoxiao_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActEffect           StTime="0.000"  EdTime="1.467"   ID="64044"  CasterBind="2"  Offset="(0,-1,1)" Retain="false"  />
+        <ActAudio            StTime="0.400"  EdTime="1.400"   ClipName="Sound/Sound/sound_roar_kuangzhanshi_02"/>
+        <ActScopeCylinder    StTime="0.600"  MaxCount="10"   Affect="2"  MaxDis="7.000"  HAngle="180"  Height="2.000">
+            <ActDamage           Type="0"    Percent="0.500"  FixValue="59"  SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActShake            StTime="0.300"  EdTime="1.100"/>
+    </Skill>
+</Root>

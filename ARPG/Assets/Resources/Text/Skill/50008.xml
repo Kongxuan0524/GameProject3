@@ -1,0 +1,13 @@
+﻿<Root ActorID="50008">
+    <Skill ID="5000801" Lv="1" Name="普攻1" CastDist="15"  EdTime="1.834" CD="2" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="0.967"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.967"  EdTime="1.834"   AnimName="attack_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.967"  EdTime="1.834"   ClipName="Sound/Sound/sound_skill_lilian_attack"/>
+        <ActMissile          StTime="0.967"  EdTime="1.967"   ID="62025" CasterBind="1"  Retain="true"  World="true"  MoveSpeed="20"   MoveType="2"  Affect="2"  MoveToward="0">
+            <ActDamage       Type="0"   Percent="0.220"  FixValue="80"  SelectTarget="1"/>
+       </ActMissile>
+    </Skill>
+</Root>
+
+

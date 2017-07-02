@@ -1,0 +1,13 @@
+﻿<Root ActorID="50003">
+ 
+    <Skill ID="5000301" Lv="1" Name="普攻" CastDist="7.0"  EdTime="1.933" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="1.933"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActEffect           StTime="0.200"  EdTime="1.600"   ID="64043"  CasterBind="2"  Retain="false"  />
+        <ActScopeBox         StTime="0.900"  MaxCount="10" Affect="2"  L="7.0"  W="4.0"  H="2.0">
+            <ActDamage       StTime="0.000"   Type="1"   Percent="0.855"  FixValue="260"  SelectTarget="2"/>
+       </ActScopeBox>
+        <ActAudio            StTime="0.900"  EdTime="1.766"   ClipName="Sound/Sound/sound_explosion"/>
+    </Skill>
+    
+</Root>

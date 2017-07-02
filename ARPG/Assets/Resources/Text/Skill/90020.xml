@@ -1,0 +1,150 @@
+<Root ActorID="90020">
+     <Skill ID="9002001" Lv="1" Name="攻击1" CastDist="3"  EdTime="0.433" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.433"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.000"  EdTime="0.000"   ClipName="Sound/Sound/sound_attack1_shengwushi_01"/>
+        <ActEffect           StTime="0.000"  EdTime="0.433"   ID="61043"  CasterBind="2"  Retain="false"  />
+        <ActScopeCylinder    StTime="0.220"  Affect="2"  MaxDis="3.000"  HAngle="180"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.320"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+            <ActShake        StTime="0.000"  EdTime="0.100"/>
+       </ActScopeCylinder>
+        <ActHeal             StTime="0.220"  Type="1"   Percent="0.200"  FixValue="59"  SelectTarget="0"/>
+    </Skill>
+
+     <Skill ID="9002002" Lv="1" Name="攻击2" CastDist="3"  EdTime="0.300" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.300"   AnimName="attack_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.000"  EdTime="0.000"   ClipName="Sound/Sound/sound_attack1_shengwushi_02"/>
+        <ActEffect           StTime="0.000"  EdTime="0.300"   ID="61044"  CasterBind="2"  Retain="false"  />
+        <ActScopeCylinder    StTime="0.120"  Affect="2"  MaxDis="3.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.320"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+            <ActShake        StTime="0.000"  EdTime="0.050"/>
+       </ActScopeCylinder>
+        <ActHeal             StTime="0.120"  Type="1"   Percent="0.200"  FixValue="59"  SelectTarget="0"/>
+    </Skill>
+
+     <Skill ID="9002003" Lv="1" Name="攻击3" CastDist="3"  EdTime="0.433" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.433"   AnimName="attack_03"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.000"  EdTime="0.000"   ClipName="Sound/Sound/sound_attack1_shengwushi_03"/>
+        <ActEffect           StTime="0.000"  EdTime="0.433"   ID="61045"  CasterBind="2"  Retain="false"  />
+        <ActScopeCylinder    StTime="0.290"  Affect="2"  MaxDis="3.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.320"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+            <ActShake        StTime="0.000"  EdTime="0.100"/>
+       </ActScopeCylinder>
+        <ActHeal             StTime="0.290"  Type="1"   Percent="0.200"  FixValue="59"  SelectTarget="0"/>
+    </Skill>
+
+     <Skill ID="9002004" Lv="1" Name="攻击4"  CastDist="3"  EdTime="1.167" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="1.167"   AnimName="attack_04"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.000"  EdTime="0.000"   ClipName="Sound/Sound/sound_attack1_shengwushi_04"/>
+        <ActEffect           StTime="0.000"  EdTime="1.167"   ID="61047"  CasterBind="2"  Retain="false"  />
+        <ActEffect           StTime="0.000"  EdTime="1.167"   ID="61046"  CasterBind="2"  Retain="false"  />
+        <ActScopeCylinder    StTime="0.450"  Affect="2"  MaxDis="3.000"  HAngle="180"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.320"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+            <ActShake        StTime="0.000"  EdTime="0.100"/>
+       </ActScopeCylinder>
+        <ActHeal             StTime="0.450"  Type="1"   Percent="0.200"  FixValue="59"  SelectTarget="0"/>
+    </Skill>
+
+     <Skill ID="9002005" Lv="1" Name="惩戒姿态" CastDist="0"  EdTime="5.766" CD="20" CostType="0" CostNum="0" Type="0" Pos="1">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_chengjiezitai_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="0.433"   AnimName="skill_chengjiezitai_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.433"  EdTime="5.433"   AnimName="skill_chengjiezitai_03"  IsLooped="true"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="5.433"  EdTime="5.766"   AnimName="skill_chengjiezitai_04"  IsLooped="false"  PlaySpeed="1.0"/>            
+        <ActEffect           StTime="0.000"  EdTime="5.750"   ID="64011"  CasterBind="2"  Retain="false"  />
+        <ActAudio            StTime="0.000"  ClipName="Sound/Sound/sound_skill_shengwushi_chengjiezitai2"/>
+        <ActScopeCylinder    StTime="0.500"  MaxCount="10" Affect="2"  MaxDis="4.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.720"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActScopeCylinder    StTime="1.000"  MaxCount="10" Affect="2"  MaxDis="4.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.720"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActScopeCylinder    StTime="1.500"  MaxCount="10" Affect="2"  MaxDis="4.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.720"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActScopeCylinder    StTime="2.000"  MaxCount="10" Affect="2"  MaxDis="4.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.720"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeCylinder>  
+        <ActScopeCylinder    StTime="2.500"  MaxCount="10" Affect="2"  MaxDis="4.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.720"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeCylinder>     
+        <ActScopeCylinder    StTime="3.000"  MaxCount="10" Affect="2"  MaxDis="4.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.720"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActScopeCylinder    StTime="3.500"  MaxCount="10" Affect="2"  MaxDis="4.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.720"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActScopeCylinder    StTime="4.000"  MaxCount="10" Affect="2"  MaxDis="4.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.720"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActScopeCylinder    StTime="4.500"  MaxCount="10" Affect="2"  MaxDis="4.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.720"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeCylinder>  
+        <ActScopeCylinder    StTime="5.000"  MaxCount="10" Affect="2"  MaxDis="4.000"  HAngle="360"  Height="2.000">
+            <ActDamage       Type="0"    Percent="0.720"  FixValue="59"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeCylinder> 
+   </Skill>
+
+    <Skill ID="9002006" Lv="1" Name="冲锋"   CastDist="10"  EdTime="1.000" CD="15" CostType="0" CostNum="0"  Type="0"  Pos="2">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="1.100"   AnimName="chong_a_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActMove             StTime="0.000"  EdTime="0.100"   Type="1" />
+        <ActEffect           StTime="0.000"  EdTime="1.000"   ID="61016"  CasterBind="2"  Retain="false"/>
+        <ActScopeCylinder    StTime="0.400"  MaxCount="10"    Affect="2"  MaxDis="3.000"  HAngle="360"  Height="2.000">
+            <ActDamage           Type="0"    Percent="0.785"  FixValue="50"  SelectTarget="2"/>
+        </ActScopeCylinder>
+    </Skill>
+
+    <Skill ID="9002007" Lv="1" Name="圣光护体" CastDist="4"  EdTime="1.166" CD="20" CostType="0" CostNum="0" Type="0" Pos="3">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_shengguanghuti_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="1.166"   AnimName="skill_shengguanghuti_02"  IsLooped="false"  PlaySpeed="1.0"/>             
+        <ActEffect           StTime="0.000"  EdTime="1.160"   ID="61102"  CasterBind="2"  Retain="false"  />    
+        <ActAddBuff          StTime="1.000"  BuffID="201002"  Probably="1"  SelectTarget="0"/>
+        <ActAudio            StTime="0.000"  ClipName="Sound/Sound/sound_skill_shengwushi_shouhutianshi2"/>
+   </Skill>
+
+    <Skill ID="900208" Lv="1" Name="十字斩"   CastDist="4"  EdTime="2.666" CD="15" CostType="0" CostNum="0" Type="0" Pos="4">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_shizizhan_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="0.566"   AnimName="skill_shizizhan_02"  IsLooped="false"  PlaySpeed="1.0"/>  
+        <ActAnim             StTime="0.566"  EdTime="1.166"   AnimName="skill_shizizhan_03"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="1.166"  EdTime="2.666"   AnimName="skill_shizizhan_04"  IsLooped="false"  PlaySpeed="1.0"/>        
+        <ActEffect           StTime="0.300"  EdTime="2.666"   ID="64030"  CasterBind="2"  Retain="false"  />  
+        <ActAudio            StTime="0.500"  ClipName="Sound/Sound/sound_attack1_shengwushi_01"/>
+        <ActScopeBox         StTime="0.500"  MaxCount="10" Affect="2"  L="5.000"  W="2.000"  H="2.000">
+            <ActDamage       Type="0"    Percent="0.520"  FixValue="101"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeBox>  
+        
+        <ActAudio            StTime="1.000"  ClipName="Sound/Sound/sound_attack1_shengwushi_02"/>
+        <ActScopeBox         StTime="1.000"  MaxCount="10" Affect="2"  L="5.000"  W="2.000"  H="2.000"> 
+            <ActDamage       Type="0"    Percent="0.720"  FixValue="159"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeBox> 
+        
+        <ActAudio            StTime="1.800"  ClipName="Sound/Sound/sound_attack1_shengwushi_03"/>
+        <ActScopeBox         StTime="1.800"  MaxCount="10" Affect="2"  L="5.000"  W="4.000"  H="2.000"> 
+            <ActDamage       Type="0"    Percent="1.120"  FixValue="259"  SelectTarget="2"/>
+            <ActHit          SelectTarget="2"/>
+       </ActScopeBox> 
+   </Skill>
+
+</Root>

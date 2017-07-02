@@ -1,0 +1,32 @@
+﻿<Root ActorID="50004">
+
+    <Skill ID="5000401" Lv="1" Name="普攻"  CastDist="2.500"  EdTime="1.467" CD="2" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="1.933"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActEffect           StTime="0.900"  EdTime="1.600"   ID="61028"  CasterBind="2"  Retain="true"  />
+        <ActScopeCylinder    StTime="0.900"  Affect="2"  MaxDis="3.000"  HAngle="180"  Height="2.000">
+            <ActDamage       StTime="0.000"  Type="1"   Percent="0.855"  FixValue="260"  SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActAudio            StTime="0.900"  EdTime="1.400"   ClipName="Sound/Sound/sound_skill_xiaoguaichuiji"/>
+    </Skill>
+
+    <Skill ID="5000402" Lv="1" Name="旋风斩" CastDist="0"     EdTime="2.633"  CD="4" CostType="0" CostNum="0" Type="0" Pos="1"   MoveType="1">
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_xuanfeng_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="1.566"   AnimName="skill_xuanfeng_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="1.566"  EdTime="2.633"   AnimName="skill_xuanfeng_03"  IsLooped="false"  PlaySpeed="1.0"/>       
+        <ActEffect           StTime="0.000"  EdTime="1.600"   ID="64027"  CasterBind="2"  Retain="false"  />
+        <ActAudio            StTime="0.333"  EdTime="2.633"   ClipName="Sound/Sound/sound_skill_kuangzhanshi_kuangbaoxuanfeng"/>
+        
+        <ActScopeCylinder    StTime="0.500"  Affect="2"  MaxDis="3.000"  HAngle="360"  Height="2.000">
+            <ActDamage       StTime="0.000"  Type="1"   Percent="0.855"  FixValue="260"  SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActScopeCylinder    StTime="1.000"  Affect="2"  MaxDis="3.000"  HAngle="360"  Height="2.000">
+            <ActDamage       StTime="0.000"  Type="1"   Percent="0.855"  FixValue="260"  SelectTarget="2"/>
+       </ActScopeCylinder>
+        <ActScopeCylinder    StTime="1.500"  Affect="2"  MaxDis="3.000"  HAngle="360"  Height="2.000">
+            <ActDamage       StTime="0.000"  Type="1"   Percent="0.855"  FixValue="260"  SelectTarget="2"/>
+       </ActScopeCylinder> 
+        <ActCanMove          StTime="0.333"  EdTime="1.566"/>
+    </Skill>
+    
+</Root>

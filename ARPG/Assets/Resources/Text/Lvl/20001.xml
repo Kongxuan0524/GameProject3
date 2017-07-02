@@ -1,0 +1,5 @@
+<Root Id="10015" LvlName="" LvlPath="" AllowRide="1" AllowPK="1" AllowTrade="1" AllowFight="1">
+    <Borns>
+        <LvlBorn Camp="0" Pos="(942.7494,0.550,1050.642)" Euler="(0.00,180.00,0.00)" Scale="(1.00,1.00,1.00)"/>
+   </Borns>
+</Root>

@@ -1,0 +1,17 @@
+<Root Id="3" Delay="0.00" LvlName="" LvlPath="" AllowRide="1" AllowPK="1" AllowTrade="1" AllowFight="1">
+    <Borns>
+        <LvlBorn Camp="0" Pos="(-17.3,1.49,-28.42)"   Euler="(0.00,0.00,0.00)" Scale="(1.00,1.00,1.00)" />
+   </Borns>
+    <Monsters>
+        <LvlMonter  Id="50001"  Pos="(-17.3, 1.44, -16.37)"  Euler="(0, 0, 0)"/>
+        <LvlMonter  Id="50002"  Pos="(-11.1, 1.44, -16.37)"  Euler="(0, 0, 0)"/>
+        <LvlMonter  Id="50006"  Pos="(-21.7, 1.44, -16.37)"  Euler="(0, 0, 0)"/>       
+        <LvlMonter  Id="50006"  Pos="(-17.3, 1.44, -12.37)"  Euler="(0, 0, 0)"/>
+        <LvlMonter  Id="50006"  Pos="(-11.1, 1.44, -12.37)"  Euler="(0, 0, 0)"/>
+
+        <LvlMonter  Id="90021"  Pos="( 13.3, 0.15,  32.01)"  Euler="(0, -148.7, 0)"/>
+        <LvlMonter  Id="90021"  Pos="(  9.5, 0.15,  36.59)"  Euler="(0, -148.7, 0)"/>
+        <LvlMonter  Id="90021"  Pos="(  1.7, 0.15,  31.73)"  Euler="(0, -148.7, 0)"/>     
+    
+   </Monsters>
+</Root>

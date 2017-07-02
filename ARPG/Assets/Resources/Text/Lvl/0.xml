@@ -1,0 +1,17 @@
+<Root Id="0" Delay="0.00" MapName="" MapPath="" AllowRide="1" AllowPK="1" AllowTrade="1" AllowFight="1">
+  <Borns />
+  <Barriers>
+    <LvlBarrier Id="1" Width="20.00" Pos="(-14.56,20.86,0.00)" Euler="(0.00,0.00,0.00)" />
+    <LvlBarrier Id="2" Width="14.00" Pos="(-12.77,20.86,-30.60)" Euler="(0.00,0.00,0.00)" />
+  </Barriers>
+  <Portals />
+  <Regions />
+  <RegionMonsters />
+  <RegionMines />
+  <RegionWaves />
+  <Npcs />
+  <Objs />
+  <Monsters />
+  <Paths />
+  <Mines />
+</Root>

@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<RECORDS>
+    
+<RECORD Id="TYPE_YES"                      Value="成功"/>
+<RECORD Id="TYPE_NO"                       Value="不做"/>
+<RECORD Id="TYPE_CANNOT_CONTROLSELF"       Value="角色被控制，无法操控"/>
+<RECORD Id="TYPE_CANNOT_MOVE"              Value="角色无法移动 "/>
+<RECORD Id="TYPE_CANNOT_MOVETODEST"        Value="无法到达此位置 "/>
+<RECORD Id="TYPE_HAS_DEAD"                 Value="角色已死亡 "/>   
+<RECORD Id="TYPE_SKILL_LACKHP"             Value="缺少HP"/>
+<RECORD Id="TYPE_SKILL_LACKMP"             Value="缺少MP"/>
+<RECORD Id="TYPE_SKILL_LACKSP"             Value="缺少SP"/>
+<RECORD Id="TYPE_SKILL_CASTING"            Value="正在释放技能"/>
+<RECORD Id="TYPE_SKILL_LEADING"            Value="正在引导技能"/>
+<RECORD Id="TYPE_SKILL_CD"                 Value="技能还未冷却"/>
+<RECORD Id="TYPE_SKILL_NOTFIND"            Value="找不到这个技能"/>
+<RECORD Id="TYPE_SKILL_NOTDOATSCENE"       Value="当前场景无法使用技能"/>
+<RECORD Id="TYPE_RIDE_ING"                 Value="骑乘中"/>
+<RECORD Id="TYPE_RIDE_NOTDOATSCENE"        Value="当前场景无法使用坐骑"/>
+<RECORD Id="TYPE_RIDE_NOTDOATFSM"          Value="当前状态无法使用坐骑"/>
+<RECORD Id="TYPE_RIDE_NONE"                Value="当前没有装备坐骑"/>
+    
+</RECORDS>

@@ -1,0 +1,41 @@
+﻿
+<Root ActorID="50014">
+
+    <Skill ID="5001401" Lv="1" Name="普攻"     CastDist="2.500"  EdTime="1.667" CD="4" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />
+        <ActAnim         StTime="0.000"  EdTime="1.667"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActScopeCylinder    StTime="0.680"  Affect="2"  MaxDis="2.500"  HAngle="120"  Height="2.000">
+            <ActDamage       StTime="0.000"  Type="1"   Percent="0.155"  FixValue="30"  SelectTarget="1"/>
+       </ActScopeCylinder>
+        <ActAudio        StTime="0.580"  EdTime="1.667"   ClipName="Sound/Sound/sound_attack_normal2"/>
+   </Skill>
+
+    <Skill ID="5001402" Lv="1" Name="幻影突刺"  CastDist="3.000"  EdTime="1.667" CD="20" CostType="0" CostNum="0" Type="0" Pos="1">
+        <ActFaceToTarget     />
+        <ActAnim         StTime="0.000"  EdTime="1.667"   AnimName="skill_huanyingtuci_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActEffect       StTime="0.000"  EdTime="1.667"   ID="61122"  CasterBind="2"  Retain="false"  />
+
+        <ActScopeBox         StTime="0.500"  MaxCount="10" Affect="2"  L="5.000"  W="2.000"  H="2.000">
+            <ActDamage       Type="0"    Percent="0.200"  FixValue="110"  SelectTarget="2"/>
+       </ActScopeBox>
+        <ActScopeBox         StTime="0.750"  MaxCount="10" Affect="2"  L="5.000"  W="2.000"  H="2.000">
+            <ActDamage       Type="0"    Percent="0.200"  FixValue="110"  SelectTarget="2"/>
+       </ActScopeBox>
+        <ActScopeBox         StTime="1.000"  MaxCount="10" Affect="2"  L="5.000"  W="2.000"  H="2.000">
+            <ActDamage       Type="0"    Percent="0.200"  FixValue="110"  SelectTarget="2"/>
+       </ActScopeBox>
+        <ActScopeBox         StTime="1.250"  MaxCount="10" Affect="2"  L="5.000"  W="2.000"  H="2.000">
+            <ActDamage       Type="0"    Percent="0.200"  FixValue="110"  SelectTarget="2"/>
+       </ActScopeBox>
+        <ActScopeBox         StTime="1.500"  MaxCount="10" Affect="2"  L="5.000"  W="2.000"  H="2.000">
+            <ActDamage       Type="0"    Percent="0.200"  FixValue="110"  SelectTarget="2"/>
+       </ActScopeBox>
+        
+        <ActAudio        StTime="0.500" EdTime="0.700"  ClipName="Sound/Sound/sound_attack_normal2"/>
+        <ActAudio        StTime="0.750" EdTime="0.950"  ClipName="Sound/Sound/sound_attack_normal2"/>
+        <ActAudio        StTime="1.000" EdTime="1.200"  ClipName="Sound/Sound/sound_attack_normal2"/>
+        <ActAudio        StTime="1.250" EdTime="1.450"  ClipName="Sound/Sound/sound_attack_normal2"/>
+        <ActAudio        StTime="1.500" EdTime="1.700"  ClipName="Sound/Sound/sound_attack_normal2"/>
+    </Skill>
+    
+</Root>

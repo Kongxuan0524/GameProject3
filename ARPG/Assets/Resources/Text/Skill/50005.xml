@@ -1,0 +1,22 @@
+﻿<Root ActorID="50005">
+
+    <Skill ID="5000501" Lv="1" Name="普攻"  CastDist="2.000"  EdTime="1.567" CD="2" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="1.567"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActEffect           StTime="0.900"  EdTime="1.567"   ID="61028"  CasterBind="2"  Retain="true"  />
+        <ActScopeCylinder    StTime="0.900"  Affect="2"  MaxDis="2.000"  HAngle="180"  Height="2.000">
+            <ActDamage       StTime="0.000"  Type="1"   Percent="0.855"  FixValue="260"  SelectTarget="2"/>
+        </ActScopeCylinder>
+        <ActAudio            StTime="0.900"  EdTime="1.567"   ClipName="Sound/Sound/sound_skill_xiaoguaichuiji"/>
+    </Skill>
+
+    <Skill ID="5000502" Lv="1" Name="撕咬"  CastDist="2.000"  EdTime="1.110" CD="2" CostType="0" CostNum="0" Type="0" Pos="1">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="1.110"   AnimName="skill_siyao"  IsLooped="false"  PlaySpeed="1.0"/>     
+        <ActMissile          StTime="0.700"  EdTime="1.700"   ID="62015" CasterBind="2"  Offset="(0,1,0)" Retain="true"  World="true"  MoveSpeed="20"   MoveType="2"  Affect="2"  MoveToward="0">
+            <ActDamage       Type="0"   Percent="0.420"  FixValue="80"  SelectTarget="1"/>
+       </ActMissile>
+        <ActAudio            StTime="0.700"  EdTime="1.000"   ClipName="Sound/Sound/sound_skill_lilian_attack"/>
+    </Skill>
+
+</Root>

@@ -1,0 +1,76 @@
+<Root ActorID="90018">
+    <Skill ID="9001801" Lv="1"  Name="攻击1"  CastDist="10.00"  EdTime="0.433" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="0.433"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.420"  EdTime="1.420"   ClipName="Sound/Sound/sound_skill_kuluogen_attack"/>
+        <ActMissile          StTime="0.420"  EdTime="1.420"   ID="62010" CasterBind="1"   Retain="true"  World="true"  MoveSpeed="20"   MoveType="0"  Affect="2"  MoveToward="0">
+            <ActDamage       Type="0"   Percent="0.300"  FixValue="80"  SelectTarget="1"/>
+            <ActHeal         Type="1"   Percent="0.100"  FixValue="50"  SelectTarget="0"/>  
+       </ActMissile>   
+   </Skill>
+    
+    <Skill ID="9001802" Lv="1"  Name="攻击2"  CastDist="10.00"  EdTime="0.500" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="attack_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.490"  ClipName="Sound/Sound/sound_skill_kuluogen_attack"/>        
+        <ActMissile          StTime="0.490"  EdTime="1.490"   ID="62010" CasterBind="1"   Retain="true"  World="true"  MoveSpeed="20" MoveType="0"  Affect="2"  MoveToward="0">
+            <ActDamage       Type="0"   Percent="0.322"  FixValue="90"  SelectTarget="1"/>
+            <ActHeal         Type="1"   Percent="0.100"  FixValue="50"  SelectTarget="0"/>
+       </ActMissile>
+    </Skill>
+
+     <Skill ID="9001803" Lv="1"  Name="攻击3" CastDist="10.00"  EdTime="0.267" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="0.267"   AnimName="attack_03"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.250"  ClipName="Sound/Sound/sound_skill_kuluogen_attack"/>
+        <ActMissile          StTime="0.250"  EdTime="1.250"   ID="62010"  CasterBind="1"  Retain="true"  World="true"  MoveSpeed="20" MoveType="0"  Affect="2"  MoveToward="0">
+            <ActDamage       Type="0"   Percent="0.372"  FixValue="130"  SelectTarget="1"/>
+            <ActHeal         Type="1"   Percent="0.100"  FixValue="50"  SelectTarget="0"/>       
+        </ActMissile>
+   </Skill>
+
+
+    <Skill ID="9001806" Lv="1"  Name="龙息术"  CastDist="6.00"  EdTime="2.432" CD="20" CostType="0" CostNum="0" Type="0" Pos="1">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_longxi_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="2.065"   AnimName="skill_longxi_03"  IsLooped="true"   PlaySpeed="1.0"/>
+        <ActAnim             StTime="2.065"  EdTime="2.432"   AnimName="skill_longxi_04"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="0.333"  EdTime="2.065"   ClipName="Sound/Sound/sound_longxi"/>
+        <ActEffect           StTime="0.333"  EdTime="2.065"   ID="64004"  CasterBind="2"  Retain="true"/>
+
+        <ActScopeBox         StTime="0.500"  EdTime="2.065"   MaxCount="10" Affect="2"  L="10.0"  W="2.0"  H="2.0">
+            <ActDamage       StTime="0.000"   Type="1"   Percent="0.555"  FixValue="260"  SelectTarget="2"/>
+        </ActScopeBox>
+
+        <ActScopeBox         StTime="0.950"  EdTime="2.065"   MaxCount="10" Affect="2"  L="10.0"  W="2.0"  H="2.0">
+            <ActDamage       StTime="0.000"   Type="1"   Percent="0.555"  FixValue="260"  SelectTarget="2"/>
+        </ActScopeBox>
+
+        <ActScopeBox         StTime="1.400"  EdTime="2.065"   MaxCount="10" Affect="2"  L="10.0"  W="2.0"  H="2.0">
+            <ActDamage       StTime="0.000"   Type="1"   Percent="0.555"  FixValue="260"  SelectTarget="2"/>
+        </ActScopeBox>
+
+        <ActScopeBox         StTime="1.850"  EdTime="2.065"   MaxCount="10" Affect="2"  L="10.0"  W="2.0"  H="2.0">
+            <ActDamage       StTime="0.000"   Type="1"   Percent="0.555"  FixValue="260"  SelectTarget="2"/>
+        </ActScopeBox>
+    </Skill>
+
+    <Skill ID="9001807" Lv="1"  Name="烈焰冲击" CastDist="10.00"  EdTime="1.500" CD="12" CostType="0" CostNum="0" Type="0" Pos="2">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_lieyanchongji_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="1.500"   AnimName="skill_lieyanchongji_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActEffect           StTime="0.500"  EdTime="1.500"   ID="64034"  CasterBind="2"  World="true"  Retain="true"/>
+        <ActAudio            StTime="0.500"  ClipName="Sound/Sound/sound_skill_lieyanchongji"/>
+        <ActScopeCylinder    StTime="0.500"  MaxCount="10" Affect="2"  MaxDis="7.0"  HAngle="360"  Height="3">
+            <ActDamage       Type="1"   Percent="1.555"  FixValue="260"  SelectTarget="2"/>
+       </ActScopeCylinder>
+    </Skill>
+
+    <Skill ID="9001808" Lv="1"  Name="烈焰形态" CastDist="10.00" EdTime="1.166" CD="20" CostType="0" CostNum="0" Type="0" Pos="3">
+        <ActFaceToTarget     />
+        <ActAnim             StTime="0.000"  EdTime="0.333"   AnimName="skill_lieyanxingtai_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.333"  EdTime="1.166"   AnimName="skill_lieyanxingtai_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAddBuff          StTime="0.500"  BuffID="201036"  Probably="1"  SelectTarget="0"/>
+    </Skill>
+    
+</Root>

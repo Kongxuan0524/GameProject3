@@ -1,0 +1,51 @@
+﻿<Root ActorID="50016">
+   <Skill ID="5001601" Lv="1" Name="攻击1" CastDist="6"    EdTime="1.800" CD="0" CostType="0" CostNum="0" Type="0" Pos="0">
+       <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+       <ActAnim             StTime="0.000"  EdTime="1.800"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+       <ActAudio            StTime="0.720"  EdTime="1.800"   ClipName="Sound/Sound/sound_attack1_kuangzhanshi_01"/>
+       <ActEffect           StTime="0.000"  EdTime="1.800"   ID="61023"  CasterBind="2"  Retain="false"  />
+       <ActScopeCylinder    StTime="0.720"  MaxCount="10"   Affect="2"  MaxDis="6.000"  HAngle="180"  Height="2.000">
+           <ActDamage           Type="0"    Percent="1.320"  FixValue="59"  SelectTarget="2"/>
+           <ActShake       StTime="0.000"  EdTime="0.100"/>
+      </ActScopeCylinder>
+  </Skill>
+
+   <Skill ID="5001602" Lv="1" Name="灵魂冲击"  CastDist="6"  EdTime="2.167" CD="15" CostType="0" CostNum="0" Type="0" Pos="1">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.267"   AnimName="skill_linghunchongji_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.267"  EdTime="1.300"   AnimName="skill_linghunchongji_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="1.300"  EdTime="2.167"   AnimName="skill_linghunchongji_03"  IsLooped="false"  PlaySpeed="1.0"/>     
+        <ActAudio            StTime="1.300"  EdTime="2.167"   ClipName="Sound/Sound/sound_attack1_kuangzhanshi_02"/>
+        <ActEffect           StTime="1.300"  EdTime="2.167"   ID="61024"  CasterBind="2"  Offset="(0,2,2)" Retain="false"/>
+        <ActScopeCylinder    StTime="2.000"  MaxCount="10"   Affect="2"  MaxDis="6.000"  HAngle="180"  Height="2.000"    Warning="true">
+            <ActDamage           Type="0"    Percent="1.320"  FixValue="59"  SelectTarget="2"/>
+            <ActBeatBack     StTime="0.000" SelectTarget="2"/>
+        </ActScopeCylinder>
+   </Skill>
+
+    <Skill ID="5001603" Lv="1" Name="亡灵之光" CastDist="10"  EdTime="2.966" CD="75" CostType="0" CostNum="0" Type="0" Pos="2">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.433"   AnimName="skill_wanglingzhiguang_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.433"  EdTime="1.466"   AnimName="skill_wanglingzhiguang_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="1.466"  EdTime="2.966"   AnimName="skill_wanglingzhiguang_03"  IsLooped="false"  PlaySpeed="1.0"/>       
+        <ActAudio            StTime="1.466"  EdTime="2.966"   ClipName="Sound/Sound/sound_attack1_kuangzhanshi_03"/>
+        <ActEffect           StTime="1.466"  EdTime="2.966"   ID="61027"  CasterBind="2"  Retain="false"  />
+        <ActScopeCylinder    StTime="1.940"  MaxCount="10"   Affect="2"  MaxDis="10.000"  HAngle="180"  Height="2.000"  Warning="true">
+            <ActDamage           Type="0"    Percent="2.220"  FixValue="59"  SelectTarget="2"/>
+            <ActBeatBack     StTime="0.000"  MaxDis="4.00"                   SelectTarget="2"/>
+        </ActScopeCylinder>
+   </Skill>
+
+    <Skill ID="5001604" Lv="1" Name="死亡之斧" CastDist="6"  EdTime="2.700" CD="30" CostType="0" CostNum="0" Type="0" Pos="3">
+        <ActFaceToTarget     StTime="0.000"  EdTime="0.000"   />
+        <ActAnim             StTime="0.000"  EdTime="0.300"   AnimName="skill_siwangzhifu_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="0.300"  EdTime="1.333"   AnimName="skill_siwangzhifu_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="1.333"  EdTime="2.700"   AnimName="skill_siwangzhifu_03"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="1.333"  EdTime="2.700"   ClipName="Sound/Sound/sound_attack1_kuangzhanshi_04"/>
+        <ActEffect           StTime="1.333"  EdTime="2.700"   ID="61026"  CasterBind="2"  Retain="false"/>        
+        <ActScopeCylinder    StTime="1.700"  MaxCount="10"   Affect="2"  MaxDis="6.000"  HAngle="360"  Height="2.000"    Warning="true">
+            <ActDamage           Type="0"    Percent="2.350"  FixValue="59"  SelectTarget="2"/>
+            <ActBeatBack     StTime="0.000" SelectTarget="2"/>
+        </ActScopeCylinder>
+    </Skill>
+ </Root>

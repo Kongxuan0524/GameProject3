@@ -1,0 +1,11 @@
+<Root ActorID="50001">
+    <Skill ID="5000101" Lv="1" Name="普攻" CastDist="15"  EdTime="1.966" CD="3" CostType="0" CostNum="0" Type="0" Pos="0">
+        <ActFaceToTarget     />  
+        <ActAnim             StTime="0.000"  EdTime="1.033"   AnimName="attack_01"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAnim             StTime="1.033"  EdTime="1.966"   AnimName="attack_02"  IsLooped="false"  PlaySpeed="1.0"/>
+        <ActAudio            StTime="1.033"  EdTime="1.800"   ClipName="Sound/Sound/sound_skill_bianyiwangling_attack"/>
+        <ActMissile          StTime="1.033"  EdTime="2.033"   ID="62024" CasterBind="2"  Offset="(0,1.3,0)" Retain="true"  World="true"  MoveSpeed="20"   MoveType="2"  Affect="2"  MoveToward="0">
+            <ActDamage       Type="0"   Percent="0.300"  FixValue="80"  SelectTarget="1"/>
+       </ActMissile>
+    </Skill>
+</Root>
