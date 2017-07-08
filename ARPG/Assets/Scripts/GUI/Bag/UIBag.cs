@@ -11,13 +11,13 @@ public class UIBag : GTWindow
         Type = EWindowType.WINDOW;
         mResPath = "Bag/UIBag";
         mResident = false;
-        mLeftWindows[EBagType.ITEM] = EWindowID.UI_ROLEEQUIP;
-        mLeftWindows[EBagType.CHIP] = EWindowID.UI_ROLEEQUIP;
-        mLeftWindows[EBagType.TASK] = EWindowID.UI_ROLEEQUIP;
-        mLeftWindows[EBagType.FASHION] = EWindowID.UI_ROLEFASHION;
-        mLeftWindows[EBagType.GEM] = EWindowID.UI_ROLEGEM;
-        mLeftWindows[EBagType.RUNE] = EWindowID.UI_ROLERUNE;
-        mLeftWindows[EBagType.CARD] = EWindowID.UI_ROLEFETTER;
+        mLeftWindows[EBagType.ITEM] = EWindowID.UIRoleEquip;
+        mLeftWindows[EBagType.CHIP] = EWindowID.UIRoleEquip;
+        mLeftWindows[EBagType.TASK] = EWindowID.UIRoleEquip;
+        mLeftWindows[EBagType.FASHION] = EWindowID.UIRoleFashion;
+        mLeftWindows[EBagType.GEM] = EWindowID.UIRoleGem;
+        mLeftWindows[EBagType.RUNE] = EWindowID.UIRoleRune;
+        mLeftWindows[EBagType.CARD] = EWindowID.UIRoleFetter;
     }
 
     protected override void OnAwake()
@@ -172,7 +172,7 @@ public class UIBag : GTWindow
 
     private void OnCloseClick(GameObject go)
     {
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
         if (mLeftWindows.ContainsKey(mShow))
         {
             EWindowID closeID = mLeftWindows[mShow];

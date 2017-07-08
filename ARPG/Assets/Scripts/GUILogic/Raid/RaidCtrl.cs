@@ -21,9 +21,9 @@ public class RaidCtrl : ICtrl
         NetworkManager.DelListener(MessageID.MSG_REQ_BATTLE_CHECK, OnAck_BattleCheck);
     }
 
-    private void OnAck_BattleCheck(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_BattleCheck(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckBattleCheck ack = Serializer.Deserialize<AckBattleCheck>(ms);
 
         GTEventCenter.FireEvent(GTEventID.TYPE_BATTLE_CHECK);
@@ -39,9 +39,9 @@ public class RaidCtrl : ICtrl
         GTLauncher.Instance.LoadScene(db.SceneId);
     }
 
-    private void OnAck_GetChapterAward(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_GetChapterAward(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckGetChapterAward ack        = Serializer.Deserialize<AckGetChapterAward>(ms);
         int                chapter    = ack.Chapter;
         int                awardIndex = ack.Index;
@@ -83,9 +83,9 @@ public class RaidCtrl : ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_GET_CHAPTERAWARD);
     }
 
-    private void OnAck_PassCopy(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_PassCopy(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckPassCopy   ack = Serializer.Deserialize<AckPassCopy>(ms);
         int chapter  = ack.Chapter;
         int copyID   = ack.CopyID;

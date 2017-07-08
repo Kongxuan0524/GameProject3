@@ -16,9 +16,9 @@ public class RoleCtrl : ICtrl
         NetworkManager.DelListener(MessageID.MSG_ACK_ADDHERO_EXP,         OnAck_AddHeroExp);
     }
 
-    private void OnAck_AddHeroExp(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_AddHeroExp(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckAddPlayerExp ack = Serializer.Deserialize<AckAddPlayerExp>(ms);
 
         XCharacter player = RoleModule.Instance.GetCurPlayer();

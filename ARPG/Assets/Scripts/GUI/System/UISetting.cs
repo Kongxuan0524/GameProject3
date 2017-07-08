@@ -82,7 +82,7 @@ public class UISetting : GTWindow
 
     private void OnCloseClick(GameObject go)
     {
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
         Hide();
     }
 
@@ -101,7 +101,7 @@ public class UISetting : GTWindow
         GTAudioManager.Instance.SetMusicActive(!GTAudioManager.Instance.MusicActive);
         if (GTAudioManager.Instance.MusicActive)
         {
-            DScene db = ReadCfgScene.GetDataById(GTLauncher.CurSceneID);
+            DScene db = ReadCfgScene.GetDataById(GTGlobal.CurSceneID);
             GTAudioManager.Instance.PlayMusic(db.SceneMusic);
         }
     }

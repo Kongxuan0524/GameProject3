@@ -13,6 +13,7 @@ public static class GTXmlHelper
     public const string NODENAME = "Item";
     public const string TYPENAME = "Type";
     public const string KEYNAME  = "Key";
+    public static bool  Write    = true;
 
     public static Int16   GetInt16(this XmlElement element, string name)
     {
@@ -147,6 +148,11 @@ public static class GTXmlHelper
 
     public static void Append(string path, string key, object obj, EDataKeyType keyType)
     {
+        if (Write == false)
+        {
+            return;
+        }
+
         XmlDocument xmlDoc = LoadDocument(path);
         FileStream fs = File.OpenRead(path);
         if (fs == null)
@@ -165,6 +171,10 @@ public static class GTXmlHelper
 
     public static void Update(string path, string key, object obj, EDataKeyType keyType)
     {
+        if (Write == false)
+        {
+            return;
+        }
         XmlDocument xmlDoc = LoadDocument(path);
         FileStream fs = File.OpenRead(path);
         if (fs == null)
@@ -191,6 +201,10 @@ public static class GTXmlHelper
 
     public static void Delete(string path, string key, EDataKeyType keyType)
     {
+        if (Write == false)
+        {
+            return;
+        }
         XmlDocument xmlDoc = LoadDocument(path);
         FileStream fs = File.OpenRead(path);
         if (fs == null)
@@ -219,6 +233,10 @@ public static class GTXmlHelper
 
     public static bool ClearAll(string path)
     {
+        if (Write == false)
+        {
+            return false;
+        }
         XmlDocument xmlDoc = LoadDocument(path);
         FileStream fs = File.OpenRead(path);
         if (fs == null)
@@ -235,6 +253,10 @@ public static class GTXmlHelper
 
     public static void InsertAll<T>(string path, Dictionary<int, T> dict, EDataKeyType keyType)
     {
+        if (Write == false)
+        {
+            return;
+        }
         XmlDocument xmlDoc = LoadDocument(path);
         FileStream fs = File.OpenRead(path);
         if (fs == null) return;
@@ -258,6 +280,10 @@ public static class GTXmlHelper
 
     public static void Save<T>(XmlElement xe, T obj)
     {
+        if (Write == false)
+        {
+            return;
+        }
         if (xe == null || obj == null)
         {
             return;

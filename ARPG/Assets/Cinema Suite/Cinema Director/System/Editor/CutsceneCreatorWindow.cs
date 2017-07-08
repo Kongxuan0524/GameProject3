@@ -21,8 +21,8 @@ public class CutsceneCreatorWindow : EditorWindow
     private int characterTrackGroupsSelection = 0;
 
     private int shotTrackSelection = 1;
-    private int audioTrackSelection = 2;
-    private int globalItemTrackSelection = 0;
+    private int audioTrackSelection = 1;
+    private int globalItemTrackSelection = 1;
 
     private List<GUIContent> intValues1 = new List<GUIContent>();
     private List<GUIContent> intValues4 = new List<GUIContent>();

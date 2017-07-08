@@ -105,7 +105,7 @@ public class UIPartner : GTWindow
                 {
                     return;
                 }
-                UIPartnerStrength window = (UIPartnerStrength)GTWindowManager.Instance.OpenWindow(EWindowID.UI_PARTNERSTRENGH);
+                UIPartnerStrength window = (UIPartnerStrength)GTWindowManager.Instance.OpenWindow(EWindowID.UIPartnerStrength);
                 window.SetID(array[index]);
             };
         }
@@ -115,14 +115,14 @@ public class UIPartner : GTWindow
             UIEventListener.Get(tab.btnBattle).onClick = (GameObject go) =>
             {
                 GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-                UIPartnerBattle window=(UIPartnerBattle)GTWindowManager.Instance.OpenWindow(EWindowID.UI_PARTNERBATTLE);
+                UIPartnerBattle window=(UIPartnerBattle)GTWindowManager.Instance.OpenWindow(EWindowID.UIPartnerBattle);
                 window.SetID(tab.id);
             };
 
             UIEventListener.Get(tab.btn).onClick = (GameObject go) =>
             {
                 GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-                UIPartnerStrength window = (UIPartnerStrength)GTWindowManager.Instance.OpenWindow(EWindowID.UI_PARTNERSTRENGH);
+                UIPartnerStrength window = (UIPartnerStrength)GTWindowManager.Instance.OpenWindow(EWindowID.UIPartnerStrength);
                 window.SetID(tab.id);
             };
         }
@@ -195,7 +195,7 @@ public class UIPartner : GTWindow
 
     private void OnReturnClick(GameObject go)
     {
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
         Hide();
     }
 

@@ -1,7 +1,21 @@
 <?xml version="1.0" standalone="yes"?>
 <RECORDS>
-<RECORD Id="1" CarrerName="圣骑士" Star1="2" Star2="3" Star3="2" Star4="3"/>
-<RECORD Id="2" CarrerName="法师" Star1="2" Star2="3" Star3="2" Star4="3"/>
-<RECORD Id="3" CarrerName="刺客" Star1="2" Star2="3" Star3="2" Star4="3"/>
-<RECORD Id="4" CarrerName="狂战士" Star1="2" Star2="3" Star3="2" Star4="3"/>
+<RECORD Id="1" CarrerName="圣骑士" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon="5403"/>
+<RECORD Id="2" CarrerName="法师" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon="5406"/>
+<RECORD Id="4" CarrerName="狂战士" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon="5410"/>
+<RECORD Id="90001" CarrerName="安东尼" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90002" CarrerName="水晶法师" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90005" CarrerName="弗丁" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90007" CarrerName="娑娜" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90008" CarrerName="薇拉" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90009" CarrerName="洛丽塔" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90010" CarrerName="狂战士" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90013" CarrerName="收割者" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90015" CarrerName="克苏拉" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90016" CarrerName="娜迦" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90017" CarrerName="莉莉丝" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90018" CarrerName="食人魔" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90019" CarrerName="魑魅" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90020" CarrerName="圣骑士" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
+<RECORD Id="90021" CarrerName="死灵法师" Star1="2" Star2="3" Star3="2" Star4="3" DisplayWeapon=""/>
 </RECORDS>

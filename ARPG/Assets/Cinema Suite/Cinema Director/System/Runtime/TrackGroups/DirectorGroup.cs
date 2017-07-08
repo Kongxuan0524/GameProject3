@@ -6,5 +6,7 @@ namespace CinemaDirector
     /// </summary>
     [TrackGroupAttribute("Director Group", TimelineTrackGenre.GlobalTrack)]
     public sealed class DirectorGroup : TrackGroup
-    { }
+    {
+
+    }
 }

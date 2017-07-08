@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class EffectUnit : IObj
 {
     public int                                 ID             { get; set; }
-    public int                                 GUID           { get; set; }
+    public ulong                               GUID           { get; set; }
     public Transform                           CacheTransform { get; set; }
     public DEffect                             Cfg            { get; private set; }
     public Transform                           Parent         { get; private set; }
@@ -54,7 +54,7 @@ public class EffectUnit : IObj
         set { CacheTransform.localScale = value; }
     }
 
-    public EffectUnit(int id, int guid, KTransform data, Transform parent, bool retain)
+    public EffectUnit(int id, ulong guid, KTransform data, Transform parent, bool retain)
     {
         this.ID = id;
         this.GUID = guid > 0 ? guid : GTGUID.NewGUID();

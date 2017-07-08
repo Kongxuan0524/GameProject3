@@ -30,9 +30,9 @@ public class BagCtrl :  ICtrl
         NetworkManager.DelListener(MessageID.MSG_ACK_USEITEM, OnAck_UseItem);
     }
 
-    private void OnAck_UseItem(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_UseItem(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckUseItem ack = Serializer.Deserialize<AckUseItem>(ms);
 
         int pos = ack.Pos;
@@ -54,9 +54,9 @@ public class BagCtrl :  ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_USE_ITEM, id, num);
     }
 
-    private void OnAck_ComposeChip(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_ComposeChip(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckComposeChip ack = Serializer.Deserialize<AckComposeChip>(ms);
 
         int srcPos = ack.SrcPos;
@@ -73,9 +73,9 @@ public class BagCtrl :  ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_COMPOSE_CHIP, srcPos);
     }
 
-    private void OnAck_UnloadGem(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_UnloadGem(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckUnloadGem ack = Serializer.Deserialize<AckUnloadGem>(ms);
 
         int newPos = ack.NewPos;
@@ -97,9 +97,9 @@ public class BagCtrl :  ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_DressGem(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_DressGem(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckDressGem ack = Serializer.Deserialize<AckDressGem>(ms);
 
         int srcPos = ack.SrcPos;
@@ -143,9 +143,9 @@ public class BagCtrl :  ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_UnloadEquip(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_UnloadEquip(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckUnloadEquip ack = Serializer.Deserialize<AckUnloadEquip>(ms);
 
         int newPos = ack.NewPos;
@@ -167,9 +167,9 @@ public class BagCtrl :  ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_DressEquip(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_DressEquip(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckDressEquip ack = Serializer.Deserialize<AckDressEquip>(ms);
         int srcPos = ack.SrcPos;
         int tarPos = ack.TarPos;
@@ -210,9 +210,9 @@ public class BagCtrl :  ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_SortBag(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_SortBag(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckSortBag ack = Serializer.Deserialize<AckSortBag>(ms);
 
         EBagType bagType = (EBagType)ack.BagType;

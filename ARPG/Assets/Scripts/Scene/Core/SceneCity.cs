@@ -7,7 +7,7 @@ public sealed class SceneCity : IScene
 {
     public override IEnumerator OpenWindows()
     {
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_HOME);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIHome);
         yield return null;
     }
 }

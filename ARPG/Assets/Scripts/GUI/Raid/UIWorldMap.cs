@@ -94,6 +94,7 @@ public class UIWorldMap : GTWindow
 
     private void OnBackCityClick(GameObject go)
     {
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
         Hide();
     }
 
@@ -221,8 +222,8 @@ public class UIWorldMap : GTWindow
 
     private void OnSelectMap(int index)
     {
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_MAINRAID);
-        UIMainRaid window = (UIMainRaid)GTWindowManager.Instance.GetWindow(EWindowID.UI_MAINRAID);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIMainRaid);
+        UIMainRaid window = (UIMainRaid)GTWindowManager.Instance.GetWindow(EWindowID.UIMainRaid);
         window.ShowViewByChapter(DWorld.WORLD_ST_CHAPTER_ID + index);
     }
 

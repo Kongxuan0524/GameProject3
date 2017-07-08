@@ -100,6 +100,10 @@ public class CharacterCtrl : GTSingleton<CharacterCtrl>,ICtrl
 
     private void OnAvatarLeaveMount()
     {
+        if (CharacterManager.Main == null || CharacterManager.Main.CacheTransform == null)
+        {
+            return;
+        }
         if (CharacterManager.Main.IsFSMLayer2() || CharacterManager.Main.IsFSMLayer3())
         {
             return;
@@ -118,6 +122,10 @@ public class CharacterCtrl : GTSingleton<CharacterCtrl>,ICtrl
 
     private void OnAvatarJump()
     {
+        if (CharacterManager.Main == null || CharacterManager.Main.CacheTransform == null)
+        {
+            return;
+        }
         CharacterManager.Main.PausedAI(true);
         Resp resp = CharacterManager.Main.Command.Get<CommandJump>().Do();
         CharacterHelper.CalcCharacterOperateError(resp);
@@ -126,6 +134,10 @@ public class CharacterCtrl : GTSingleton<CharacterCtrl>,ICtrl
 
     private void OnAvatarCastSkill(ESkillPos pos)
     {
+        if (CharacterManager.Main == null || CharacterManager.Main.CacheTransform == null)
+        {
+            return;
+        }
         ActSkill skill = CharacterManager.Main.Skill.GetSkill(pos);
         if (skill == null)
         {
@@ -154,6 +166,10 @@ public class CharacterCtrl : GTSingleton<CharacterCtrl>,ICtrl
 
     private void OnAvatarStopJoystick()
     {
+        if (CharacterManager.Main == null || CharacterManager.Main.CacheTransform == null)
+        {
+            return;
+        }
         CharacterManager.Main.PausedAI(false);
         if (CharacterManager.Main.IsFSMLayer2())
         {
@@ -173,6 +189,10 @@ public class CharacterCtrl : GTSingleton<CharacterCtrl>,ICtrl
 
     private void OnAvatarMoveJoystick(float x, float y)
     {
+        if (CharacterManager.Main == null || CharacterManager.Main.CacheTransform == null)
+        {
+            return;
+        }
         CharacterManager.Main.PausedAI(true);
         if (CharacterManager.Main.IsFSMLayer2())
         {
@@ -200,6 +220,10 @@ public class CharacterCtrl : GTSingleton<CharacterCtrl>,ICtrl
 
     private void OnAvatarPursue(Vector3 destPosition)
     {
+        if (CharacterManager.Main == null || CharacterManager.Main.CacheTransform == null)
+        {
+            return;
+        }
         if (CharacterManager.Main.IsFSMLayer2())
         {
             return;

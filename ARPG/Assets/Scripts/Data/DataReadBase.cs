@@ -107,9 +107,21 @@ public class DataReadBase<TType, TVal> where TVal : ProtoBuf.IExtensible
     public static void Parse(ref PropertyInfo field, object obj, string value)
     {
         Type fieldType = field.PropertyType;
-        if (fieldType      == typeof(int))
+        if (fieldType      == typeof(Int32))
         {
             field.SetValue(obj, value.ToInt32(), null);
+        }
+        else if (fieldType == typeof(UInt16))
+        {
+            field.SetValue(obj, value.ToUInt16(), null);
+        }
+        else if(fieldType  == typeof(UInt32))
+        {
+            field.SetValue(obj, value.ToUInt32(), null);
+        }
+        else if (fieldType == typeof(UInt64))
+        {
+            field.SetValue(obj, value.ToUInt64(), null);
         }
         else if (fieldType == typeof(string))
         {

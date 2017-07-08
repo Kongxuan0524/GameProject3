@@ -10,7 +10,6 @@ using System.Reflection;
 public class GTLauncher : MonoBehaviour
 {
     public static GTLauncher  Instance;
-    public static int LAST_CITY_ID = GTSceneKey.SCENE_CITY_4;
 
     [HideInInspector]
     public bool          ShowFPS;
@@ -28,9 +27,10 @@ public class GTLauncher : MonoBehaviour
     public bool          MusicDisable = true;
     [HideInInspector]
     public bool          UseGuide = true;
+    [HideInInspector]
+    public IScene        CurScene;
 
     private IStateMachine<GTLauncher, ESceneType> mStateMachine;
-
 
     void Awake()
     {
@@ -85,7 +85,7 @@ public class GTLauncher : MonoBehaviour
         this.mStateMachine.AddState(ESceneType.TYPE_PVE,   new ScenePVE());
         this.mStateMachine.AddState(ESceneType.TYPE_WORLD, new SceneWorld());
         this.mStateMachine.SetCurState(this.mStateMachine.GetState(ESceneType.TYPE_INIT));
-        CurScene = (IScene)this.mStateMachine.GetState(ESceneType.TYPE_INIT);
+        this.CurScene = (IScene)this.mStateMachine.GetState(ESceneType.TYPE_INIT);
     }
 
     void SecondTick()
@@ -111,10 +111,10 @@ public class GTLauncher : MonoBehaviour
     {
         if (TestScene)
         {
-            CurPlayerID = TestActorID <= 0 ? 1 : TestActorID;
+            GTGlobal.CurPlayerID = TestActorID <= 0 ? 1 : TestActorID;
             DataManager.Instance.LoadCommonData();
-            DataManager.Instance.LoadRoleData(CurPlayerID);
-            LoadScene(LAST_CITY_ID);
+            DataManager.Instance.LoadRoleData(GTGlobal.CurPlayerID);
+            LoadScene(GTGlobal.LAST_CITY_ID);
         }
         else
         {
@@ -131,8 +131,8 @@ public class GTLauncher : MonoBehaviour
         this.mStateMachine.GetState(state).SetCommand(ev);
         this.mStateMachine.ChangeState(state);
         this.CurrSceneType = state;
-        this.CurrSceneName = GTLauncher.LoadedLevelName;
-        CurScene = (IScene)this.mStateMachine.GetState(state);
+        this.CurrSceneName = GTGlobal.LoadedLevelName;
+        this.CurScene = (IScene)this.mStateMachine.GetState(state);
     }
 
     public void LoadScene(int sceneId)
@@ -157,7 +157,7 @@ public class GTLauncher : MonoBehaviour
                     if (this.CurrSceneType == ESceneType.TYPE_ROLE)
                     {
                         GTCtrl.Instance.AddAllCtrls();
-                        DataManager.Instance.LoadRoleData(CurPlayerID);
+                        DataManager.Instance.LoadRoleData(GTGlobal.CurPlayerID);
                         GTWorld.Instance.EnterGuide();
                         DataTimer.Instance.Init();
                     }
@@ -168,7 +168,7 @@ public class GTLauncher : MonoBehaviour
                     this.NextSceneType = ESceneType.TYPE_WORLD;
                     if (this.CurrSceneType == ESceneType.TYPE_ROLE)
                     {
-                        DataManager.Instance.LoadRoleData(CurPlayerID);
+                        DataManager.Instance.LoadRoleData(GTGlobal.CurPlayerID);
                         DataTimer.Instance.Init();
                         GTWorld.Instance.EnterGuide();
                     }
@@ -228,6 +228,7 @@ public class GTLauncher : MonoBehaviour
         GTUpdate.        Instance.Execute();
         NetworkManager.  Instance.Execute();
         GTWorld.         Instance.Execute();
+        GTAsync.         Instance.Execute();
     }
 
     void FixedUpdate()
@@ -240,39 +241,5 @@ public class GTLauncher : MonoBehaviour
         GTTimerManager.Instance.DelListener(SecondTick);
         DataTimer.Instance.Exit();
         ReleaseResource();
-    }
-
-    public static ELanguage Language
-    {
-        get; set;
-    }
-
-    public static float     TimeScale
-    {
-        get { return Time.timeScale; }
-        set { Time.timeScale = value; }
-    }
-
-    public static IScene    CurScene
-    {
-        get;
-        private set;
-    }
-
-    public static Int32     CurSceneID
-    {
-        get;
-        set;
-    }
-
-    public static Int32     CurPlayerID
-    {
-        get;
-        set;
-    }
-
-    public static string    LoadedLevelName
-    {
-        get { return SceneManager.GetActiveScene().name; }
     }
 }

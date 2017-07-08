@@ -17,9 +17,9 @@ public class GemCtrl : ICtrl
         NetworkManager.DelListener(MessageID.MSG_ACK_STRENGTHEN_GEM, OnAck_StrengthGem);
     }
 
-    private void OnAck_StrengthGem(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_StrengthGem(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckStrengthGem ack  = Serializer.Deserialize<AckStrengthGem>(ms);
         XGem           gem  = ack.TarGem;
         List<XItem>    list = ack.UseItems;

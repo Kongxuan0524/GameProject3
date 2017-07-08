@@ -17,8 +17,7 @@
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>5.6.0f3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -104,12 +103,10 @@
     <Compile Include="Assets\CharacterSystem\Character_System\Scripts\HeroCamera.cs" />
     <Compile Include="Assets\CharacterSystem\Character_System\Scripts\HeroCtrl.cs" />
     <Compile Include="Assets\CharacterSystem\Tutorial_Assets\Scripts\ReloadLvl.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\Animation\BlendAnimationEvent.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\Animation\CrossFadeAnimationEvent.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\Animation\PlayAnimationEvent.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\Animation\RewindAnimationEvent.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\Animation\SampleAnimationEvent.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\Animation\StopAnimationEvent.cs" />
+    <Compile Include="Assets\Cinema Suite\Cinema Director\Attributes\PlotCutsceneAttribute.cs" />
+    <Compile Include="Assets\Cinema Suite\Cinema Director\Attributes\PlotGroupAttribute.cs" />
+    <Compile Include="Assets\Cinema Suite\Cinema Director\Attributes\PlotTimelineAttribute.cs" />
+    <Compile Include="Assets\Cinema Suite\Cinema Director\Attributes\PlotTrackAttribute.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\Animator\CrossFadeAnimatorEvent.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\Animator\LookAtTarget.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\Animator\MatchTargetEvent.cs" />
@@ -157,12 +154,6 @@
     <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\Transform\SetScaleEvent.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\Transform\SetTransformEvent.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\Transform\TransformLookAtAction.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\uGUI\CanvasCameraSwitchEvent.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\uGUI\ColorChange.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\uGUI\ColorChangeSelectable.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\uGUI\SetIsInteractable.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\uGUI\TextDegenerationEvent.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Actor Items\uGUI\TextGenerationEvent.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Core\CinemaAudio.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Core\CinemaShot.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Global Items\AudioSource\PlayClipAtPointAudioEvent.cs" />
@@ -182,9 +173,12 @@
     <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Global Items\Transitions\FadeFromWhite.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Global Items\Transitions\FadeToBlack.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Global Items\Transitions\FadeToWhite.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Global Items\Utility\LoadLevelEvent.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Global Items\Utility\MassDisabler.cs" />
-    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Global Items\Utility\StoryboardEvent.cs" />
+    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Track Animation Items\PlotAnimationBlend.cs" />
+    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Track Animation Items\PlotAnimationCrossFade.cs" />
+    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Track Animation Items\PlotAnimationPlay.cs" />
+    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Track Animation Items\PlotAnimationRewind.cs" />
+    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Track Animation Items\PlotAnimationSample.cs" />
+    <Compile Include="Assets\Cinema Suite\Cinema Director\Cutscene Items\Track Animation Items\PlotAnimationStop.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\System\Common\Reflection\ReflectionHelper.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\System\Runtime\Cutscene.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\System\Runtime\Enums\CutsceneItemGenre.cs" />
@@ -233,7 +227,6 @@
     <Compile Include="Assets\Cinema Suite\Cinema Director\System\Runtime\TrackGroups\CharacterTrackGroup.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\System\Runtime\TrackGroups\DirectorGroup.cs" />
     <Compile Include="Assets\Cinema Suite\Cinema Director\System\Runtime\TrackGroups\MultiActorTrackGroup.cs" />
-    <Compile Include="Assets\Cinema Suite\Example Scenes\Cinema Director\Example Cutscene Items\ExampleShrinkAction.cs" />
     <Compile Include="Assets\FORGE3D\Sci-Fi Effects\Code\F3DAudioController.cs" />
     <Compile Include="Assets\FORGE3D\Sci-Fi Effects\Code\F3DBeam.cs" />
     <Compile Include="Assets\FORGE3D\Sci-Fi Effects\Code\F3DCurvedBeam.cs" />
@@ -895,10 +888,6 @@
     <Compile Include="Assets\Scripts\Cfg\Lvl\LvlWave.cs" />
     <Compile Include="Assets\Scripts\Cfg\Machine\DMachine.cs" />
     <Compile Include="Assets\Scripts\Cfg\Manager\GTConfigManager.cs" />
-    <Compile Include="Assets\Scripts\Cfg\World\WorldConfig.cs" />
-    <Compile Include="Assets\Scripts\Cfg\World\WorldMine.cs" />
-    <Compile Include="Assets\Scripts\Cfg\World\WorldNpc.cs" />
-    <Compile Include="Assets\Scripts\Cfg\World\WorldMonster.cs" />
     <Compile Include="Assets\Scripts\Cfg\Partner\DPartner.cs" />
     <Compile Include="Assets\Scripts\Cfg\Partner\DPartnerAdvance.cs" />
     <Compile Include="Assets\Scripts\Cfg\Partner\DPartnerFetter.cs" />
@@ -941,6 +930,10 @@
     <Compile Include="Assets\Scripts\Cfg\Task\TaskLocation.cs" />
     <Compile Include="Assets\Scripts\Cfg\Task\TaskNpc.cs" />
     <Compile Include="Assets\Scripts\Cfg\Video\DVideo.cs" />
+    <Compile Include="Assets\Scripts\Cfg\World\WorldConfig.cs" />
+    <Compile Include="Assets\Scripts\Cfg\World\WorldMine.cs" />
+    <Compile Include="Assets\Scripts\Cfg\World\WorldMonster.cs" />
+    <Compile Include="Assets\Scripts\Cfg\World\WorldNpc.cs" />
     <Compile Include="Assets\Scripts\Cfg\World\WorldRegion.cs" />
     <Compile Include="Assets\Scripts\Data\DataFactory.cs" />
     <Compile Include="Assets\Scripts\Data\DataManager.cs" />
@@ -964,6 +957,7 @@
     <Compile Include="Assets\Scripts\Extend\ETouch.cs" />
     <Compile Include="Assets\Scripts\Extend\ETriggerObject.cs" />
     <Compile Include="Assets\Scripts\Frameworks\GTAction.cs" />
+    <Compile Include="Assets\Scripts\Frameworks\GTAsync.cs" />
     <Compile Include="Assets\Scripts\Frameworks\GTAudioManager.cs" />
     <Compile Include="Assets\Scripts\Frameworks\GTCallback.cs" />
     <Compile Include="Assets\Scripts\Frameworks\GTCameraManager.cs" />
@@ -986,7 +980,6 @@
     <Compile Include="Assets\Scripts\Frameworks\GTTools.cs" />
     <Compile Include="Assets\Scripts\Frameworks\GTUpdate.cs" />
     <Compile Include="Assets\Scripts\Frameworks\GTXmlHelper.cs" />
-    <Compile Include="Assets\Scripts\GUILogic\Login\LoginModule.cs" />
     <Compile Include="Assets\Scripts\GUI\Adventure\UIAdventure.cs" />
     <Compile Include="Assets\Scripts\GUI\Bag\UIBag.cs" />
     <Compile Include="Assets\Scripts\GUI\Bag\UIRoleEquip.cs" />
@@ -1001,6 +994,7 @@
     <Compile Include="Assets\Scripts\GUI\Dialog\UIAwardBox.cs" />
     <Compile Include="Assets\Scripts\GUI\Dialog\UIAwardTip.cs" />
     <Compile Include="Assets\Scripts\GUI\Dialog\UIMessageBox.cs" />
+    <Compile Include="Assets\Scripts\GUI\Dialog\UIMessageBoxForNetwork.cs" />
     <Compile Include="Assets\Scripts\GUI\Dialog\UIMessageTip.cs" />
     <Compile Include="Assets\Scripts\GUI\Equip\UIEquip.cs" />
     <Compile Include="Assets\Scripts\GUI\Gem\UIGem.cs" />
@@ -1012,6 +1006,7 @@
     <Compile Include="Assets\Scripts\GUI\Load\UILoading.cs" />
     <Compile Include="Assets\Scripts\GUI\Login\UIAccount.cs" />
     <Compile Include="Assets\Scripts\GUI\Login\UILogin.cs" />
+    <Compile Include="Assets\Scripts\GUI\Login\UINetWaiting.cs" />
     <Compile Include="Assets\Scripts\GUI\Login\UINotice.cs" />
     <Compile Include="Assets\Scripts\GUI\Login\UIServer.cs" />
     <Compile Include="Assets\Scripts\GUI\Mount\UIMount.cs" />
@@ -1064,6 +1059,7 @@
     <Compile Include="Assets\Scripts\GUILogic\Gem\GemModule.cs" />
     <Compile Include="Assets\Scripts\GUILogic\Gem\GemService.cs" />
     <Compile Include="Assets\Scripts\GUILogic\Login\LoginCtrl.cs" />
+    <Compile Include="Assets\Scripts\GUILogic\Login\LoginModule.cs" />
     <Compile Include="Assets\Scripts\GUILogic\Login\LoginService.cs" />
     <Compile Include="Assets\Scripts\GUILogic\Mount\MountCtrl.cs" />
     <Compile Include="Assets\Scripts\GUILogic\Mount\MountService.cs" />
@@ -1252,7 +1248,6 @@
     <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideCGTask.cs" />
     <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuidePathTask.cs" />
     <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuidePlotTask.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideTimeLimitTask.cs" />
     <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideUIClick.cs" />
     <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideUIDoubleClick.cs" />
     <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideUIEvent.cs" />
@@ -1383,14 +1378,6 @@
     <Compile Include="Assets\Scripts\GamePlay\LVL\Interface\ILevelElementComponent.cs" />
     <Compile Include="Assets\Scripts\GamePlay\LVL\Interface\ILevelEventBase.cs" />
     <Compile Include="Assets\Scripts\GamePlay\LVL\Interface\ILevelGroup.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Machine\Machine.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Machine\MachineAnimation.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Machine\MachineCollider.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Machine\MachineDropout.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Machine\MachineMove.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Machine\MachinePrick.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Machine\MachineSystem.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Machine\MachineTrigger.cs" />
     <Compile Include="Assets\Scripts\GamePlay\PLT\PlotSystem.cs" />
     <Compile Include="Assets\Scripts\GamePlay\TAS\TaskSystem.cs" />
     <Compile Include="Assets\Scripts\Interface\ICommand.cs" />
@@ -1404,30 +1391,31 @@
     <Compile Include="Assets\Scripts\Interface\IStateMachine.cs" />
     <Compile Include="Assets\Scripts\Interface\ITrigger.cs" />
     <Compile Include="Assets\Scripts\Main\GTCtrl.cs" />
+    <Compile Include="Assets\Scripts\Main\GTGlobal.cs" />
     <Compile Include="Assets\Scripts\Main\GTLauncher.cs" />
     <Compile Include="Assets\Scripts\Main\GTTouchEffect.cs" />
     <Compile Include="Assets\Scripts\Main\GTWorld.cs" />
     <Compile Include="Assets\Scripts\Net\Core\NetworkClient.cs" />
+    <Compile Include="Assets\Scripts\Net\Core\NetworkCtrl.cs" />
     <Compile Include="Assets\Scripts\Net\Core\NetworkManager.cs" />
+    <Compile Include="Assets\Scripts\Net\Core\PakcetHeader.cs" />
     <Compile Include="Assets\Scripts\Net\Message\MessageCenter.cs" />
     <Compile Include="Assets\Scripts\Net\Message\MessageHandler.cs" />
     <Compile Include="Assets\Scripts\Net\Message\MessagePackType.cs" />
     <Compile Include="Assets\Scripts\Net\Message\MessageRecv.cs" />
     <Compile Include="Assets\Scripts\Net\Message\MessageSend.cs" />
+    <Compile Include="Assets\Scripts\Net\Proto\Message.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessageBag.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessageCommon.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessageCopy.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessageEquip.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessageGem.cs" />
-    <Compile Include="Assets\Scripts\Net\Proto\MessageID.cs" />
-    <Compile Include="Assets\Scripts\Net\Proto\MessageLogin.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessageMount.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessagePacket.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessagePartner.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessagePet.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessagePlayer.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessageRelics.cs" />
-    <Compile Include="Assets\Scripts\Net\Proto\MessageRetCode.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessageStore.cs" />
     <Compile Include="Assets\Scripts\Net\Proto\MessageTask.cs" />
     <Compile Include="Assets\Scripts\Res\Core\GTResourceBundle.cs" />
@@ -1862,9 +1850,6 @@
     <None Include="Assets\Cinema Suite\About\Editor\Resources\BaseProductInfo.xml" />
     <None Include="Assets\Cinema Suite\Cinema Director\System\Editor\Resources\CinemaDirectorInstalledProductInfo.xml" />
     <None Include="Assets\Cinema Suite\Cinema Director\link.xml" />
-    <None Include="Assets\Cinema Suite\Documents\CinemaDirectorChangeLog.txt" />
-    <None Include="Assets\Cinema Suite\Documents\CinemaDirectorReadMe.txt" />
-    <None Include="Assets\Cinema Suite\Example Scenes\Cinema Director\Example Scenes\Director Basics\Shaders\Additive.shader" />
     <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Additive.shader" />
     <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\AlphaBlended.shader" />
     <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Billboard.shader" />
@@ -2217,6 +2202,7 @@
     <None Include="Assets\Resources\Text\Skill\90019.xml" />
     <None Include="Assets\Resources\Text\Skill\90020.xml" />
     <None Include="Assets\Resources\Text\Skill\90021.xml" />
+    <None Include="Assets\Resources\Text\World\20001\RegionMonster.xml" />
     <None Include="Assets\Scripts\统计结果.txt" />
     <None Include="Assets\Standard Assets\Core\Shader\Illumin-DiffuseAndAlphaTest.shader" />
     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GrayscaleEffect.shader" />
@@ -2247,84 +2233,6 @@
     <None Include="Assets\StreamingAssets\Data\1\Relics.xml" />
     <None Include="Assets\StreamingAssets\Data\1\Runes.xml" />
     <None Include="Assets\StreamingAssets\Data\1\Souls.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Actions.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\BagChips.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\BagFashions.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\BagGems.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\BagItems.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\BagRunes.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\BranchTasks.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Copys.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\DailyTasks.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\DressEquips.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\DressFashions.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\DressGems.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\DressRunes.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Equips.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Gems.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Guides.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\MainChapters.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\MainTasks.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Moneys.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Mounts.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Partners.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Pets.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Raid.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Relics.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Runes.xml" />
-    <None Include="Assets\StreamingAssets\Data\4\Souls.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Actions.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\BagChips.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\BagFashions.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\BagGems.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\BagItems.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\BagRunes.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\BranchTasks.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Copys.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\DailyTasks.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\DressEquips.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\DressFashions.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\DressGems.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\DressRunes.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Equips.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Gems.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Guides.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\MainChapters.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\MainTasks.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Moneys.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Mounts.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Partners.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Pets.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Raid.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Relics.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Runes.xml" />
-    <None Include="Assets\StreamingAssets\Data\90001\Souls.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Actions.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\BagChips.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\BagFashions.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\BagGems.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\BagItems.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\BagRunes.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\BranchTasks.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Copys.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\DailyTasks.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\DressEquips.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\DressFashions.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\DressGems.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\DressRunes.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Equips.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Gems.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Guides.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\MainChapters.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\MainTasks.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Moneys.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Mounts.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Partners.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Pets.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Raid.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Relics.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Runes.xml" />
-    <None Include="Assets\StreamingAssets\Data\90019\Souls.xml" />
     <None Include="Assets\StreamingAssets\Data\Roles.xml" />
     <None Include="Assets\Third\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
     <None Include="Assets\Third\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
@@ -2387,10 +2295,6 @@
     <None Include="Assets\Third\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Third\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Third\protobuf-net\Web\TODO.txt" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="Assets\Resources\Text\World\20001\RegionMonster.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

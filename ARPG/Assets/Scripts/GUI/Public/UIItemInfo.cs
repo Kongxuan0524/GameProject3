@@ -69,7 +69,7 @@ public class UIItemInfo : GTWindow
 
     private void OnCloseClick(GameObject go)
     {
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
         Hide();
     }
 

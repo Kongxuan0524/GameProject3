@@ -1,43 +1,86 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Protocol;
+using System;
 
 public class LoginService : GTSingleton<LoginService>
 {
-    public void TryLoginGame(int serverID = 0)
+    public void TryRegister(string username, string password)
     {
-        ReqLoginGame req = new ReqLoginGame();
-        req.ServerID = serverID;
-        NetworkManager.Instance.Send(MessageID.MSG_REQ_LOGINSERVER, req);
+        AccountRegReq req = new AccountRegReq();
+        req.AccountName = username;
+        req.Password = password;
+        LoginModule.Instance.LastUsername = username;
+        LoginModule.Instance.LastPassword = password;
+        NetworkManager.Instance.Send(MessageID.MSG_ACCOUNT_REG_REQ, req);
     }
 
-    public void TryCreateRole(string name, int id)
+    public void TryLogin(string username, string password)
+    {
+        AccountLoginReq req = new AccountLoginReq();
+        req.AccountName = username;
+        req.Password = password;
+        NetworkManager.Instance.Send(MessageID.MSG_ACCOUNT_LOGIN_REQ, req, 0, 0);
+    }
+
+    public void TryGetSvrList()
+    {
+        ClientServerListReq req = new ClientServerListReq();
+        req.AccountID = 1;
+        req.Channel = 2;
+        req.ClientVersion = 100001;
+        NetworkManager.Instance.Send(MessageID.MSG_SERVER_LIST_REQ, req, 0, 0);
+    }
+
+    //确认当前服务器
+    public void TrySelectServer(Int32 ServerID)
+    {
+        SelectServerReq req = new SelectServerReq();
+        req.ServerID = ServerID;
+        NetworkManager.Instance.Send(MessageID.MSG_SELECT_SERVER_REQ, req);
+    }
+
+    //创建角色
+    public void TryCreateRole(string name, int roleID)
     {
         if (string.IsNullOrEmpty(name))
         {
             GTItemHelper.ShowTip("名字不能为空");
             return;
         }
-        ReqCreateRole req = new ReqCreateRole();
+        RoleCreateReq req = new RoleCreateReq();
         req.Name = name;
-        req.ID = id;
-        NetworkManager.Instance.Send(MessageID.MSG_REQ_CREATEROLE, req);
+        req.AccountID = 1;
+        req.RoleType = (uint)roleID;
+        NetworkManager.Instance.Send(MessageID.MSG_ROLE_CREATE_REQ, req);
     }
 
-    public void TryEnterGame(int roleId)
+    //取角色列表
+    public void TryGetRoleList()
     {
-        ReqEnterGame req = new ReqEnterGame();
-        req.RoleID = roleId;
-        NetworkManager.Instance.Send(MessageID.MSG_REQ_ENTERGAME, req);
+        RoleListReq req = new RoleListReq();
+        req.AccountID = 1;
+        req.LoginCode = 0x111;
+        NetworkManager.Instance.Send(MessageID.MSG_ROLE_LIST_REQ, req);
     }
 
-    public void TryRegister(string username, string password)
+    //登录角色
+    public void TryEnterGame(UInt64 roleGUID)
     {
-
+        RoleLoginReq req = new RoleLoginReq();
+        req.AccountID = 1;
+        req.RoleID = roleGUID;
+        req.LoginCode = 0x111;
+        NetworkManager.Instance.Send(MessageID.MSG_ROLE_LOGIN_REQ, req);
     }
 
-    public void TryLogin(string username, string password)
+    //进入副本场景或者主城场景
+    public void TryEnterScene(UInt64 roleID, UInt32 CopyID, UInt32 ServerID)
     {
-
+        EnterSceneReq req = new EnterSceneReq();
+        req.RoleID = roleID;
+        req.CopyID = CopyID;
+        req.ServerID = ServerID;
+        NetworkManager.Instance.Send(MessageID.MSG_ENTER_SCENE_REQ, req, (UInt64)CopyID, (UInt32)ServerID);
     }
 }

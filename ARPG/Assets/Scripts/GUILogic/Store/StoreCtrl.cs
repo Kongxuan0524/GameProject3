@@ -17,9 +17,9 @@ public class StoreCtrl : ICtrl
         NetworkManager.DelListener(MessageID.MSG_ACK_BUY_STORE, OnAck_BuyStore);
     }
 
-    private void OnAck_BuyStore(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_BuyStore(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckBuyStore ack = Serializer.Deserialize<AckBuyStore>(ms);
 
         DStore db = ReadCfgStore.GetDataById(ack.StoreID);

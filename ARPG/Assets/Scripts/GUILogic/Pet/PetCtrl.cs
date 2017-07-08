@@ -21,9 +21,9 @@ public class PetCtrl : ICtrl
         NetworkManager.DelListener(MessageID.MSG_ACK_UPGRADE_PET, OnAck_UpgradePet);
     }
 
-    private void OnAck_UpgradePet(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_UpgradePet(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckUpgradePet ack   = Serializer.Deserialize<AckUpgradePet>(ms);
         int           id    = ack.ID;
         List<XItem>   items = ack.UseItems;
@@ -57,9 +57,9 @@ public class PetCtrl : ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_UnloadPet(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_UnloadPet(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckUnloadPet ack = Serializer.Deserialize<AckUnloadPet>(ms);
 
         XCharacter role = RoleModule.Instance.GetCurPlayer();
@@ -71,9 +71,9 @@ public class PetCtrl : ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_BattlePet(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_BattlePet(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckBattlePet ack = Serializer.Deserialize<AckBattlePet>(ms);
 
         XCharacter role = RoleModule.Instance.GetCurPlayer();

@@ -21,9 +21,9 @@ public class PartnerCtrl : ICtrl
         NetworkManager.DelListener(MessageID.MSG_ACK_ADVANVE_PARTNER, OnAck_AdvancePartner);
     }
 
-    private void OnAck_AdvancePartner(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_AdvancePartner(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckAdvancePartner ack = Serializer.Deserialize<AckAdvancePartner>(ms);
 
         XPartner partner = DataDBSPartner.GetDataById(ack.ID);
@@ -44,9 +44,9 @@ public class PartnerCtrl : ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_UpgradePartner(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_UpgradePartner(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckUpgradePartner ack = Serializer.Deserialize<AckUpgradePartner>(ms);
 
         XPartner partner = DataDBSPartner.GetDataById(ack.ID);
@@ -67,9 +67,9 @@ public class PartnerCtrl : ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_ChangePartner(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_ChangePartner(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckChangePartner ack = Serializer.Deserialize<AckChangePartner>(ms);
 
         XCharacter role = RoleModule.Instance.GetCurPlayer();

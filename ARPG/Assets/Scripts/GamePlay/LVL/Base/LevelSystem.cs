@@ -23,7 +23,7 @@ namespace LVL
             }
             else
             {
-                this.StartCoroutine(GTLauncher.CurScene.OpenWindows());
+                this.StartCoroutine(GTLauncher.Instance.CurScene.OpenWindows());
             }
         }
 
@@ -80,7 +80,7 @@ namespace LVL
 
         IEnumerator AddMainPlayer()
         {
-            int id = GTLauncher.CurPlayerID;
+            int id = GTGlobal.CurPlayerID;
             if (m_Config.A == null)
                 yield break;
             KTransform bornData = KTransform.Create(m_Config.A.Pos, m_Config.A.Euler);
@@ -140,7 +140,7 @@ namespace LVL
             yield return AddPartner();
             yield return AddMonster();
             yield return AddFollowCamera();
-            yield return GTLauncher.CurScene.OpenWindows();      
+            yield return GTLauncher.Instance.CurScene.OpenWindows();      
             CharacterCtrl.Instance.DelListener();
             CharacterCtrl.Instance.AddListener();
             LevelData.StTime = Time.time;
@@ -254,7 +254,7 @@ namespace LVL
             LevelData.EdTime = Time.time;
             LevelData.Win = true;
             LevelData.Star = 3;
-            GTWindowManager.Instance.OpenWindow(EWindowID.UI_MAINRESULT);
+            GTWindowManager.Instance.OpenWindow(EWindowID.UIMainResult);
         }
 
         public void AddLevelBuff(int id)

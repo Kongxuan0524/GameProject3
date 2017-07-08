@@ -16,9 +16,9 @@ public class MountCtrl : ICtrl
         NetworkManager.DelListener(MessageID.MSG_ACK_SETMOUNT, OnAck_SetMount);
     }
 
-    private void OnAck_SetMount(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_SetMount(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckSetMount ack = Serializer.Deserialize<AckSetMount>(ms);
 
         XCharacter role = RoleModule.Instance.GetCurPlayer();

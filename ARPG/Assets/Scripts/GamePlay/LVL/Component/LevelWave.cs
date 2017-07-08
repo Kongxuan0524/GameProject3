@@ -17,9 +17,9 @@ namespace LVL
         public int                  AddBuffID;
 
 
-        private LevelRegionWave m_ParentGroup;
-        private List<int>       m_MonsterGUIDs    = new List<int>();
-        private HashSet<int>    m_HasKillMonsters = new HashSet<int>();
+        private LevelRegionWave  m_ParentGroup;
+        private List<ulong>       m_MonsterGUIDs    = new List<ulong>();
+        private HashSet<ulong>    m_HasKillMonsters = new HashSet<ulong>();
 
 
         public override void Startup()
@@ -55,12 +55,12 @@ namespace LVL
                     }
                     break;
             }
-            GTEventCenter.AddHandler<int, int>(GTEventID.TYPE_KILL_MONSTER, OnKillMonster);
+            GTEventCenter.AddHandler<ulong, int>(GTEventID.TYPE_KILL_MONSTER, OnKillMonster);
         }
 
         public override void Release()
         {
-            GTEventCenter.DelHandler<int, int>(GTEventID.TYPE_KILL_MONSTER, OnKillMonster);
+            GTEventCenter.DelHandler<ulong, int>(GTEventID.TYPE_KILL_MONSTER, OnKillMonster);
         }
 
         public override void SetName()
@@ -139,7 +139,7 @@ namespace LVL
             m_MonsterGUIDs.Add(cc.GUID);
         }
 
-        public          void OnKillMonster(int guid, int id)
+        public          void OnKillMonster(ulong guid, int id)
         {
             if (m_HasKillMonsters.Contains(guid) == false)
             {

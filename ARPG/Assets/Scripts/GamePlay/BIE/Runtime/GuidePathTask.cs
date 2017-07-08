@@ -95,6 +95,12 @@ namespace BIE
             }
         }
 
+        public override void Reset()
+        {
+            m_ArrowGameObjectList.Clear();
+            base.Reset();
+        }
+
         public override void Read(XmlElement os)
         {
             base.Read(os);

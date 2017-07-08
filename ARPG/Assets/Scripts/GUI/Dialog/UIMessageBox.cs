@@ -24,11 +24,11 @@ public class UIMessageBox : GTWindow
     protected override void OnAwake()
     {
         this.pivot      = transform.Find("Pivot");
-        this.boxTitle   = pivot.Find("Background/TopBar/Label").GetComponent<UILabel>();
+        this.boxTitle   = pivot.Find("Title").GetComponent<UILabel>();
         this.boxContent = pivot.Find("Content").GetComponent<UILabel>();
-        this.btnClose   = pivot.Find("BtnClose").gameObject;
-        this.btnOK      = pivot.Find("BtnOK").gameObject;
-        this.btnCancle  = pivot.Find("BtnCancle").gameObject;
+        this.btnClose   = pivot.Find("Btn_Close").gameObject;
+        this.btnOK      = pivot.Find("Btn_OK").gameObject;
+        this.btnCancle  = pivot.Find("Btn_Cancle").gameObject;
     }
 
     protected override void OnAddButtonListener()
@@ -51,7 +51,7 @@ public class UIMessageBox : GTWindow
 
     private void OnBtnOKClick(GameObject go)
     {
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
         if (mOKFunc != null)
         {
             mOKFunc();
@@ -62,7 +62,7 @@ public class UIMessageBox : GTWindow
 
     private void OnBtnCloseClick(GameObject go)
     {
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
         Hide();
     }
 
@@ -89,7 +89,7 @@ public class UIMessageBox : GTWindow
     public void ShowView(string title, string content, Callback ok, Callback cancle = null)
     {
         this.boxTitle.text = string.IsNullOrEmpty(title) ? "温馨提示" : title;
-        this.boxContent.text = string.IsNullOrEmpty(title) ? string.Empty : content;
+        this.boxContent.text = string.IsNullOrEmpty(content) ? string.Empty : content;
         this.mOKFunc = ok;
         this.mCancleFunc = cancle;
     }

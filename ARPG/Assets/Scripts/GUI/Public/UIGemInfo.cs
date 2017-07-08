@@ -194,20 +194,20 @@ public class UIGemInfo : GTWindow
     private void OnDressClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        UIRoleGem window = (UIRoleGem)GTWindowManager.Instance.GetWindow(EWindowID.UI_ROLEGEM);
+        UIRoleGem window = (UIRoleGem)GTWindowManager.Instance.GetWindow(EWindowID.UIRoleGem);
         BagService.Instance.TryDressGem( window.GetCurIndex(), mPos);
     }
 
     private void OnUnloadClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        UIRoleGem window = (UIRoleGem)GTWindowManager.Instance.GetWindow(EWindowID.UI_ROLEGEM);
+        UIRoleGem window = (UIRoleGem)GTWindowManager.Instance.GetWindow(EWindowID.UIRoleGem);
         BagService.Instance.TryUnloadGem(window.GetCurIndex(), mPos);
     }
 
     private void OnCloseClick(GameObject go)
     {
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
         Hide();
     }
 

@@ -9,9 +9,10 @@ namespace BIE
 {
     public class GuideSystem
     {
-        public const int GUIDE_KEY = 1;
+        public const int GUIDE_KEY  = 1;
 
-        public bool      UseGuide = true;
+        public bool      UseGuide   = true;
+        public bool      PauseGuide = false;
         public UInt16    CurId;
         public GuideBase CurGuide;
 
@@ -41,7 +42,7 @@ namespace BIE
 
         public void Execute()
         {
-            if (CurGuide == null)
+            if (CurGuide == null || PauseGuide == true || UseGuide == false)
             {
                 return;
             }
@@ -74,6 +75,14 @@ namespace BIE
             }
             this.CurId++;
             this.CurGuide = CreateGuide(this.CurId);
+        }
+
+        public void ResetCurGuide()
+        {
+            if (CurGuide != null)
+            {
+                CurGuide.Reset();
+            }
         }
 
         public GuideBase CreateGuide(UInt16 id)
@@ -118,7 +127,7 @@ namespace BIE
             {
                 return;
             }
-            m_GuideEvents.Add(key, trans);
+            m_GuideEvents[key] = trans;
         }
 
         public void DelGuideListener(string key)

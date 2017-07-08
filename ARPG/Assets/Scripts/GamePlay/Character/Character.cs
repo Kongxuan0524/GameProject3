@@ -17,7 +17,7 @@ public class Character : IActor
     public Transform                           CacheFixEuler  { get; set; }
     public Transform                           CacheTransform { get; set; }
 
-    public int                                 GUID           { get; set; }
+    public ulong                               GUID           { get; set; }
     public int                                 ID             { get; set; }
     public EBattleCamp                         Camp           { get; private set; }
 
@@ -139,7 +139,7 @@ public class Character : IActor
         set;
     }
 
-    public Character(int id, int guid, EActorType type, EBattleCamp camp, bool isMain)
+    public Character(int id, ulong guid, EActorType type, EBattleCamp camp, bool isMain)
     {
         this.ID           = id;
         this.GUID         = guid;

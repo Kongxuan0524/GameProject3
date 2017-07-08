@@ -373,8 +373,8 @@ public class GTItemHelper
             case EItemType.ACTION:
             case EItemType.MONEY:
             case EItemType.KEY:
-                GTWindowManager.Instance.OpenWindow(EWindowID.UI_ITEMINFO);
-                UIItemInfo itemInfo = (UIItemInfo)GTWindowManager.Instance.GetWindow(EWindowID.UI_ITEMINFO);
+                GTWindowManager.Instance.OpenWindow(EWindowID.UIItemInfo);
+                UIItemInfo itemInfo = (UIItemInfo)GTWindowManager.Instance.GetWindow(EWindowID.UIItemInfo);
                 itemInfo.ShowInfoById(itemID);
                 break;
             case EItemType.GEM:
@@ -399,32 +399,32 @@ public class GTItemHelper
         switch (db.ItemType)
         {
             case EItemType.EQUIP:
-                GTWindowManager.Instance.OpenWindow(EWindowID.UI_EQUIPINFO);
-                UIEquipInfo w1 = (UIEquipInfo)GTWindowManager.Instance.GetWindow(EWindowID.UI_EQUIPINFO);
+                GTWindowManager.Instance.OpenWindow(EWindowID.UIEquipInfo);
+                UIEquipInfo w1 = (UIEquipInfo)GTWindowManager.Instance.GetWindow(EWindowID.UIEquipInfo);
                 w1.ShowInfoByPos(EPosType.BagItem, pos);
                 break;
             case EItemType.MAT:
-                GTWindowManager.Instance.OpenWindow(EWindowID.UI_ITEMINFO);
-                UIItemInfo w2 = (UIItemInfo)GTWindowManager.Instance.GetWindow(EWindowID.UI_ITEMINFO);
+                GTWindowManager.Instance.OpenWindow(EWindowID.UIItemInfo);
+                UIItemInfo w2 = (UIItemInfo)GTWindowManager.Instance.GetWindow(EWindowID.UIItemInfo);
                 w2.ShowInfoByPos(pos, false);
                 break;
             case EItemType.DRUG:
             case EItemType.BOX:
             case EItemType.KEY:
-                GTWindowManager.Instance.OpenWindow(EWindowID.UI_ITEMINFO);
-                UIItemInfo w3 = (UIItemInfo)GTWindowManager.Instance.GetWindow(EWindowID.UI_ITEMINFO);
+                GTWindowManager.Instance.OpenWindow(EWindowID.UIItemInfo);
+                UIItemInfo w3 = (UIItemInfo)GTWindowManager.Instance.GetWindow(EWindowID.UIItemInfo);
                 w3.ShowInfoByPos(pos, true);
                 break;
             case EItemType.EXP:
                 break;
             case EItemType.CHIP:
-                GTWindowManager.Instance.OpenWindow(EWindowID.UI_CHIPINFO);
-                UIChipInfo w4 = (UIChipInfo)GTWindowManager.Instance.GetWindow(EWindowID.UI_CHIPINFO);
+                GTWindowManager.Instance.OpenWindow(EWindowID.UIChipInfo);
+                UIChipInfo w4 = (UIChipInfo)GTWindowManager.Instance.GetWindow(EWindowID.UIChipInfo);
                 w4.ShowInfoByPos(pos);
                 break;
             case EItemType.GEM:
-                GTWindowManager.Instance.OpenWindow(EWindowID.UI_GEMINFO);
-                UIGemInfo w5 = (UIGemInfo)GTWindowManager.Instance.GetWindow(EWindowID.UI_GEMINFO);
+                GTWindowManager.Instance.OpenWindow(EWindowID.UIGemInfo);
+                UIGemInfo w5 = (UIGemInfo)GTWindowManager.Instance.GetWindow(EWindowID.UIGemInfo);
                 w5.ShowInfoByPos(EPosType.BagGem, pos);
                 break;
         }
@@ -437,13 +437,13 @@ public class GTItemHelper
         switch (posType)
         {
             case EPosType.RoleEquip:
-                GTWindowManager.Instance.OpenWindow(EWindowID.UI_EQUIPINFO);
-                UIEquipInfo window1 = (UIEquipInfo)GTWindowManager.Instance.GetWindow(EWindowID.UI_EQUIPINFO);
+                GTWindowManager.Instance.OpenWindow(EWindowID.UIEquipInfo);
+                UIEquipInfo window1 = (UIEquipInfo)GTWindowManager.Instance.GetWindow(EWindowID.UIEquipInfo);
                 window1.ShowInfoByPos(EPosType.RoleEquip, pos);
                 break;
             case EPosType.RoleGem:
-                GTWindowManager.Instance.OpenWindow(EWindowID.UI_GEMINFO);
-                UIGemInfo window2 = (UIGemInfo)GTWindowManager.Instance.GetWindow(EWindowID.UI_GEMINFO);
+                GTWindowManager.Instance.OpenWindow(EWindowID.UIGemInfo);
+                UIGemInfo window2 = (UIGemInfo)GTWindowManager.Instance.GetWindow(EWindowID.UIGemInfo);
                 window2.ShowInfoByPos(EPosType.RoleGem, pos);
                 break;
             case EPosType.RoleFashion:
@@ -454,13 +454,13 @@ public class GTItemHelper
                 ShowItemDialogByBagType(EBagType.ITEM, pos);
                 break;
             case EPosType.BagGem:
-                GTWindowManager.Instance.OpenWindow(EWindowID.UI_GEMINFO);
-                UIGemInfo window6 = (UIGemInfo)GTWindowManager.Instance.GetWindow(EWindowID.UI_GEMINFO);
+                GTWindowManager.Instance.OpenWindow(EWindowID.UIGemInfo);
+                UIGemInfo window6 = (UIGemInfo)GTWindowManager.Instance.GetWindow(EWindowID.UIGemInfo);
                 window6.ShowInfoByPos(EPosType.BagGem, pos);
                 break;
             case EPosType.BagChip:
-                GTWindowManager.Instance.OpenWindow(EWindowID.UI_CHIPINFO);
-                UIChipInfo window7 = (UIChipInfo)GTWindowManager.Instance.GetWindow(EWindowID.UI_CHIPINFO);
+                GTWindowManager.Instance.OpenWindow(EWindowID.UIChipInfo);
+                UIChipInfo window7 = (UIChipInfo)GTWindowManager.Instance.GetWindow(EWindowID.UIChipInfo);
                 window7.ShowInfoByPos(pos);
                 break;
             case EPosType.BagFashion:
@@ -476,59 +476,59 @@ public class GTItemHelper
     public static void ShowItemUseDialogByPos(int pos)
     {
         if (!DataDBSBagItem.ContainsKey(pos)) return;
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_ITEMUSE);
-        UIItemUse window = (UIItemUse)GTWindowManager.Instance.GetWindow(EWindowID.UI_ITEMUSE);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIItemUse);
+        UIItemUse window = (UIItemUse)GTWindowManager.Instance.GetWindow(EWindowID.UIItemUse);
         window.ShowInfo(pos);
     }
 
     public static void ShowEquipWindowByPos(EPosType posType, int pos)
     {
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_EQUIP);
-        UIEquip window = (UIEquip)GTWindowManager.Instance.GetWindow(EWindowID.UI_EQUIP);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIEquip);
+        UIEquip window = (UIEquip)GTWindowManager.Instance.GetWindow(EWindowID.UIEquip);
         window.ShowEquipWindowByPos(posType, pos);
     }
 
     public static void ShowGemWindowByPos(EPosType posType, int pos)
     {
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_GEM);
-        UIGem window = (UIGem)GTWindowManager.Instance.GetWindow(EWindowID.UI_GEM);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIGem);
+        UIGem window = (UIGem)GTWindowManager.Instance.GetWindow(EWindowID.UIGem);
         window.ShowWindowByPos(posType, pos);
     }
 
     public static void ShowTip(string key)
     {
         string value = GetText(key);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_MESSAGETIP);
-        UIMessageTip dialog = (UIMessageTip)GTWindowManager.Instance.GetWindow(EWindowID.UI_MESSAGETIP);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIMessageTip);
+        UIMessageTip dialog = (UIMessageTip)GTWindowManager.Instance.GetWindow(EWindowID.UIMessageTip);
         dialog.ShowWarning(value);
     }
 
     public static void ShowExpTip(int exp)
     {
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_MESSAGETIP);
-        UIMessageTip dialog = (UIMessageTip)GTWindowManager.Instance.GetWindow(EWindowID.UI_MESSAGETIP);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIMessageTip);
+        UIMessageTip dialog = (UIMessageTip)GTWindowManager.Instance.GetWindow(EWindowID.UIMessageTip);
         string format = GetText("经验+{0}");
         dialog.ShowExp(GTTools.Format(format, exp));
     }
 
     public static void ShowAwardTip(List<KStruct> list)
     {
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_AWARDTIP);
-        UIAwardTip dialog = (UIAwardTip)GTWindowManager.Instance.GetWindow(EWindowID.UI_AWARDTIP);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIAwardTip);
+        UIAwardTip dialog = (UIAwardTip)GTWindowManager.Instance.GetWindow(EWindowID.UIAwardTip);
         dialog.ShowView(list);
     }
 
     public static void ShowAwardTip(KStruct data)
     {
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_AWARDTIP);
-        UIAwardTip dialog = (UIAwardTip)GTWindowManager.Instance.GetWindow(EWindowID.UI_AWARDTIP);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIAwardTip);
+        UIAwardTip dialog = (UIAwardTip)GTWindowManager.Instance.GetWindow(EWindowID.UIAwardTip);
         dialog.ShowView(new List<KStruct> { data });
     }
 
     public static void ShowMessageBox(string title, string content, Callback ok, Callback cancle)
     {
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_MESSAGEBOX);
-        UIMessageBox dialog = (UIMessageBox)GTWindowManager.Instance.GetWindow(EWindowID.UI_MESSAGEBOX);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIMessageBox);
+        UIMessageBox dialog = (UIMessageBox)GTWindowManager.Instance.GetWindow(EWindowID.UIMessageBox);
         dialog.ShowView(title, content, ok, cancle);
     }
 

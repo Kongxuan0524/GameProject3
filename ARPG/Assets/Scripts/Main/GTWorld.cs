@@ -22,7 +22,7 @@ public class GTWorld : GTSingleton<GTWorld>
     public GuideSystem    Bie     { get; private set; }
     public TaskSystem     Tas     { get; private set; }
     public PlotSystem     Plt     { get; private set; }
-    public VideoSystem      Cut     { get; private set; }
+    public VideoSystem    Cut     { get; private set; }
 
     public void EnterWorld(int mapID)
     {
@@ -50,14 +50,18 @@ public class GTWorld : GTSingleton<GTWorld>
 
     public void EnterGuide()
     {
-        if (Tas == null)
-        {
-            Tas = new TaskSystem();
-        }
         if (Bie == null)
         {
             Bie = new GuideSystem();
             Bie.Startup();
+        }
+    }
+
+    public void ResetGuide()
+    {
+        if (Bie != null)
+        {
+            Bie.ResetCurGuide();
         }
     }
 

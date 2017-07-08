@@ -16,14 +16,17 @@ public sealed class SceneLoading : IScene
     {
         base.Enter();
         CommandLoadScene ev = Cmd as CommandLoadScene;
-
+        if (GTWorld.Instance.Bie != null)
+        {
+            GTWorld.Instance.Bie.PauseGuide = true;
+        }
         GTWindowManager. Instance.Release();
         GTWorld.         Instance.Release();
         GTPoolManager.   Instance.Release();
-        GTWindowManager. Instance.OpenWindow(EWindowID.UI_LOADING);
+        GTWindowManager. Instance.OpenWindow(EWindowID.UILoading);
 
         mLoadingSceneId = ev.SceneID;
-        mLoadingWindow  = (UILoading)GTWindowManager.Instance.GetWindow(EWindowID.UI_LOADING);
+        mLoadingWindow  = (UILoading)GTWindowManager.Instance.GetWindow(EWindowID.UILoading);
         mWaitTime       = Time.realtimeSinceStartup;
     }
 
@@ -66,13 +69,18 @@ public sealed class SceneLoading : IScene
         DScene db = ReadCfgScene.GetDataById(mLoadingSceneId);
         GTAudioManager.Instance.PlayMusic(db.SceneMusic);
         GTLauncher.    Instance.ChangeState(GTLauncher.Instance.NextSceneType,Cmd);
+        GTWorld.       Instance.ResetGuide();
         GTWorld.       Instance.EnterWorld(mLoadingSceneId);
     }
 
     void OnSceneWasFadeOut()
     {
-        GTLauncher.CurSceneID = mLoadingSceneId;
-        GTWindowManager.Instance.CloseWindow(EWindowID.UI_LOADING);
+        GTGlobal.CurSceneID = mLoadingSceneId;
+        GTWindowManager.Instance.CloseWindow(EWindowID.UILoading);
+        if (GTWorld.Instance.Bie != null)
+        {
+            GTWorld.Instance.Bie.PauseGuide = false;
+        }
     }
 
     IEnumerator DoLoadScene()

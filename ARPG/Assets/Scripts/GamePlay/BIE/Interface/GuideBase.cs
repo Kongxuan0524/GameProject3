@@ -71,7 +71,7 @@ namespace BIE
         public virtual void Enter()
         {
             GTEventCenter.FireEvent(GTEventID.TYPE_GUIDE_ENTER, Id);
-            this.GuideWindow = (UIGuide)GTWindowManager.Instance.OpenWindow(EWindowID.UI_GUIDE);
+            this.GuideWindow = (UIGuide)GTWindowManager.Instance.OpenWindow(EWindowID.UIGuide);
             this.GuideWindow.ShowViewByGuideBaseData(this);
             this.Audio = GTAudioManager.Instance.PlaySound(TipSound);
         }
@@ -99,6 +99,11 @@ namespace BIE
             }
             GTEventCenter.FireEvent(GTEventID.TYPE_GUIDE_EXIT, Id);
             this.State = EGuideState.TYPE_FINISH;
+        }
+
+        public virtual void Reset()
+        {
+            this.State = EGuideState.TYPE_NONE;
         }
 
         public override void Read(XmlElement os)

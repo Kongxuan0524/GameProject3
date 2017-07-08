@@ -22,9 +22,9 @@ public class RelicsCtrl : ICtrl
         NetworkManager.DelListener(MessageID.MSG_ACK_UPGRADE_RELICS, OnAck_UpgradeRelics);
     }
 
-    private void OnAck_UpgradeRelics(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_UpgradeRelics(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckUpgradeRelics ack = Serializer.Deserialize<AckUpgradeRelics>(ms);
 
 
@@ -41,9 +41,9 @@ public class RelicsCtrl : ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_ChargeRelics(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_ChargeRelics(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckChargeRelics ack      = Serializer.Deserialize<AckChargeRelics>(ms);
         int             index    = ack.Index;
         int             relicsID = ack.RelicsID;
@@ -78,9 +78,9 @@ public class RelicsCtrl : ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_UnloadRelics(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_UnloadRelics(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckUnloadRelics ack = Serializer.Deserialize<AckUnloadRelics>(ms);
        
         XCharacter role = RoleModule.Instance.GetCurPlayer();
@@ -92,9 +92,9 @@ public class RelicsCtrl : ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_BattleRelics(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_BattleRelics(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckBattleRelics ack = Serializer.Deserialize<AckBattleRelics>(ms);
 
         XCharacter role = RoleModule.Instance.GetCurPlayer();

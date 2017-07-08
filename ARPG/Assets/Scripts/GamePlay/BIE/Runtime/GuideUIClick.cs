@@ -15,13 +15,13 @@ namespace BIE
         public override void Finish()
         {
             base.Finish();
-            GTWindowManager.Instance.CloseWindow(EWindowID.UI_GUIDE);
+            GTWindowManager.Instance.CloseWindow(EWindowID.UIGuide);
         }
 
         public override void Stop()
         {
             base.Stop();
-            GTWindowManager.Instance.CloseWindow(EWindowID.UI_GUIDE);
+            GTWindowManager.Instance.CloseWindow(EWindowID.UIGuide);
         }
     }
 }

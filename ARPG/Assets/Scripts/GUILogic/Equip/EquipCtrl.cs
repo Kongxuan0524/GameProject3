@@ -21,9 +21,9 @@ public class EquipCtrl :  ICtrl
         NetworkManager.DelListener(MessageID.MSG_ACK_UPSTAR_EQUIP, OnAck_UpStarEquip);
     }
 
-    private void OnAck_UpStarEquip(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_UpStarEquip(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckUpStarEquip ack = Serializer.Deserialize<AckUpStarEquip>(ms);
 
 
@@ -43,9 +43,9 @@ public class EquipCtrl :  ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_AdvanceEquip(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_AdvanceEquip(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckAdvanceEquip ack = Serializer.Deserialize<AckAdvanceEquip>(ms);
 
         XEquip      equip     = ack.TarEquip;
@@ -72,9 +72,9 @@ public class EquipCtrl :  ICtrl
         GTEventCenter.FireEvent(GTEventID.TYPE_CHANGE_FIGHTVALUE);
     }
 
-    private void OnAck_StrengthEquip(MessageRecv obj, MessageRetCode retCode)
+    private void OnAck_StrengthEquip(MessageRecv obj)
     {
-        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Packet.Data);
+        System.IO.MemoryStream ms = new System.IO.MemoryStream(obj.Data);
         AckStrengthEquip ack = Serializer.Deserialize<AckStrengthEquip>(ms);
 
         XEquip      equip = ack.TarEquip;

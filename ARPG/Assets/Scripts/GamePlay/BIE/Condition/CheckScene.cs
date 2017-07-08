@@ -22,7 +22,7 @@ namespace BIE
 
         public override bool Check()
         {
-            return GTLauncher.CurSceneID == SceneID;
+            return GTGlobal.CurSceneID == SceneID;
         }
     }
 }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from: MessageCommon.proto
+// Generated from: proto_raw/MessageCommon.proto
 namespace Protocol
 {
   [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"XItem")]
@@ -274,16 +274,16 @@ namespace Protocol
   {
     public XTransform() {}
     
-    private Protocol.XVector3 _Pos;
+    private XVector3 _Pos;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"Pos", DataFormat = global::ProtoBuf.DataFormat.Default)]
-    public Protocol.XVector3 Pos
+    public XVector3 Pos
     {
       get { return _Pos; }
       set { _Pos = value; }
     }
-    private Protocol.XVector3 _Forward;
+    private XVector3 _Forward;
     [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"Forward", DataFormat = global::ProtoBuf.DataFormat.Default)]
-    public Protocol.XVector3 Forward
+    public XVector3 Forward
     {
       get { return _Forward; }
       set { _Forward = value; }
@@ -756,9 +756,9 @@ namespace Protocol
       get { return _Id; }
       set { _Id = value; }
     }
-    private int _GUID;
+    private ulong _GUID;
     [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"GUID", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
-    public int GUID
+    public ulong GUID
     {
       get { return _GUID; }
       set { _GUID = value; }
@@ -896,16 +896,16 @@ namespace Protocol
       get { return _CurExp; }
       set { _CurExp = value; }
     }
-    private readonly global::System.Collections.Generic.List<Protocol.XGem> _Gems = new global::System.Collections.Generic.List<Protocol.XGem>();
+    private readonly global::System.Collections.Generic.List<XGem> _Gems = new global::System.Collections.Generic.List<XGem>();
     [global::ProtoBuf.ProtoMember(22, Name=@"Gems", DataFormat = global::ProtoBuf.DataFormat.Default)]
-    public global::System.Collections.Generic.List<Protocol.XGem> Gems
+    public global::System.Collections.Generic.List<XGem> Gems
     {
       get { return _Gems; }
     }
   
-    private readonly global::System.Collections.Generic.List<Protocol.XEquip> _Equips = new global::System.Collections.Generic.List<Protocol.XEquip>();
+    private readonly global::System.Collections.Generic.List<XEquip> _Equips = new global::System.Collections.Generic.List<XEquip>();
     [global::ProtoBuf.ProtoMember(23, Name=@"Equips", DataFormat = global::ProtoBuf.DataFormat.Default)]
-    public global::System.Collections.Generic.List<Protocol.XEquip> Equips
+    public global::System.Collections.Generic.List<XEquip> Equips
     {
       get { return _Equips; }
     }
@@ -924,10 +924,10 @@ namespace Protocol
       get { return _BaseAttr; }
     }
   
-    private Protocol.XTransform _AOI = null;
+    private XTransform _AOI = null;
     [global::ProtoBuf.ProtoMember(26, IsRequired = false, Name=@"AOI", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
-    public Protocol.XTransform AOI
+    public XTransform AOI
     {
       get { return _AOI; }
       set { _AOI = value; }
@@ -949,9 +949,9 @@ namespace Protocol
       get { return _Id; }
       set { _Id = value; }
     }
-    private Protocol.XTransform _AOI;
+    private XTransform _AOI;
     [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"AOI", DataFormat = global::ProtoBuf.DataFormat.Default)]
-    public Protocol.XTransform AOI
+    public XTransform AOI
     {
       get { return _AOI; }
       set { _AOI = value; }

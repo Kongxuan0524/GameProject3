@@ -68,8 +68,8 @@ public class UIMainRaid : GTWindow
             GTItemHelper.ShowTip("未通关前置关卡");
             return;
         }
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_MAINGATE);
-        UIMainGate window = (UIMainGate)GTWindowManager.Instance.GetWindow(EWindowID.UI_MAINGATE);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIMainGate);
+        UIMainGate window = (UIMainGate)GTWindowManager.Instance.GetWindow(EWindowID.UIMainGate);
         window.ShowViewById(mCurCopyType, mChapter, chapterDB.Copys[index-1]);
     }
 
@@ -79,8 +79,8 @@ public class UIMainRaid : GTWindow
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
         int index = go.name.ToInt32() - 1;
         DWorld db = ReadCfgWorld.GetDataById(mChapter);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_AWARDBOX);
-        UIAwardBox window = (UIAwardBox)GTWindowManager.Instance.GetWindow(EWindowID.UI_AWARDBOX);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIAwardBox);
+        UIAwardBox window = (UIAwardBox)GTWindowManager.Instance.GetWindow(EWindowID.UIAwardBox);
         int state = RaidModule.Instance.GetChapterRewardStateByAwardIndex(mChapter, index);
         UIEventListener.VoidDelegate doReceive = delegate (GameObject w)
         {
@@ -91,7 +91,7 @@ public class UIMainRaid : GTWindow
 
     private void OnReturnClick(GameObject go)
     {
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
         Hide();
     }
 

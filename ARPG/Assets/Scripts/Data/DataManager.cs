@@ -35,15 +35,20 @@ public class DataManager : GTSingleton<DataManager>
 
     public void   LoadCommonData()
     {
-        DataDBSRole.Read(GetCommonDataPath(GTDataKey.Data_Roles), EDataKeyType.Id);
-
+        if (GTGlobal.Along)
+        {
+            DataDBSRole.Read(GetCommonDataPath(GTDataKey.Data_Roles), EDataKeyType.Id);
+        }
     }
 
     public void   LoadRoleData(int id)
     {
         this.mCurRoleID = id;
-        DumpRoleData();
-        ReadRoleData();
+        if (GTGlobal.Along)
+        {
+            DumpRoleData();
+            ReadRoleData();
+        }
     }
 
     void   DumpRoleData()

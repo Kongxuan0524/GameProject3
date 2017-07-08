@@ -38,7 +38,6 @@ public class UIServer : GTWindow
     }
 
 
-
     protected override void OnAddHandler()
     {
         
@@ -56,19 +55,19 @@ public class UIServer : GTWindow
 
     protected override void OnEnable()
     {
-        List<XServer> list = LoginModule.Instance.GetServerList();
+        List<ClientServerNode> list = LoginModule.Instance.GetServerList();
         for (int i = 0; i < list.Count; i++)
         {
             GameObject item = NGUITools.AddChild(grid.gameObject, temp);
             item.SetActive(true);
-            XServer data = list[i];
-            item.transform.Find("Label").GetComponent<UILabel>().text = data.Name;
+            ClientServerNode data = list[i];
+            item.transform.Find("Label").GetComponent<UILabel>().text = data.SvrName;
             UIEventListener.Get(item).onClick = (go) =>
             {
                 LoginModule.Instance.SetCurrServer(data);
-                currSeverLabel.text = data.Name;
+                currSeverLabel.text = data.SvrName;
                 GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK2);
-                GTWindowManager.Instance.GetWindow<UILogin>(EWindowID.UI_LOGIN).ShowCurrServer();
+                GTWindowManager.Instance.GetWindow<UILogin>(EWindowID.UILogin).ShowCurrServer();
             };
         }
     }
@@ -76,12 +75,12 @@ public class UIServer : GTWindow
     private void OnCloseClick(GameObject go)
     {
         Hide();
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_BACK);
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
     }
 
     private void OnBtnCurrServerClick(GameObject go)
     {
         Hide();
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_BACK);
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
     }
 }

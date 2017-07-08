@@ -5,7 +5,7 @@ using Protocol;
 
 public class RoleModule : GTSingleton<RoleModule>
 {
-    private List<string> mRandomNames;
+    private List<string>   mRandomNames;
 
     public string     GetRandomName()
     {
@@ -33,7 +33,7 @@ public class RoleModule : GTSingleton<RoleModule>
     public XCharacter GetCurPlayer()
     {
         XCharacter player = null;
-        DataDBSRole.Dict.TryGetValue(GTLauncher.CurPlayerID, out player);
+        DataDBSRole.Dict.TryGetValue(GTGlobal.CurPlayerID, out player);
         if (player == null)
         {
             player = new XCharacter();

@@ -7,7 +7,7 @@ public sealed class SceneRole : IScene
 {
     public override IEnumerator OpenWindows()
     {
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_CREATEROLE);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UICreateRole);
         yield return null;
     }
 }

@@ -283,3 +283,5 @@ proto/proto-gen-lua
 *.cc
 *.dll
 *.asset
+/ARPG/Temp
+/ARPG/Library

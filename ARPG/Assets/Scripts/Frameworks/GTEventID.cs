@@ -3,7 +3,9 @@ using System.Collections;
 
 public enum GTEventID : ushort
 {
+    TYPE_CONNECT             = 1000,   //准备连接
     TYPE_CONNECT_FAIL        = 1001,   //连接失败  
+    TYPE_CONNECT_SUCCESS     = 1002,   //连接成功
 
     TYPE_REGISTER_CALLBACK   = 1051,   //注册回调            
     TYPE_LOGIN_CALLBACK      = 1052,   //登陆回调 
@@ -11,6 +13,8 @@ public enum GTEventID : ushort
     TYPE_LOGINGAME_CALLBACK  = 1054,   //登陆游戏服回调
     TYPE_ENTERGAME_CALLBACK  = 1055,   //进入游戏
     TYPE_GETSERVERS_CALLBACK = 1056,   //获取服务器列表回调
+    TYPE_ACCLOGIN_CALLBACK   = 1057,   //账号登陆回调
+    TYPE_SELECTSERVER        = 1058,   //确认选择的服务器
 
     TYPE_CHANGE_MONEY        = 1108,   //金钱改变
     TYPE_CHANGE_ACTION       = 1109,   //行动力改变
@@ -92,5 +96,6 @@ public enum GTEventID : ushort
     TYPE_MOUSE_BUTTON        = 9001,
     TYPE_MOUSE_BUTTON_UP     = 9002,
     TYPE_MOUSE_BUTTON_DOWN   = 9003,
+
 
 }

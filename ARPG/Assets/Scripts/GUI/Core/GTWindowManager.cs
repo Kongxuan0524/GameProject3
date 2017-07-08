@@ -33,73 +33,76 @@ public class GTWindowManager : GTSingleton<GTWindowManager>
 
     void RegisterWindows()
     {
-        RegisterWindow(EWindowID.UI_LOGIN, new UILogin());
-        RegisterWindow(EWindowID.UI_SERVER, new UIServer());
-        RegisterWindow(EWindowID.UI_NOTICE, new UINotice());
-        RegisterWindow(EWindowID.UI_ACCOUNT, new UIAccount());
+        RegisterWindow(EWindowID.UILogin, new UILogin());
+        RegisterWindow(EWindowID.UIServer, new UIServer());
+        RegisterWindow(EWindowID.UINotice, new UINotice());
+        RegisterWindow(EWindowID.UIAccount, new UIAccount());
+        RegisterWindow(EWindowID.UINetWaiting, new UINetWaiting());
 
-        RegisterWindow(EWindowID.UI_CREATEROLE, new UIRole());
-        RegisterWindow(EWindowID.UI_HOME, new UIHome());
-        RegisterWindow(EWindowID.UI_HEROINFO, new UIHeroInfo());
-        RegisterWindow(EWindowID.UI_SETTING, new UISetting());
+        RegisterWindow(EWindowID.UICreateRole, new UIRole());
+        RegisterWindow(EWindowID.UIHome, new UIHome());
+        RegisterWindow(EWindowID.UIHeroInfo, new UIHeroInfo());
+        RegisterWindow(EWindowID.UISetting, new UISetting());
 
-        RegisterWindow(EWindowID.UI_BAG, new UIBag());
-        RegisterWindow(EWindowID.UI_ROLEEQUIP, new UIRoleEquip());
-        RegisterWindow(EWindowID.UI_ROLEGEM, new UIRoleGem());
-        RegisterWindow(EWindowID.UI_ROLEFASHION, new UIRoleFashion());
-        RegisterWindow(EWindowID.UI_ROLERUNE, new UIRoleRune());
-        RegisterWindow(EWindowID.UI_ROLEFETTER, new UIRoleFetter());
+        RegisterWindow(EWindowID.UIBag, new UIBag());
+        RegisterWindow(EWindowID.UIRoleEquip, new UIRoleEquip());
+        RegisterWindow(EWindowID.UIRoleGem, new UIRoleGem());
+        RegisterWindow(EWindowID.UIRoleFashion, new UIRoleFashion());
+        RegisterWindow(EWindowID.UIRoleRune, new UIRoleRune());
+        RegisterWindow(EWindowID.UIRoleFetter, new UIRoleFetter());
 
-        RegisterWindow(EWindowID.UI_ITEMINFO, new UIItemInfo());
-        RegisterWindow(EWindowID.UI_ITEMUSE, new UIItemUse());
-        RegisterWindow(EWindowID.UI_EQUIPINFO, new UIEquipInfo());
-        RegisterWindow(EWindowID.UI_GEMINFO, new UIGemInfo());
-        RegisterWindow(EWindowID.UI_CHIPINFO, new UIChipInfo());
-        RegisterWindow(EWindowID.UI_EQUIP, new UIEquip());
-        RegisterWindow(EWindowID.UI_GEM, new UIGem());
+        RegisterWindow(EWindowID.UIItemInfo, new UIItemInfo());
+        RegisterWindow(EWindowID.UIItemUse, new UIItemUse());
+        RegisterWindow(EWindowID.UIEquipInfo, new UIEquipInfo());
+        RegisterWindow(EWindowID.UIGemInfo, new UIGemInfo());
+        RegisterWindow(EWindowID.UIChipInfo, new UIChipInfo());
+        RegisterWindow(EWindowID.UIEquip, new UIEquip());
+        RegisterWindow(EWindowID.UIGem, new UIGem());
 
-        RegisterWindow(EWindowID.UI_MESSAGETIP, new UIMessageTip());
-        RegisterWindow(EWindowID.UI_AWARDTIP, new UIAwardTip());
+        RegisterWindow(EWindowID.UIMessageTip, new UIMessageTip());
+        RegisterWindow(EWindowID.UIMessageBox, new UIMessageBox());
+        RegisterWindow(EWindowID.UIMessageBoxForNetwork, new UIMessageBoxForNetwork());
+        RegisterWindow(EWindowID.UIAwardTip, new UIAwardTip());
 
-        RegisterWindow(EWindowID.UI_MAINRAID, new UIMainRaid());
-        RegisterWindow(EWindowID.UI_MAINGATE, new UIMainGate());
-        RegisterWindow(EWindowID.UI_MAINRESULT, new UIMainResult());
+        RegisterWindow(EWindowID.UIMainRaid, new UIMainRaid());
+        RegisterWindow(EWindowID.UIMainGate, new UIMainGate());
+        RegisterWindow(EWindowID.UIMainResult, new UIMainResult());
 
-        RegisterWindow(EWindowID.UI_AWARDBOX, new UIAwardBox());
-        RegisterWindow(EWindowID.UI_LOADING,  new UILoading());
+        RegisterWindow(EWindowID.UIAwardBox, new UIAwardBox());
+        RegisterWindow(EWindowID.UILoading,  new UILoading());
 
-        RegisterWindow(EWindowID.UI_MOUNT, new UIMount());
-        RegisterWindow(EWindowID.UI_MOUNTLIBRARY, new UIMountLibrary());
-        RegisterWindow(EWindowID.UI_MOUNTBLOOD, new UIMountBlood());
-        RegisterWindow(EWindowID.UI_MOUNTTAME, new UIMountTame());
-        RegisterWindow(EWindowID.UI_MOUNTTURNED, new UIMountTurned());
+        RegisterWindow(EWindowID.UIMount, new UIMount());
+        RegisterWindow(EWindowID.UIMountLibrary, new UIMountLibrary());
+        RegisterWindow(EWindowID.UIMountBlood, new UIMountBlood());
+        RegisterWindow(EWindowID.UIMountTame, new UIMountTame());
+        RegisterWindow(EWindowID.UIMountTurned, new UIMountTurned());
 
-        RegisterWindow(EWindowID.UI_RELICS, new UIRelics());
-        RegisterWindow(EWindowID.UI_STORE, new UIStore());
-        RegisterWindow(EWindowID.UI_PET, new UIPet());
+        RegisterWindow(EWindowID.UIRelics, new UIRelics());
+        RegisterWindow(EWindowID.UIStore, new UIStore());
+        RegisterWindow(EWindowID.UIPet, new UIPet());
 
-        RegisterWindow(EWindowID.UI_PARTNER, new UIPartner());
-        RegisterWindow(EWindowID.UI_PARTNERBATTLE, new UIPartnerBattle());
-        RegisterWindow(EWindowID.UI_PARTNERSTRENGH, new UIPartnerStrength());
-        RegisterWindow(EWindowID.UI_PARTNERADVANCE, new UIPartnerAdvance());
-        RegisterWindow(EWindowID.UI_PARTNERFETTER, new UIPartnerFetter());
-        RegisterWindow(EWindowID.UI_PARTNERFPROPERTY, new UIPartnerProperty());
-        RegisterWindow(EWindowID.UI_PARTNERSKILL, new UIPartnerSkill());
-        RegisterWindow(EWindowID.UI_PARTNERSTAR, new UIPartnerStar());
-        RegisterWindow(EWindowID.UI_PARTNERWAKE, new UIPartnerWake());
-        RegisterWindow(EWindowID.UI_PARTNERWASH, new UIPartnerWash());
+        RegisterWindow(EWindowID.UIPartner, new UIPartner());
+        RegisterWindow(EWindowID.UIPartnerBattle, new UIPartnerBattle());
+        RegisterWindow(EWindowID.UIPartnerStrength, new UIPartnerStrength());
+        RegisterWindow(EWindowID.UIPartnerAdvance, new UIPartnerAdvance());
+        RegisterWindow(EWindowID.UIPartnerFetter, new UIPartnerFetter());
+        RegisterWindow(EWindowID.UIPartnerProperty, new UIPartnerProperty());
+        RegisterWindow(EWindowID.UIPartnerSkill, new UIPartnerSkill());
+        RegisterWindow(EWindowID.UIPartnerStar, new UIPartnerStar());
+        RegisterWindow(EWindowID.UIPartnerWake, new UIPartnerWake());
+        RegisterWindow(EWindowID.UIPartnerWash, new UIPartnerWash());
 
-        RegisterWindow(EWindowID.UI_TASK, new UITask());
-        RegisterWindow(EWindowID.UI_TASKTALK, new UITaskTalk());
-        RegisterWindow(EWindowID.UI_WORLDMAP, new UIWorldMap());
+        RegisterWindow(EWindowID.UITask, new UITask());
+        RegisterWindow(EWindowID.UITaskTalk, new UITaskTalk());
+        RegisterWindow(EWindowID.UIWorldMap, new UIWorldMap());
 
-        RegisterWindow(EWindowID.UI_PLOTCUTSCENE, new UIPlot());
-        RegisterWindow(EWindowID.UI_GUIDE, new UIGuide());
+        RegisterWindow(EWindowID.UIPlotCutscene, new UIPlot());
+        RegisterWindow(EWindowID.UIGuide, new UIGuide());
 
-        RegisterWindow(EWindowID.UI_ADVENTURE, new UIAdventure());
-        RegisterWindow(EWindowID.UI_SKILL, new UISkill());
-        RegisterWindow(EWindowID.UI_REBORN, new UIReborn());
-        RegisterWindow(EWindowID.UI_MAINBOSSHP, new UIMainBossHP());
+        RegisterWindow(EWindowID.UIAdventure, new UIAdventure());
+        RegisterWindow(EWindowID.UISkill, new UISkill());
+        RegisterWindow(EWindowID.UIReborn, new UIReborn());
+        RegisterWindow(EWindowID.UIMainBossHP, new UIMainBossHP());
     }
 
     void RegisterWindow(EWindowID id, GTWindow win)
@@ -280,7 +283,7 @@ public class GTWindowManager : GTSingleton<GTWindowManager>
         mToggleGroupId = 1;
         foreach (KeyValuePair<EWindowID, GTWindow> pair in mAllWindows)
         {
-            if (pair.Key != EWindowID.UI_LOADING)
+            if (pair.Key != EWindowID.UILoading)
             {
                 pair.Value.Close();
             }

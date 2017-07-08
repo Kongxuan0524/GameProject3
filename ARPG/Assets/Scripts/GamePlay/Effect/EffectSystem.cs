@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class EffectSystem
 {
-    public Dictionary<int, EffectUnit> Effects = new Dictionary<int, EffectUnit>();
+    public Dictionary<ulong, EffectUnit> Effects = new Dictionary<ulong, EffectUnit>();
 
     public GameObject LoadEffectObj(int id)
     {
@@ -31,14 +31,14 @@ public class EffectSystem
         return go;
     }
 
-    public EffectUnit LoadEffect(int id, int guid, KTransform data, Transform parent, bool retain = true)
+    public EffectUnit LoadEffect(int id, ulong guid, KTransform data, Transform parent, bool retain = true)
     {
         EffectUnit tab = new EffectUnit(id, guid, data, parent, retain);
         Effects[tab.GUID] = tab;
         return tab;
     }
 
-    public EffectUnit LoadEffect(int id, int guid, bool retain =true)
+    public EffectUnit LoadEffect(int id, ulong guid, bool retain =true)
     {
         EffectUnit tab = new EffectUnit(id, guid, KTransform.Default, null, retain);
         Effects[tab.GUID] = tab;

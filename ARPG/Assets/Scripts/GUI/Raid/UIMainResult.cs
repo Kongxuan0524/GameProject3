@@ -120,7 +120,7 @@ public class UIMainResult : GTWindow
     private void OnQuitClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTLauncher.Instance.LoadScene(GTLauncher.LAST_CITY_ID);
+        GTLauncher.Instance.LoadScene(GTGlobal.LAST_CITY_ID);
     }
 
     private void OnMaskClick(GameObject go)
@@ -129,7 +129,7 @@ public class UIMainResult : GTWindow
         {
             return;
         }
-        GTLauncher.Instance.LoadScene(GTLauncher.LAST_CITY_ID);
+        GTLauncher.Instance.LoadScene(GTGlobal.LAST_CITY_ID);
     }
 
     protected override void OnAddHandler()

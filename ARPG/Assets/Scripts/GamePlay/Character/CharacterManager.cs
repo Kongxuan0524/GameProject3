@@ -136,7 +136,7 @@ public class CharacterManager : GTMonoSingleton<CharacterManager>
         return cc;
     }
 
-    public Character GetActor(int guid)
+    public Character GetActor(ulong guid)
     {
         for (int i = 0; i < Characters.Count; i++)
         {

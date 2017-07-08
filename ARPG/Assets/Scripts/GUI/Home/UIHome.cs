@@ -311,25 +311,25 @@ public class UIHome : GTWindow
     private void OnSettingClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_SETTING);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UISetting);
     }
 
     private void OnAdventureClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_ADVENTURE);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIAdventure);
     }
 
     private void OnRaidClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_WORLDMAP);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIWorldMap);
     }
 
     private void OnShopClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_STORE);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIStore);
     }
 
     private void OnMenuClick(GameObject go)
@@ -373,49 +373,49 @@ public class UIHome : GTWindow
     private void OnTaskClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_TASK);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UITask);
     }
 
     private void OnPartnerClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_PARTNER);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIPartner);
     }
 
     private void OnPetClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_PET);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIPet);
     }
 
     private void OnRelicsClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_RELICS);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIRelics);
     }
 
     private void OnBagClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_BAG);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIBag);
     }
 
     private void OnSkillClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_SKILL);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UISkill);
     }
 
     private void OnMountClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_MOUNT);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIMount);
     }
 
     private void OnHeroClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_HEROINFO);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UIHeroInfo);
     }
 
     private void OnJumpClick(GameObject go)
@@ -434,7 +434,7 @@ public class UIHome : GTWindow
     private void OnPauseClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        GTLauncher.Instance.LoadScene(GTLauncher.LAST_CITY_ID);
+        GTLauncher.Instance.LoadScene(GTGlobal.LAST_CITY_ID);
     }
 
     private void OnCastSkillClick(GameObject go)

@@ -32,10 +32,10 @@ public class UIMount : GTWindow
 
     private Dictionary<Func, EWindowID> mFuncWindows = new Dictionary<Func, EWindowID>
     {
-        { Func.Func_Blood,   EWindowID.UI_MOUNTBLOOD },
-        { Func.Func_Library, EWindowID.UI_MOUNTLIBRARY },
-        { Func.Func_Tame,    EWindowID.UI_MOUNTTAME },
-        { Func.Func_Turned,  EWindowID.UI_MOUNTTURNED }
+        { Func.Func_Blood,   EWindowID.UIMountBlood },
+        { Func.Func_Library, EWindowID.UIMountLibrary },
+        { Func.Func_Tame,    EWindowID.UIMountTame },
+        { Func.Func_Turned,  EWindowID.UIMountTurned }
     };
 
 
@@ -103,7 +103,7 @@ public class UIMount : GTWindow
 
     private void OnCloseClick(GameObject go)
     {
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
         Switch(Func.Func_None);
         Hide();
     }

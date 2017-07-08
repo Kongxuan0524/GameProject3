@@ -17,30 +17,21 @@ public class UIRole : GTWindow
     private UIGrid          roleGrid;
 
     private int             mRoleIndex      = 0;
-    private int[]           mDisplayWeapons ;
     private Character       mPlayer         = null;
     private Vector3         mRoleModelPos   = new Vector3(-44.17f, 2.473f, -4.41f);
     private Vector3         mRoleModelEuler = new Vector3(0, 180, 0);
-    private List<int>       mRoleDBList;
+    private List<DRole>     mRoleDBList;
 
+    private DRole           CurRole
+    {
+        get { return mRoleDBList[mRoleIndex]; }
+    }
 
     public UIRole()
     {
         Type        = EWindowType.WINDOW;
         mResident   = false;
         mResPath    = "Role/UIRole";
-        mRoleDBList = new List<int>()
-        {
-            1, 2, 4,
-            90001, 90002, 90005, 90007, 90008, 90009, 90010,
-            90013, 90015, 90016, 90017, 90018, 90019, 90020,
-            90021
-        };
-
-        mDisplayWeapons = new int[3]
-        {
-            5403, 5406, 5410
-        };
     }
 
     protected override void OnAwake()
@@ -93,15 +84,20 @@ public class UIRole : GTWindow
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
         string name = iptHeroName.value.Trim();
-        int id = mRoleDBList[mRoleIndex];
-        LoginService.Instance.TryCreateRole(name, id);
+        LoginService.Instance.TryCreateRole(name, CurRole.Id);
     }
 
     private void OnEnterGameClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        int id = mRoleDBList[mRoleIndex];
-        LoginService.Instance.TryEnterGame(id);
+        int id = mRoleDBList[mRoleIndex].Id;
+        XCharacter c = DataDBSRole.GetDataById(id);
+        if(c == null)
+        {
+            GTItemHelper.ShowTip("你还没有创建这个角色");
+            return;
+        }
+        LoginService.Instance.TryEnterGame(c.GUID);
     }
 
     private void OnRollClick(GameObject go)
@@ -123,6 +119,7 @@ public class UIRole : GTWindow
 
     protected override void OnEnable()
     {
+        mRoleDBList = new List<DRole>(ReadCfgRole.Dict.Values);
         InitModel();
         InitView();
         ShowView();
@@ -132,17 +129,14 @@ public class UIRole : GTWindow
     protected override void OnClose()
     {
         mRoleIndex = 0;
-        if (mPlayer != null)
-        {
-            CharacterManager.Instance.DelActor(mPlayer);
-            mPlayer = null;
-        }
+        CharacterManager.Instance.DelActor(mPlayer);
+        mPlayer = null;
         GTCameraManager.Instance.RevertMainCamera();
     }
 
     private void ShowView()
     {
-        int id = mRoleDBList[mRoleIndex];
+        int id = mRoleDBList[mRoleIndex].Id;
         XCharacter role = DataDBSRole.GetDataById(id);
         DActor roleDB = ReadCfgActor.GetDataById(id);
         btnCreateRole.SetActive(role == null);
@@ -167,7 +161,7 @@ public class UIRole : GTWindow
         int group = GTWindowManager.Instance.GetToggleGroupId();
         for (int i = 0; i < mRoleDBList.Count; i++)
         {
-            int id = mRoleDBList[i];
+            int id = mRoleDBList[i].Id;
             int index = i;
             DActor roleDB = ReadCfgActor.GetDataById(id);
             GameObject item = NGUITools.AddChild(roleGrid.gameObject, roleTemplate);
@@ -207,14 +201,16 @@ public class UIRole : GTWindow
             CharacterManager.Instance.DelActor(mPlayer);
         }
         KTransform param = KTransform.Default;
-        int id = mRoleDBList[mRoleIndex];
+
+        DRole roleDB = mRoleDBList[mRoleIndex];
+        int id = roleDB.Id;
         mPlayer = CharacterManager.Instance.AddRole(id, param);
         mPlayer.EnableCharacter(false);
         mPlayer.EnableRootMotion(false);
         mPlayer.Action.Play("idle");
-        if (mRoleIndex < mDisplayWeapons.Length)
+        if (roleDB.DisplayWeapon > 0)
         {
-            mPlayer.Avatar.ChangeAvatar(8, mDisplayWeapons[mRoleIndex]);
+            mPlayer.Avatar.ChangeAvatar(8, roleDB.DisplayWeapon);
         }
         mPlayer.CacheTransform.localPosition = mRoleModelPos;
         mPlayer.CacheTransform.localEulerAngles = mRoleModelEuler;

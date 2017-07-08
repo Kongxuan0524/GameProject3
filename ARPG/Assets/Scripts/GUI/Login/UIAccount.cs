@@ -6,7 +6,7 @@ public class UIAccount : GTWindow
 {
     private GameObject  btnClose;
     private GameObject  btnSure;
-    private GameObject  btnRegisterAndLogin;
+    private GameObject  btnGoRegister;
     private GameObject  btnCancel;
     private GameObject  btnRegister;
     private UIInput     usernameInput;
@@ -27,7 +27,7 @@ public class UIAccount : GTWindow
     {
         btnClose = transform.Find("Pivot/BtnClose").gameObject;
         btnSure = transform.Find("Pivot/BtnSure").gameObject;
-        btnRegisterAndLogin = transform.Find("Pivot/BtnRegisterAndLogin").gameObject;
+        btnGoRegister = transform.Find("Pivot/BtnGoRegister").gameObject;
         btnRegister = transform.Find("Pivot/BtnRegister").gameObject;
         btnCancel = transform.Find("Pivot/BtnCancel").gameObject;
         usernameInput = transform.Find("Pivot/Username/Input").GetComponent<UIInput>();
@@ -38,7 +38,7 @@ public class UIAccount : GTWindow
     {
         UIEventListener.Get(btnClose).onClick = OnCloseClick;
         UIEventListener.Get(btnSure).onClick = OnSureClick;
-        UIEventListener.Get(btnRegisterAndLogin).onClick = OnRegisterAndLoginClick;
+        UIEventListener.Get(btnGoRegister).onClick = OnGoRegisterClick;
         UIEventListener.Get(btnRegister).onClick = OnRegisterClick;
         UIEventListener.Get(btnCancel).onClick = OnBtnCancelClick;
     }
@@ -61,14 +61,14 @@ public class UIAccount : GTWindow
 
     protected override void OnEnable()
     {
-        this.showRegister = false;
+        this.showRegister = string.IsNullOrEmpty(LoginModule.Instance.LastUsername);
         this.InitView();
     }
 
     private void OnCloseClick(GameObject go)
     {
         this.Hide();
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_BACK);
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
     }
 
     private void OnBtnCancelClick(GameObject go)
@@ -80,44 +80,46 @@ public class UIAccount : GTWindow
 
     private void OnRegisterClick(GameObject go)
     {
+        string username = this.usernameInput.value;
+        string password = this.passwordInput.value;
+        LoginService.Instance.TryRegister(username, password);
+        Hide();
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
+    }
+
+    private void OnGoRegisterClick(GameObject go)
+    {
         this.showRegister = true;
         this.InitView();
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
     }
 
-    private void OnRegisterAndLoginClick(GameObject go)
-    {
-        string username = this.usernameInput.value;
-        string password = this.passwordInput.value;
-        LoginService.Instance.TryRegister(username, password);
-        Hide();
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_BACK);
-    }
-
     private void OnSureClick(GameObject go)
     {
-        string username = this.usernameInput.value;
-        string password = this.passwordInput.value;
-        LoginService.Instance.TryLogin(username, password);
+        LoginModule.Instance.LastUsername = this.usernameInput.value;
+        LoginModule.Instance.LastPassword = this.passwordInput.value;
+        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLOSE);
         Hide();
-        GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_BACK);
     }
 
     private void InitView()
     {
         if(showRegister)
         {
-            btnSure.SetActive(true);
+            btnSure.SetActive(false);
+            btnGoRegister.SetActive(false);
             btnRegister.SetActive(true);
-            btnRegisterAndLogin.SetActive(false);
-            btnCancel.SetActive(false);
+            btnCancel.SetActive(true);
         }
         else
         {
-            btnSure.SetActive(false);
+            btnSure.SetActive(true);
+            btnGoRegister.SetActive(true);
             btnRegister.SetActive(false);
-            btnRegisterAndLogin.SetActive(true);
-            btnCancel.SetActive(true);
+            btnCancel.SetActive(false);
+
+            usernameInput.value = LoginModule.Instance.LastUsername;
+            passwordInput.value = LoginModule.Instance.LastPassword;
         }
     }
 }

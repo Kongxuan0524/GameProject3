@@ -7,7 +7,7 @@ public sealed class SceneLogin : IScene
 {
     public override IEnumerator OpenWindows()
     {
-        GTWindowManager.Instance.OpenWindow(EWindowID.UI_LOGIN);
+        GTWindowManager.Instance.OpenWindow(EWindowID.UILogin);
         yield return null;
     }
 }
