@@ -71,7 +71,7 @@ public class RelicsCtrl : ICtrl
         }
 
         DataDBSRelics.Update(relicsID, relics);
-        DataManager.Instance.UseItemById(itemID);
+        GTDataManager.Instance.UseItemById(itemID);
 
         CharacterManager.Instance.SyncMainPlayerData(ESyncDataType.TYPE_BASEATTR);
         GTEventCenter.FireEvent(GTEventID.TYPE_CHARGE_RELICS, relicsID, index);

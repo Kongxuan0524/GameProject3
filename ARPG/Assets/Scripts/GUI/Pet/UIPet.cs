@@ -314,7 +314,7 @@ public class UIPet : GTWindow
     {
         DActor db = ReadCfgActor.GetDataById(mCurPetID);
         XPet data = DataDBSPet.GetDataById(mCurPetID);
-        data = data == null ? DataFactory.CreatePet(mCurPetID) : data;
+        data = data == null ? GTDataFactory.CreatePet(mCurPetID) : data;
         DPetLevel levelDB = ReadCfgPetLevel.GetDataById(db.Quality * 1000 + data.Level);
         GTItemHelper.ShowProgressSlider(expSlider, data.CurExp, levelDB.Exp);
         GTItemHelper.ShowProgressText(expNum, data.CurExp, levelDB.Exp);

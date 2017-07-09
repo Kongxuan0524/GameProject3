@@ -25,8 +25,8 @@ public class StoreCtrl : ICtrl
         DStore db = ReadCfgStore.GetDataById(ack.StoreID);
         KStruct data = new KStruct(db.ItemID, db.ItemNum * ack.Num);
         GTItemHelper.ShowAwardTip(data);
-        DataManager.Instance.AddNewItem(db.ItemID, db.ItemNum * ack.Num);
-        DataManager.Instance.UseMoney(db.CostMoneyID, db.CostMoneyNum * ack.Num);
+        GTDataManager.Instance.AddNewItem(db.ItemID, db.ItemNum * ack.Num);
+        GTDataManager.Instance.UseMoney(db.CostMoneyID, db.CostMoneyNum * ack.Num);
 
         GTEventCenter.FireEvent(GTEventID.TYPE_BUY_STORE);
     }

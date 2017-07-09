@@ -112,8 +112,8 @@ public class GTLauncher : MonoBehaviour
         if (TestScene)
         {
             GTGlobal.CurPlayerID = TestActorID <= 0 ? 1 : TestActorID;
-            DataManager.Instance.LoadCommonData();
-            DataManager.Instance.LoadRoleData(GTGlobal.CurPlayerID);
+            GTDataManager.Instance.LoadCommonData();
+            GTDataManager.Instance.LoadRoleData(GTGlobal.CurPlayerID);
             LoadScene(GTGlobal.LAST_CITY_ID);
         }
         else
@@ -148,7 +148,7 @@ public class GTLauncher : MonoBehaviour
             case ESceneType.TYPE_ROLE:
                 {
                     this.NextSceneType = ESceneType.TYPE_ROLE;
-                    DataManager.Instance.LoadCommonData();                  
+                    GTDataManager.Instance.LoadCommonData();                  
                 }
                 break;
             case ESceneType.TYPE_CITY:
@@ -157,9 +157,9 @@ public class GTLauncher : MonoBehaviour
                     if (this.CurrSceneType == ESceneType.TYPE_ROLE)
                     {
                         GTCtrl.Instance.AddAllCtrls();
-                        DataManager.Instance.LoadRoleData(GTGlobal.CurPlayerID);
+                        GTDataManager.Instance.LoadRoleData(GTGlobal.CurPlayerID);
                         GTWorld.Instance.EnterGuide();
-                        DataTimer.Instance.Init();
+                        GTDataTimer.Instance.Init();
                     }
                 }
                 break;
@@ -168,8 +168,8 @@ public class GTLauncher : MonoBehaviour
                     this.NextSceneType = ESceneType.TYPE_WORLD;
                     if (this.CurrSceneType == ESceneType.TYPE_ROLE)
                     {
-                        DataManager.Instance.LoadRoleData(GTGlobal.CurPlayerID);
-                        DataTimer.Instance.Init();
+                        GTDataManager.Instance.LoadRoleData(GTGlobal.CurPlayerID);
+                        GTDataTimer.Instance.Init();
                         GTWorld.Instance.EnterGuide();
                     }
                 }
@@ -239,7 +239,7 @@ public class GTLauncher : MonoBehaviour
     void OnApplicationQuit()
     {
         GTTimerManager.Instance.DelListener(SecondTick);
-        DataTimer.Instance.Exit();
+        GTDataTimer.Instance.Exit();
         ReleaseResource();
     }
 }

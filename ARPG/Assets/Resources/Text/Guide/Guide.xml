@@ -1,8 +1,15 @@
  <Root>
-      <Guide  Id="1"  TypeName="GuidePathTask"             IsLocked="false"  IsPause="false"  IsShowSkip="false"  IsSavePoint="false"  TipSound="" TipText="" TipPosition="(0.00,-2.16,0.00)" TriggerConditionRelation="0"  TargetPos="(0,-2.16,0)"  TargetScale="(5,5,5)">
-          <CheckScene SceneID="6"/>
+      <Guide  Id ="1"  TypeName="GuideOperation" IsLocked="1"  IsPause="0"  IsShowSkip="0"  IsSavePoint="0"  BoardType="2"  BoardSize="(120,120)"  OperationType="1"   RowType="4"  LockKey="BtnBag">
+          <CheckScene    SceneID ="6"/>
+          <CheckOpenUI   WindowID="UIHome"/>
+     </Guide>    
+      <Guide  Id ="2"  TypeName="GuideDialogue"  IsLocked="1"  IsPause="0"  IsShowSkip="0"  IsSavePoint="0"  StDialogueID="1"  EdDialogueID="6">
+           <CheckOpenUI  WindowID="UIHome"/>
      </Guide>
-      <Guide  Id="2"  TypeName="GuideUIClick"              />      
-      <Guide  Id="3"  TypeName="GuideUIDoubleClick"        />
-      <Guide  Id="4"  TypeName="GuideUIPress"              />
-</Root>
+      <Guide  Id ="3"  TypeName="GuidePath"      IsLocked="0"  IsPause="0"  IsShowSkip="0"  IsSavePoint="0"  TargetScale="(5,5,5)"  TargetPos="(0, -2.16, 0)"  TipText="adssaasf">
+           <CheckScene   SceneID ="6"/>
+     </Guide>
+      <Guide  Id ="4"  TypeName="GuideVideo"     IsLocked="0"  IsPause="0"  IsShowSkip="0"  IsSavePoint="0"  VideoID="1">
+           <CheckScene   SceneID ="6"/>
+     </Guide>
+ </Root>

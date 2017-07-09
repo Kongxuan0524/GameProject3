@@ -7,10 +7,10 @@ namespace CUT
     public class VideoSystem
     {
         private VideoPlayer              m_VideoPlayer;
-        private VideoPlayer.EventHandler m_OnCancle;
+        private VideoPlayer.EventHandler m_OnCancel;
         private VideoPlayer.EventHandler m_OnFinish;
 
-        public void Trigger(int id, VideoPlayer.EventHandler onCancle = null, VideoPlayer.EventHandler onFinish = null)
+        public void Trigger(int id, VideoPlayer.EventHandler onCancel = null, VideoPlayer.EventHandler onFinish = null)
         {
             DVideo db = ReadCfgVideo.GetDataById(id);
             if (db == null)
@@ -22,7 +22,7 @@ namespace CUT
                 m_VideoPlayer = CreateVideoPlayer();
             }
             VideoClip clip = GTResourceManager.Instance.Load<VideoClip>(db.Path);
-            m_OnCancle = onCancle;
+            m_OnCancel = onCancel;
             m_OnFinish = onFinish;
             m_VideoPlayer.clip = clip;
             m_VideoPlayer.loopPointReached += OnFinish;
@@ -37,10 +37,10 @@ namespace CUT
                 m_VideoPlayer.Stop();
                 m_VideoPlayer.gameObject.SetActive(false);
             }
-            if (m_OnCancle != null)
+            if (m_OnCancel != null)
             {
-                m_OnCancle.Invoke(m_VideoPlayer);
-                m_OnCancle = null;
+                m_OnCancel.Invoke(m_VideoPlayer);
+                m_OnCancel = null;
             }
             GTWindowManager.Instance.LockNGUI(false);
         }

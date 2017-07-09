@@ -84,14 +84,14 @@ public class UIGem : GTWindow
     private void OnStrengthenClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        XGem gem = DataManager.Instance.GetGemDataByPos(mPosType, mPos);
+        XGem gem = GTDataManager.Instance.GetGemDataByPos(mPosType, mPos);
         GemService.Instance.TryStrengthGem(gem,mStrengthenMats);
     }
 
     private void OnAutoToAddMatClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        XGem gem = DataManager.Instance.GetGemDataByPos(mPosType, mPos);
+        XGem gem = GTDataManager.Instance.GetGemDataByPos(mPosType, mPos);
         mStrengthenMats = GemModule.Instance.GetItemListToOneKeyStrengthen(gem);
         ShowView();
     }
@@ -133,11 +133,11 @@ public class UIGem : GTWindow
     
     private void ShowView()
     {
-        labMoneyNum1.text = DataManager.Instance.GetItemCountById(1).ToString();
-        labMoneyNum2.text = DataManager.Instance.GetItemCountById(2).ToString();
+        labMoneyNum1.text = GTDataManager.Instance.GetItemCountById(1).ToString();
+        labMoneyNum2.text = GTDataManager.Instance.GetItemCountById(2).ToString();
         GTItemHelper.ShowItemTexture(moneyTexture1, 1);
         GTItemHelper.ShowItemTexture(moneyTexture2, 2);
-        XGem gem = DataManager.Instance.GetGemDataByPos(mPosType, mPos);
+        XGem gem = GTDataManager.Instance.GetGemDataByPos(mPosType, mPos);
         int itemID = gem.Id;
         GTItemHelper.ShowItemTexture(gemTexture, itemID);
         GTItemHelper.ShowItemQuality(gemQuality, itemID);

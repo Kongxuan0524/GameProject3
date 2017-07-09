@@ -849,6 +849,7 @@
     <Compile Include="Assets\Scripts\Cfg\Base\DObj.cs" />
     <Compile Include="Assets\Scripts\Cfg\Base\DReadBase.cs" />
     <Compile Include="Assets\Scripts\Cfg\Curve\DCurve.cs" />
+    <Compile Include="Assets\Scripts\Cfg\Dialogue\DDialogue.cs" />
     <Compile Include="Assets\Scripts\Cfg\Effect\DEffect.cs" />
     <Compile Include="Assets\Scripts\Cfg\Equip\DEquip.cs" />
     <Compile Include="Assets\Scripts\Cfg\Equip\DEquipAdvance.cs" />
@@ -887,7 +888,6 @@
     <Compile Include="Assets\Scripts\Cfg\Lvl\LvlRegionWave.cs" />
     <Compile Include="Assets\Scripts\Cfg\Lvl\LvlWave.cs" />
     <Compile Include="Assets\Scripts\Cfg\Machine\DMachine.cs" />
-    <Compile Include="Assets\Scripts\Cfg\Manager\GTConfigManager.cs" />
     <Compile Include="Assets\Scripts\Cfg\Partner\DPartner.cs" />
     <Compile Include="Assets\Scripts\Cfg\Partner\DPartnerAdvance.cs" />
     <Compile Include="Assets\Scripts\Cfg\Partner\DPartnerFetter.cs" />
@@ -935,10 +935,6 @@
     <Compile Include="Assets\Scripts\Cfg\World\WorldMonster.cs" />
     <Compile Include="Assets\Scripts\Cfg\World\WorldNpc.cs" />
     <Compile Include="Assets\Scripts\Cfg\World\WorldRegion.cs" />
-    <Compile Include="Assets\Scripts\Data\DataFactory.cs" />
-    <Compile Include="Assets\Scripts\Data\DataManager.cs" />
-    <Compile Include="Assets\Scripts\Data\DataReadBase.cs" />
-    <Compile Include="Assets\Scripts\Data\DataTimer.cs" />
     <Compile Include="Assets\Scripts\Defines\GTAudioKey.cs" />
     <Compile Include="Assets\Scripts\Defines\GTDataKey.cs" />
     <Compile Include="Assets\Scripts\Defines\GTDefine.cs" />
@@ -993,6 +989,7 @@
     <Compile Include="Assets\Scripts\GUI\Core\GTWindowManager.cs" />
     <Compile Include="Assets\Scripts\GUI\Dialog\UIAwardBox.cs" />
     <Compile Include="Assets\Scripts\GUI\Dialog\UIAwardTip.cs" />
+    <Compile Include="Assets\Scripts\GUI\Dialog\UIDialogue.cs" />
     <Compile Include="Assets\Scripts\GUI\Dialog\UIMessageBox.cs" />
     <Compile Include="Assets\Scripts\GUI\Dialog\UIMessageBoxForNetwork.cs" />
     <Compile Include="Assets\Scripts\GUI\Dialog\UIMessageTip.cs" />
@@ -1245,14 +1242,11 @@
     <Compile Include="Assets\Scripts\GamePlay\BIE\Define\GuideDefine.cs" />
     <Compile Include="Assets\Scripts\GamePlay\BIE\Interface\GuideBase.cs" />
     <Compile Include="Assets\Scripts\GamePlay\BIE\Interface\GuideConfig.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideCGTask.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuidePathTask.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuidePlotTask.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideUIClick.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideUIDoubleClick.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideUIEvent.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideUIPress.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideUISwap.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideDialogue.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideOperation.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuidePath.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuidePlot.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\BIE\Runtime\GuideVideo.cs" />
     <Compile Include="Assets\Scripts\GamePlay\CUT\VideoSystem.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Character\Character.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Character\CharacterAttr.cs" />
@@ -1390,7 +1384,12 @@
     <Compile Include="Assets\Scripts\Interface\IState.cs" />
     <Compile Include="Assets\Scripts\Interface\IStateMachine.cs" />
     <Compile Include="Assets\Scripts\Interface\ITrigger.cs" />
+    <Compile Include="Assets\Scripts\Main\GTConfigManager.cs" />
     <Compile Include="Assets\Scripts\Main\GTCtrl.cs" />
+    <Compile Include="Assets\Scripts\Main\GTDataFactory.cs" />
+    <Compile Include="Assets\Scripts\Main\GTDataManager.cs" />
+    <Compile Include="Assets\Scripts\Main\GTDataReadBase.cs" />
+    <Compile Include="Assets\Scripts\Main\GTDataTimer.cs" />
     <Compile Include="Assets\Scripts\Main\GTGlobal.cs" />
     <Compile Include="Assets\Scripts\Main\GTLauncher.cs" />
     <Compile Include="Assets\Scripts\Main\GTTouchEffect.cs" />
@@ -2111,6 +2110,7 @@
     <None Include="Assets\Resources\Text\Data\Data_Adventure.xml" />
     <None Include="Assets\Resources\Text\Data\Data_Award.xml" />
     <None Include="Assets\Resources\Text\Data\Data_Copy.xml" />
+    <None Include="Assets\Resources\Text\Data\Data_Dialogue.xml" />
     <None Include="Assets\Resources\Text\Data\Data_Effect.xml" />
     <None Include="Assets\Resources\Text\Data\Data_Equip.xml" />
     <None Include="Assets\Resources\Text\Data\Data_EquipAdvance.xml" />

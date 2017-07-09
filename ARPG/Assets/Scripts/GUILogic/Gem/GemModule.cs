@@ -196,12 +196,12 @@ public class GemModule : GTSingleton<GemModule>
     public List<XItem> GetItemListToOneKeyStrengthen(XGem gem)
     {
         List<XItem> list = new List<XItem>();
-        Dictionary<int, XItem> bagItems = DataManager.Instance.GetItemDataByPosType(EPosType.BagItem);
+        Dictionary<int, XItem> bagItems = GTDataManager.Instance.GetItemDataByPosType(EPosType.BagItem);
         HashSet<int>.Enumerator em = mStrengHashSet.GetEnumerator();
         while (em.MoveNext())
         {
             int id = em.Current;
-            XItem data = DataManager.Instance.GetItemDataById(id);
+            XItem data = GTDataManager.Instance.GetItemDataById(id);
             if (data == null || list.Count > 0)
             {
                 continue;

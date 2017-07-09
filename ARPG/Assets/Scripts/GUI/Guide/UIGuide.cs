@@ -5,15 +5,18 @@ using BIE;
 
 public class UIGuide : GTWindow
 {
-    private GameObject m_Mask;
-    private Transform  m_Pivot;
-    private Transform  m_Hand;
-    private UISprite   m_AreaCircle;
-    private UISprite   m_AreaRect;
-    private UISprite   m_AreaRow;
-    private Transform  m_TipTransform;
-    private UILabel    m_TipText;
-
+    private GameObject mask;
+    private Transform  pivot;
+    private Transform  hand;
+    private UISprite   areaCircle;
+    private UISprite   areaRect;
+    private GameObject row;
+    private Transform  tipTransform;
+    private UILabel    tipText;
+    private UISprite   tipIcon;
+    private GameObject btnSkip;
+    private GameObject btnFalse;
+     
     public UIGuide()
     {
         mResPath = "Guide/UIGuide";
@@ -23,20 +26,26 @@ public class UIGuide : GTWindow
 
     protected override void OnAwake()
     {
-        m_Mask          = transform.Find("Mask").gameObject;
-        m_Pivot         = transform.Find("Pivot");
-        m_Hand          = m_Pivot.Find("Hand");
-        m_AreaCircle    = m_Pivot.Find("Area_Circle").GetComponent<UISprite>();
-        m_AreaRect      = m_Pivot.Find("Area_Rect").GetComponent<UISprite>();
-        m_AreaRow       = m_Pivot.Find("Area_Row").GetComponent<UISprite>();
-        m_TipTransform  = m_Pivot.Find("Tip");
-        m_TipText       = m_TipTransform.Find("Content").GetComponent<UILabel>();
-        m_Hand.gameObject.SetActive(false);
-        m_AreaCircle.gameObject.SetActive(false);
-        m_AreaRect.gameObject.SetActive(false);
-        m_AreaRow.gameObject.SetActive(false);
-        m_TipTransform.gameObject.SetActive(false);
-        m_TipText.text = string.Empty;
+        mask          = transform.Find("Mask").gameObject;
+        pivot         = transform.Find("Pivot");
+        hand          = pivot.Find("Hand");
+        areaCircle    = pivot.Find("Area_Circle").GetComponent<UISprite>();
+        areaRect      = pivot.Find("Area_Rect").GetComponent<UISprite>();
+        row           = pivot.Find("Row").gameObject;
+        tipTransform = pivot.Find("Tip");
+        tipText       = tipTransform.Find("Content").GetComponent<UILabel>();
+        tipIcon       = tipTransform.Find("Icon").GetComponent<UISprite>();
+        btnSkip       = pivot.Find("Top/BtnSkip").gameObject;
+        btnFalse      = pivot.Find("BtnFalse").gameObject;
+
+        hand.gameObject.SetActive(false);
+        areaCircle.gameObject.SetActive(false);
+        areaRect.gameObject.SetActive(false);
+        row.gameObject.SetActive(false);
+        tipTransform.gameObject.SetActive(false);
+        tipText.text = string.Empty;
+        btnSkip.SetActive(false);
+        btnFalse.SetActive(false);
     }
 
     protected override void OnEnable()
@@ -46,7 +55,7 @@ public class UIGuide : GTWindow
 
     protected override void OnAddButtonListener()
     {
-        
+  
     }
 
     protected override void OnAddHandler()
@@ -64,54 +73,100 @@ public class UIGuide : GTWindow
         
     }
 
-    public void ShowViewByGuideBaseData(GuideBase data)
+    public void ShowGuideBase(GuideBase data)
     {
-        m_Mask.SetActive(data.IsLocked);
-        if(string.IsNullOrEmpty(data.TipText))
+        mask.SetActive(data.IsLocked);
+        btnSkip.SetActive(data.IsShowSkip);
+        UIEventListener.Get(btnSkip).onClick = (go) =>
         {
-            m_TipTransform.gameObject.SetActive(false);
+            data.Finish();
+        };
+    }
+
+    public void ShowGuideTip(string tipText, Vector2 tipPos, EGuideGirlPos  tipGirlPos)
+    {
+        if(string.IsNullOrEmpty(tipText))
+        {
+            this.tipTransform.gameObject.SetActive(false);
         }
         else
         {
-            m_TipText.text = data.TipText;
-            m_TipTransform.gameObject.SetActive(true);
-            m_TipTransform.transform.localPosition = data.TipPosition;
+            this.tipTransform.gameObject.SetActive(true);
+            this.tipTransform.localPosition = tipPos;
+            this.tipText.text = tipText;
+        }
+        switch(tipGirlPos)
+        {
+            case EGuideGirlPos.TYPE_NONE:
+                tipIcon.gameObject.SetActive(false);
+                break;
+            case EGuideGirlPos.TYPE_LEFT:
+                tipIcon.gameObject.SetActive(true);
+                tipIcon.transform.localScale = new Vector3(-1, 1, 1);
+                tipIcon.transform.localPosition = new Vector3(-100, 0, 0);
+                break;
+            case EGuideGirlPos.TYPE_RIGHT:
+                tipIcon.gameObject.SetActive(true);
+                tipIcon.transform.localScale = new Vector3(1, 1, 1);
+                tipIcon.transform.localPosition = new Vector3(100, 0, 0);
+                break;
         }
     }
 
-    public void DoGuideForClick(Transform target, GuideUIClick data)
+    public void ShowGuideOperation(Transform target, GuideOperation data)
     {
         GameObject btn = null;
-        DoGuideInstantie(target, ref btn);
-        UIEventListener.Get(btn).onClick = (go) =>
+        DoGuideInstantie(target, data, ref btn);
+        if (btn == null)
         {
-            UIEventListener ul = target.GetComponent<UIEventListener>();
-            if (ul != null && ul.onClick != null)
+            btnFalse.SetActive(true);
+            UIEventListener.Get(btnFalse).onClick = (go) =>
             {
-                ul.onClick(go);
-            }
-            data.Finish();
-            UnityEngine.GameObject.DestroyImmediate(btn);
-        };
+                data.Finish();
+            };
+            return;    
+        }
+        UIEventListener ul = target.GetComponent<UIEventListener>();
+
+        switch (data.OperationType)
+        {
+            case EGuideUIOperationType.TYPE_CLICK:
+                UIEventListener.Get(btn).onClick = (go) =>
+                {
+                    if (ul != null && ul.onClick != null)
+                    {
+                        ul.onClick(go);
+                    }
+                    data.Finish();
+                    UnityEngine.GameObject.DestroyImmediate(btn);
+                };
+                break;
+            case EGuideUIOperationType.TYPE_PRESS:
+                UIEventListener.Get(btn).onPress = (go, state) =>
+                {
+                    if (ul != null && ul.onPress != null)
+                    {
+                        ul.onPress(go, state);
+                    }
+                    data.Finish();
+                    UnityEngine.GameObject.DestroyImmediate(btn);
+                };
+                break;
+            case EGuideUIOperationType.TYPE_SWAP:
+                UIEventListener.Get(btn).onDrag = (go, delta) =>
+                {
+                    if (ul != null && ul.onDrag != null)
+                    {
+                        ul.onDrag(go, delta);
+                    }
+                    data.Finish();
+                    UnityEngine.GameObject.DestroyImmediate(btn);
+                };
+                break;
+        }
     }
 
-    public void DoGuideForDoubleClick(Transform target, GuideUIDoubleClick data)
-    {
-        GameObject btn = null;
-        DoGuideInstantie(target, ref btn);
-        UIEventListener.Get(btn).onDoubleClick = (go) =>
-        {
-            UIEventListener ul = target.GetComponent<UIEventListener>();
-            if (ul != null && ul.onDoubleClick != null)
-            {
-                ul.onDoubleClick(go);
-            }
-            data.Finish();
-            UnityEngine.GameObject.DestroyImmediate(btn);
-        };
-    }
-
-    public void DoGuideInstantie(Transform target ,ref GameObject btn)
+    public void DoGuideInstantie(Transform target, GuideOperation data, ref GameObject btn)
     {
         if (target == null)
         {
@@ -122,39 +177,82 @@ public class UIGuide : GTWindow
         {
             return;
         }
-        btn = NGUITools.AddChild(transform.gameObject, target.gameObject);
+        btn = NGUITools.AddChild(pivot.gameObject, target.gameObject);
         btn.transform.position = target.transform.position;
-    }
 
-    public void DoGuideForPress(Transform target, GuideUIPress data)
-    {
-        GameObject btn = null;
-        DoGuideInstantie(target, ref btn);
-        UIEventListener.Get(btn).onPress = (go, state) =>
+        switch (data.BoardType)
         {
-            UIEventListener ul = target.GetComponent<UIEventListener>();
-            if (ul != null && ul.onPress != null)
-            {
-                ul.onPress(go, state);
-            }
-            data.Finish();
-            UnityEngine.GameObject.DestroyImmediate(btn);
-        };
-    }
+            case EGuideBoardType.TYPE_NONE:
+                areaCircle.gameObject.SetActive(false);
+                areaRect.gameObject.SetActive(false);
+                break;
+            case EGuideBoardType.TYPE_RECTANGLE:
+                areaCircle.gameObject.SetActive(false);
+                areaRect.gameObject.SetActive(true);
+                areaRect.width = (int)data.BoardSize.x;
+                areaRect.height = (int)data.BoardSize.y;
+                areaRect.transform.localPosition = btn.transform.localPosition;
+                break;
+            case EGuideBoardType.TYPE_CIRCLE:
+                areaCircle.gameObject.SetActive(true);
+                areaRect.gameObject.SetActive(false);
+                areaCircle.width = (int)data.BoardSize.x;
+                areaCircle.height = (int)data.BoardSize.y;
+                areaCircle.transform.localPosition = btn.transform.localPosition;
+                break;
+        }
 
-    public void DoGuideForSwap(Transform target, GuideUISwap data)
-    {
-        GameObject btn = null;
-        DoGuideInstantie(target, ref btn);
-        UIEventListener.Get(btn).onDrag = (go, delta) =>
+        float r1 = 100;
+        float r2 = 70;
+        float x = data.BoardSize.x * 0.5f;
+        float y = data.BoardSize.y * 0.5f;
+
+        switch (data.RowType)
         {
-            UIEventListener ul = target.GetComponent<UIEventListener>();
-            if (ul != null && ul.onDrag != null)
-            {
-                ul.onDrag(go, delta);
-            }
-            data.Finish();
-            UnityEngine.GameObject.DestroyImmediate(btn);
-        };
+            case EGuideRowType.TYPE_NONE:
+                row.gameObject.SetActive(false);
+                break;
+            case EGuideRowType.TYPE_UP:
+                row.gameObject.SetActive(true);
+                row.transform.localEulerAngles = new Vector3(0, 0, 270);
+                row.transform.localPosition = btn.transform.localPosition + new Vector3(0, y + r1, 0);
+
+                break;
+            case EGuideRowType.TYPE_UP_RIGHT:
+                row.gameObject.SetActive(true);
+                row.transform.localEulerAngles = new Vector3(0, 0, 225);
+                row.transform.localPosition = btn.transform.localPosition + new Vector3(x + r2, y + r2, 0);
+                break;
+            case EGuideRowType.TYPE_RIGHT:
+                row.gameObject.SetActive(true);
+                row.transform.localEulerAngles = new Vector3(0, 0, 180);
+                row.transform.localPosition = btn.transform.localPosition + new Vector3(x + r1, 0, 0);
+                break;
+            case EGuideRowType.TYPE_DOWN_RIGHT:
+                row.gameObject.SetActive(true);
+                row.transform.localEulerAngles = new Vector3(0, 0, 135);
+                row.transform.localPosition = btn.transform.localPosition + new Vector3(x + r2, -y - r2, 0);
+                break;
+            case EGuideRowType.TYPE_DOWN:
+                row.gameObject.SetActive(true);
+                row.transform.localEulerAngles = new Vector3(0, 0,  90);
+                row.transform.localPosition = btn.transform.localPosition + new Vector3(0, -y - r1, 0);
+                break;
+            case EGuideRowType.TYPE_DOWN_LEFT:
+                row.gameObject.SetActive(true);
+                row.transform.localEulerAngles = new Vector3(0, 0, 45);
+                row.transform.localPosition = btn.transform.localPosition + new Vector3(-x - r2, -y - r2, 0);
+                break;
+            case EGuideRowType.TYPE_LEFT:
+                row.gameObject.SetActive(true);
+                row.transform.localEulerAngles = new Vector3(0, 0, 0);
+                row.transform.localPosition = btn.transform.localPosition + new Vector3(-x - r1, 0, 0);
+                break;
+            case EGuideRowType.TYPE_UP_LEFT:
+                row.gameObject.SetActive(true);
+                row.transform.localEulerAngles = new Vector3(0, 0, -45);
+                row.transform.localPosition = btn.transform.localPosition + new Vector3(-x - r2, y + r2, 0);
+                break;         
+        }
     }
 }

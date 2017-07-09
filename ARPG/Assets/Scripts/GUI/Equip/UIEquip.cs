@@ -163,7 +163,7 @@ public class UIEquip : GTWindow
         {
             return;
         }
-        XEquip equip = DataManager.Instance.GetEquipDataByPos(mPosType, mPos);
+        XEquip equip = GTDataManager.Instance.GetEquipDataByPos(mPosType, mPos);
         List<XItem> list = EquipModule.Instance.GetItemListToOneKeyStrengthen(equip);
         if (list.Count == 0)
         {
@@ -205,21 +205,21 @@ public class UIEquip : GTWindow
     private void OnStrengthenEquipClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        XEquip equip = DataManager.Instance.GetEquipDataByPos(mPosType, mPos);
+        XEquip equip = GTDataManager.Instance.GetEquipDataByPos(mPosType, mPos);
         EquipService.Instance.TryStrengthEquip(equip, mStrengthenCostItems);
     }
 
     private void OnAdvanceEquipClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        XEquip equip = DataManager.Instance.GetEquipDataByPos(mPosType, mPos);
+        XEquip equip = GTDataManager.Instance.GetEquipDataByPos(mPosType, mPos);
         EquipService.Instance.TryAdvanceEquip(equip);
     }
 
     private void OnUpStarEquipClick(GameObject go)
     {
         GTAudioManager.Instance.PlayEffectAudio(GTAudioKey.SOUND_UI_CLICK);
-        XEquip equip = DataManager.Instance.GetEquipDataByPos(mPosType, mPos);
+        XEquip equip = GTDataManager.Instance.GetEquipDataByPos(mPosType, mPos);
         EquipService.Instance.TryUpStarEquip(equip);
     }
 
@@ -231,7 +231,7 @@ public class UIEquip : GTWindow
 
     private void ShowStrengthenView()
     {
-        XEquip equip = DataManager.Instance.GetEquipDataByPos(mPosType, mPos);
+        XEquip equip = GTDataManager.Instance.GetEquipDataByPos(mPosType, mPos);
         if (equip == null) return;
         if (EquipModule.Instance.IsFullStrengthenLevel(equip) == true)
         {
@@ -276,7 +276,7 @@ public class UIEquip : GTWindow
 
     private void ShowEquipStarView()
     {
-        XEquip equip = DataManager.Instance.GetEquipDataByPos(mPosType, mPos);
+        XEquip equip = GTDataManager.Instance.GetEquipDataByPos(mPosType, mPos);
         if (equip == null) return;
         int itemID = equip.Id;
         if (EquipModule.Instance.IsFullAdvanceLevel(equip) == true)
@@ -295,7 +295,7 @@ public class UIEquip : GTWindow
         DEquip equipDB = ReadCfgEquip.GetDataById(equip.Id);
         DEquipStar nexStarDB = ReadCfgEquipStar.GetDataById(equipDB.Quality * 1000 + equip.StarLevel + 1);
 
-        int hasItemNum = DataManager.Instance.GetItemCountById(nexStarDB.CostItemId);
+        int hasItemNum = GTDataManager.Instance.GetItemCountById(nexStarDB.CostItemId);
         GTItemHelper.ShowItemTexture(mEquipStar.costItemTexture, nexStarDB.CostItemId);
         GTItemHelper.ShowItemQuality(mEquipStar.costItemQuality, nexStarDB.CostItemId);
         GTItemHelper.ShowPriceText(mEquipStar.costItemNum, hasItemNum, nexStarDB.CostItemNum);
@@ -309,7 +309,7 @@ public class UIEquip : GTWindow
 
     private void ShowAdvanceView()
     {
-        XEquip equip = DataManager.Instance.GetEquipDataByPos(mPosType, mPos);
+        XEquip equip = GTDataManager.Instance.GetEquipDataByPos(mPosType, mPos);
         if (equip == null) return;
         int itemID = equip.Id;
         if(EquipModule.Instance.IsFullStarLevel(equip))
@@ -337,7 +337,7 @@ public class UIEquip : GTWindow
 
         DEquip equipDB = ReadCfgEquip.GetDataById(itemID);
         DEquipAdvanceCost db = ReadCfgEquipAdvanceCost.GetDataById(equipDB.Quality*1000+ equip.AdvanceLevel + 1);
-        int hasItemNum = DataManager.Instance.GetItemCountById(db.CostItemId);
+        int hasItemNum = GTDataManager.Instance.GetItemCountById(db.CostItemId);
         GTItemHelper.ShowItemTexture(mEquipAdvance.costItemTexture, db.CostItemId);
         GTItemHelper.ShowPriceText(mEquipAdvance.costItemNum,hasItemNum,db.CostItemNum);
         GTItemHelper.ShowItemQuality(mEquipAdvance.costItemQuality, itemID);
@@ -379,8 +379,8 @@ public class UIEquip : GTWindow
                 break;
         }
 
-        labMoneyNum1.text = DataManager.Instance.GetItemCountById(1).ToString();
-        labMoneyNum2.text = DataManager.Instance.GetItemCountById(2).ToString();
+        labMoneyNum1.text = GTDataManager.Instance.GetItemCountById(1).ToString();
+        labMoneyNum2.text = GTDataManager.Instance.GetItemCountById(2).ToString();
         GTItemHelper.ShowItemTexture(moneyTexture1,1);
         GTItemHelper.ShowItemTexture(moneyTexture2,2);
     }

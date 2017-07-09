@@ -37,6 +37,7 @@ public enum EWindowID
     UIMessageBoxForNetwork,
     UIAwardTip,
     UIAwardBox,
+    UIDialogue,
 
     UICreateRole,
     UIHome,

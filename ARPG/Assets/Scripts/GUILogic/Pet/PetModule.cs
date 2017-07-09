@@ -41,7 +41,7 @@ public class PetModule : GTSingleton<PetModule>
         list.Clear();
         for (int i = 0; i < mUpItemList.Count; i++)
         {
-            int count = DataManager.Instance.GetItemCountById(mUpItemList[i]);
+            int count = GTDataManager.Instance.GetItemCountById(mUpItemList[i]);
             for (int k = 0; k < count; k++)
             {
                 if (list.Count >= 6)

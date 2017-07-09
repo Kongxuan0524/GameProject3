@@ -85,7 +85,7 @@ public class UIGemInfo : GTWindow
         this.mPosType = posType;
         bool isDress = (posType == EPosType.RoleGem);
         ShowDress(isDress);
-        XGem gem = DataManager.Instance.GetGemDataByPos(posType, pos);
+        XGem gem = GTDataManager.Instance.GetGemDataByPos(posType, pos);
         int itemID = gem.Id;
         DGem gemDB = ReadCfgGem.GetDataById(itemID);
         gemLevel.text = GTTools.Format("等级 {0}", gem.StrengthenLevel);

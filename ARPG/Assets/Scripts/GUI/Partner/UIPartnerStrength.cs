@@ -91,7 +91,7 @@ public class UIPartnerStrength : GTWindow
         XPartner data = DataDBSPartner.GetDataById(mSelectID);
         if(data==null)
         {
-            data = DataFactory.CreatePartner(mSelectID);
+            data = GTDataFactory.CreatePartner(mSelectID);
         }
         partnerLevel.text = GTTools.Format("等级 {0}", data.Level);
         partnerExp.text = GTTools.Format("{0}/{1}", data.Exp, 2500);

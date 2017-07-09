@@ -42,7 +42,7 @@ public class GemCtrl : ICtrl
         gem.StrengthenExp = addExpNum + db.RequireExp - expNum;
 
         DataDBSGem.Update(gem.Instance, gem);
-        DataManager.Instance.UseMoney(db.CostMoneyId, expNum);
+        GTDataManager.Instance.UseMoney(db.CostMoneyId, expNum);
         for (int i = 0; i < list.Count; i++)
         {
             XItem item = list[i];
@@ -50,10 +50,10 @@ public class GemCtrl : ICtrl
             switch (posType)
             {
                 case EPosType.BagItem:
-                    DataManager.Instance.UseItemById(item.Id, item.Num);
+                    GTDataManager.Instance.UseItemById(item.Id, item.Num);
                     break;
                 case EPosType.BagGem:
-                    DataManager.Instance.DelBagGem(item.Pos);
+                    GTDataManager.Instance.DelBagGem(item.Pos);
                     break;
             }
         }

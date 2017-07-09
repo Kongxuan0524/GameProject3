@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace BIE
 {
-    public class GuideCGTask : GuideBase
+    public class GuideVideo : GuideBase
     {
         public Int16 VideoID = 1;
 
@@ -23,20 +23,16 @@ namespace BIE
             });
         }
 
-        public override void Stop()
-        {
-            base.Stop();
-        }
-
-        public override void Finish()
-        {
-            base.Finish();
-        }
-
         public override void Read(XmlElement os)
         {
             base.Read(os);
             this.VideoID = os.GetInt16("VideoID");
+        }
+
+        public override void Write(XmlDocument doc, XmlElement os)
+        {
+            base.Write(doc, os);
+            DCFG.Write(doc, os, "VideoID", VideoID);
         }
     }
 }

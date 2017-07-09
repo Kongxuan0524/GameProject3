@@ -1027,6 +1027,7 @@
     <None Include="Assets\Resources\Text\Data\Data_Adventure.xml" />
     <None Include="Assets\Resources\Text\Data\Data_Award.xml" />
     <None Include="Assets\Resources\Text\Data\Data_Copy.xml" />
+    <None Include="Assets\Resources\Text\Data\Data_Dialogue.xml" />
     <None Include="Assets\Resources\Text\Data\Data_Effect.xml" />
     <None Include="Assets\Resources\Text\Data\Data_Equip.xml" />
     <None Include="Assets\Resources\Text\Data\Data_EquipAdvance.xml" />

@@ -8,7 +8,7 @@ using System.Xml;
 using UnityEngine;
 
 
-public class DataReadBase<TType, TVal> where TVal : ProtoBuf.IExtensible
+public class GTDataReadBase<TType, TVal> where TVal : ProtoBuf.IExtensible
 {
     public static string                    XmlPath = string.Empty;
     public static EDataKeyType              KeyType = EDataKeyType.Id;
@@ -143,30 +143,30 @@ public class DataReadBase<TType, TVal> where TVal : ProtoBuf.IExtensible
     }
 }
 
-public sealed class DataDBSBagFashion :   DataReadBase<DataDBSBagFashion, XItem> { }
-public sealed class DataDBSBagGem :       DataReadBase<DataDBSBagGem, XItem> { }
-public sealed class DataDBSBagItem :      DataReadBase<DataDBSBagItem, XItem> { }
-public sealed class DataDBSBagRune :      DataReadBase<DataDBSBagRune, XItem> { }
-public sealed class DataDBSDressFashion : DataReadBase<DataDBSDressFashion, XItem> { }
-public sealed class DataDBSDressGem :     DataReadBase<DataDBSDressGem, XItem> { }
-public sealed class DataDBSDressRune :    DataReadBase<DataDBSDressRune, XItem> { }
-public sealed class DataDBSBagChip :      DataReadBase<DataDBSBagChip, XItem> { }
-public sealed class DataDBSDressEquip :   DataReadBase<DataDBSDressEquip, XItem> { }
-public sealed class DataDBSEquip :        DataReadBase<DataDBSEquip, XEquip> { }
-public sealed class DataDBSGem :          DataReadBase<DataDBSGem, XGem> { }
-public sealed class DataDBSMoney :        DataReadBase<DataDBSMoney, XMoney> { }
-public sealed class DataDBSSoul :         DataReadBase<DataDBSSoul, XSoul> { }
-public sealed class DataDBSRaid :         DataReadBase<DataDBSRaid, XRaid> { }
-public sealed class DataDBSMainChapter :  DataReadBase<DataDBSMainChapter, XMainChapter> { }
-public sealed class DataDBSCopy :         DataReadBase<DataDBSCopy, XCopy> { }
-public sealed class DataDBSRole :         DataReadBase<DataDBSRole, XCharacter> { }
-public sealed class DataDBSRune :         DataReadBase<DataDBSRune, XRune> { }
-public sealed class DataDBSAction :       DataReadBase<DataDBSAction, XAction> { }
-public sealed class DataDBSMount :        DataReadBase<DataDBSMount, XMount> { }
-public sealed class DataDBSRelics :       DataReadBase<DataDBSRelics, XRelics> { }
-public sealed class DataDBSPartner :      DataReadBase<DataDBSPartner, XPartner> { }
-public sealed class DataDBSPet :          DataReadBase<DataDBSPet, XPet> { }
-public sealed class DataDBSGuide :        DataReadBase<DataDBSGuide, XGuide> { }
-public sealed class DataDBSThreadTask :   DataReadBase<DataDBSThreadTask, XTaskThread> { }
-public sealed class DataDBSBranchTask :   DataReadBase<DataDBSBranchTask, XTaskBranch> { }
-public sealed class DataDBSDailyTask :    DataReadBase<DataDBSDailyTask, XTaskDaily> { }
+public sealed class DataDBSBagFashion :   GTDataReadBase<DataDBSBagFashion, XItem> { }
+public sealed class DataDBSBagGem :       GTDataReadBase<DataDBSBagGem, XItem> { }
+public sealed class DataDBSBagItem :      GTDataReadBase<DataDBSBagItem, XItem> { }
+public sealed class DataDBSBagRune :      GTDataReadBase<DataDBSBagRune, XItem> { }
+public sealed class DataDBSDressFashion : GTDataReadBase<DataDBSDressFashion, XItem> { }
+public sealed class DataDBSDressGem :     GTDataReadBase<DataDBSDressGem, XItem> { }
+public sealed class DataDBSDressRune :    GTDataReadBase<DataDBSDressRune, XItem> { }
+public sealed class DataDBSBagChip :      GTDataReadBase<DataDBSBagChip, XItem> { }
+public sealed class DataDBSDressEquip :   GTDataReadBase<DataDBSDressEquip, XItem> { }
+public sealed class DataDBSEquip :        GTDataReadBase<DataDBSEquip, XEquip> { }
+public sealed class DataDBSGem :          GTDataReadBase<DataDBSGem, XGem> { }
+public sealed class DataDBSMoney :        GTDataReadBase<DataDBSMoney, XMoney> { }
+public sealed class DataDBSSoul :         GTDataReadBase<DataDBSSoul, XSoul> { }
+public sealed class DataDBSRaid :         GTDataReadBase<DataDBSRaid, XRaid> { }
+public sealed class DataDBSMainChapter :  GTDataReadBase<DataDBSMainChapter, XMainChapter> { }
+public sealed class DataDBSCopy :         GTDataReadBase<DataDBSCopy, XCopy> { }
+public sealed class DataDBSRole :         GTDataReadBase<DataDBSRole, XCharacter> { }
+public sealed class DataDBSRune :         GTDataReadBase<DataDBSRune, XRune> { }
+public sealed class DataDBSAction :       GTDataReadBase<DataDBSAction, XAction> { }
+public sealed class DataDBSMount :        GTDataReadBase<DataDBSMount, XMount> { }
+public sealed class DataDBSRelics :       GTDataReadBase<DataDBSRelics, XRelics> { }
+public sealed class DataDBSPartner :      GTDataReadBase<DataDBSPartner, XPartner> { }
+public sealed class DataDBSPet :          GTDataReadBase<DataDBSPet, XPet> { }
+public sealed class DataDBSGuide :        GTDataReadBase<DataDBSGuide, XGuide> { }
+public sealed class DataDBSThreadTask :   GTDataReadBase<DataDBSThreadTask, XTaskThread> { }
+public sealed class DataDBSBranchTask :   GTDataReadBase<DataDBSBranchTask, XTaskBranch> { }
+public sealed class DataDBSDailyTask :    GTDataReadBase<DataDBSDailyTask, XTaskDaily> { }

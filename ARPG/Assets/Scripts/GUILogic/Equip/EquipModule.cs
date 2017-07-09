@@ -241,7 +241,7 @@ public class EquipModule : GTSingleton<EquipModule>
         List<XItem> list = new List<XItem>();
         DEquip equipDB = ReadCfgEquip.GetDataById(equip.Id);
         DEquipStrengLevel levelDB = ReadCfgEquipStrengLevel.GetDataById(equipDB.Quality * 1000 + equip.StrengthenLevel + 1);
-        int moneyNum = DataManager.Instance.GetItemCountById(DEquip.EQUIP_STRENGTHEN_MONEY_ID_2);
+        int moneyNum = GTDataManager.Instance.GetItemCountById(DEquip.EQUIP_STRENGTHEN_MONEY_ID_2);
         if (moneyNum > 0)
         {
             int needNum = levelDB.RequireExp - equip.StrengthenExp;

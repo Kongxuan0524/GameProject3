@@ -239,7 +239,7 @@ public class UIHome : GTWindow
         GTEventCenter.AddHandler(GTEventID.TYPE_CHANGE_HEROEXP, OnUpdateAvatarExp);
 
         GTUpdate.Instance.AddListener(OnUpdate);
-        GTWorld.Instance.Bie.AddGuideListener("ButtonName", btnBag.transform);
+        GTWorld.Instance.Bie.AddGuideListener("BtnBag", btnBag.transform);
     }
 
     protected override void OnDelHandler()

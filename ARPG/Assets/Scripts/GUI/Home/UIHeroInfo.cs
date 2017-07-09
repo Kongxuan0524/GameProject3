@@ -111,7 +111,7 @@ public class UIHeroInfo : GTWindow
             MoneyView mv = mMoneyViewList[i];
             DItem db = ReadCfgItem.GetDataById(i + 1);
             GTItemHelper.ShowItemTexture(mv.texture, db.Id);
-            mv.labNum.text = DataManager.Instance.GetItemCountById(db.Id).ToString();
+            mv.labNum.text = GTDataManager.Instance.GetItemCountById(db.Id).ToString();
         }
 
         XCharacter role = RoleModule.Instance.GetCurPlayer();
@@ -133,15 +133,15 @@ public class UIHeroInfo : GTWindow
         labActionName1.text = db1.Name;
         labActionName2.text = db2.Name;
 
-        int curNum1 = DataManager.Instance.GetActionCountByType(EAction.Manual);
-        int curNum2 = DataManager.Instance.GetActionCountByType(EAction.Energy);
+        int curNum1 = GTDataManager.Instance.GetActionCountByType(EAction.Manual);
+        int curNum2 = GTDataManager.Instance.GetActionCountByType(EAction.Energy);
         labActionNum1.text = GTTools.Format("{0}/{1}",curNum1, db1.Data1);
         labActionNum2.text = GTTools.Format("{0}/{1}",curNum2, db2.Data1);
 
-        string oneTimer1 = DataTimer.Instance.GetOneSecondTimer(EAction.Manual);
-        string oneTimer2 = DataTimer.Instance.GetOneSecondTimer(EAction.Energy);
-        string allTimer1 = DataTimer.Instance.GetAllSecondTimer(EAction.Manual);
-        string allTimer2 = DataTimer.Instance.GetAllSecondTimer(EAction.Energy);
+        string oneTimer1 = GTDataTimer.Instance.GetOneSecondTimer(EAction.Manual);
+        string oneTimer2 = GTDataTimer.Instance.GetOneSecondTimer(EAction.Energy);
+        string allTimer1 = GTDataTimer.Instance.GetAllSecondTimer(EAction.Manual);
+        string allTimer2 = GTDataTimer.Instance.GetAllSecondTimer(EAction.Energy);
 
         labOneTimer1.text = GTTools.Format("{0}恢复一点:{1}", db1.Name, oneTimer1);
         labOneTimer2.text = GTTools.Format("{0}恢复一点:{1}", db2.Name, oneTimer2);

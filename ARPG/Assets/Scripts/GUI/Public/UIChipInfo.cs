@@ -114,7 +114,7 @@ public class UIChipInfo : GTWindow
         int itemID = item.Id;
         DItem itemDB = ReadCfgItem.GetDataById(itemID);
         itemDesc.text = itemDB.Desc;
-        int hasNum = DataManager.Instance.GetItemCountById(itemID);
+        int hasNum = GTDataManager.Instance.GetItemCountById(itemID);
         itemNum.text = GTTools.Format("拥有数量：{0}", hasNum);
         GTItemHelper.ShowItemTexture(itemTexture, itemID);
         GTItemHelper.ShowItemName(itemName, itemID);

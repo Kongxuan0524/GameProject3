@@ -32,7 +32,7 @@ public class PetCtrl : ICtrl
         XPet data = DataDBSPet.GetDataById(id);
         if (data == null)
         {
-            data = DataFactory.CreatePet(id);
+            data = GTDataFactory.CreatePet(id);
         }
 
         int exp = PetModule.Instance.GetExpByItemList(items);
@@ -48,7 +48,7 @@ public class PetCtrl : ICtrl
         DataDBSPet.Update(id, data);
         for (int i = 0; i < items.Count; i++)
         {
-            DataManager.Instance.UseItemById(items[i].Id, 1);
+            GTDataManager.Instance.UseItemById(items[i].Id, 1);
         }
 
         CharacterManager.Instance.SyncMainPlayerData(ESyncDataType.TYPE_BASEATTR);

@@ -50,7 +50,7 @@ public class RoleModule : GTSingleton<RoleModule>
         Dictionary<int, XItem>.Enumerator em1 = DataDBSDressEquip.Dict.GetEnumerator();
         while (em1.MoveNext())
         {
-            XEquip it = DataManager.Instance.GetEquipDataByPos(EPosType.RoleEquip, em1.Current.Value.Pos);
+            XEquip it = GTDataManager.Instance.GetEquipDataByPos(EPosType.RoleEquip, em1.Current.Value.Pos);
             if (it != null)
             {
                 c.Equips.Add(it);
@@ -62,7 +62,7 @@ public class RoleModule : GTSingleton<RoleModule>
         Dictionary<int, XItem>.Enumerator em2 = DataDBSDressGem.Dict.GetEnumerator();
         while (em2.MoveNext())
         {
-            XGem it = DataManager.Instance.GetGemDataByPos(EPosType.RoleGem, em1.Current.Value.Pos);
+            XGem it = GTDataManager.Instance.GetGemDataByPos(EPosType.RoleGem, em1.Current.Value.Pos);
             if (it != null)
             {
                 c.Gems.Add(it);

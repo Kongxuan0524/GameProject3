@@ -143,7 +143,7 @@ public class UIEquipInfo : GTWindow
         this.mPos = pos;
         this.mPosType = posType;
         ShowDress(posType == EPosType.RoleEquip);
-        XEquip equip = DataManager.Instance.GetEquipDataByPos(mPosType, mPos);
+        XEquip equip = GTDataManager.Instance.GetEquipDataByPos(mPosType, mPos);
         if (equip == null) return;
         int itemID = equip.Id;
         ShowBaseView(itemID);

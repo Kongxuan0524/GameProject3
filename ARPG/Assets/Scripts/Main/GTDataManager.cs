@@ -6,7 +6,7 @@ using System.IO;
 using System.Xml;
 using Protocol;
 
-public class DataManager : GTSingleton<DataManager>
+public class GTDataManager : GTSingleton<GTDataManager>
 {
     private int mMaxInstance = PlayerPrefs.GetInt("MaxInstance", 1001);
     private int mCurRoleID;
@@ -423,7 +423,7 @@ public class DataManager : GTSingleton<DataManager>
         item.PosType = (int)EPosType.BagItem;
 
         DataDBSBagItem.Insert(newPos, item);
-        DataDBSEquip.Update(instance, DataFactory.CreateEquip(id, instance));
+        DataDBSEquip.Update(instance, GTDataFactory.CreateEquip(id, instance));
     }
 
     public void AddNewGem(int instance, int id)
@@ -441,12 +441,12 @@ public class DataManager : GTSingleton<DataManager>
         item.PosType = (int)EPosType.BagGem;
 
         DataDBSBagGem.Insert(newPos, item);
-        DataDBSGem.Insert(instance, DataFactory.CreateGem(id, instance));
+        DataDBSGem.Insert(instance, GTDataFactory.CreateGem(id, instance));
     }
 
     public void AddChip(int id, int num)
     {
-        XItem item = DataManager.Instance.GetItemDataById(id);
+        XItem item = GTDataManager.Instance.GetItemDataById(id);
         if (item == null)
         {
             int newPos = GetNewPos(EBagType.CHIP);
@@ -485,7 +485,7 @@ public class DataManager : GTSingleton<DataManager>
         item.PosType = (int)EPosType.BagRune;
         DataDBSBagRune.Insert(newPos, item);
 
-        DataDBSRune.Insert(instance, DataFactory.CreateRune(id, instance));
+        DataDBSRune.Insert(instance, GTDataFactory.CreateRune(id, instance));
     }
 
     public void AddNewFashion(int instanceId, int id)
@@ -663,7 +663,7 @@ public class DataManager : GTSingleton<DataManager>
 
     public bool UseBagChip(int id, int num)
     {
-        XItem item = DataManager.Instance.GetItemDataById(id);
+        XItem item = GTDataManager.Instance.GetItemDataById(id);
         if (item == null)
         {
             return false;

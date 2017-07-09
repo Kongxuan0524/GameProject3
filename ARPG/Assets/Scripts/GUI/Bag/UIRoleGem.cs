@@ -93,7 +93,7 @@ public class UIRoleGem : GTWindow
         {
             ItemEquip item = mEItems[i];
             item.toggle.group = group;
-            XEquip equip= DataManager.Instance.GetEquipDataByPos(EPosType.RoleEquip,i + 1);
+            XEquip equip= GTDataManager.Instance.GetEquipDataByPos(EPosType.RoleEquip,i + 1);
             if(equip==null)
             {
                 item.Show(false);
@@ -113,7 +113,7 @@ public class UIRoleGem : GTWindow
     {
         int gemPos = GemModule.Instance.GetDressGemPosByIndexAndTargetPos(mCurIndex, pos);
         ItemGem cell = mGItems[pos - 1];
-        XGem gem = DataManager.Instance.GetGemDataByPos(EPosType.RoleGem,gemPos);
+        XGem gem = GTDataManager.Instance.GetGemDataByPos(EPosType.RoleGem,gemPos);
         if (gem == null)
         {
             cell.Show(false);

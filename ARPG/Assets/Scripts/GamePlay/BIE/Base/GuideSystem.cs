@@ -88,13 +88,13 @@ namespace BIE
         public GuideBase CreateGuide(UInt16 id)
         {
             GuideBase guide = null;
-            if (id < m_GuideConfig.Items.Count)
+            if (id <= m_GuideConfig.Items.Count)
             {
                 guide = m_GuideConfig.Items[id - 1];
             }
             if (guide != null)
             {
-                guide.Manager = this;
+                guide.Container = this;
                 return guide;
             }
             else

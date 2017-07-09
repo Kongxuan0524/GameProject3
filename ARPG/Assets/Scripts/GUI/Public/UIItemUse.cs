@@ -122,7 +122,7 @@ public class UIItemUse : GTWindow
         GTItemHelper.ShowItemTexture(itemTexture, item.Id);
         GTItemHelper.ShowItemQuality(itemQuality, item.Id);
         mItemPos = pos;
-        mMaxUseCount = DataManager.Instance.GetItemCountById(item.Id);
+        mMaxUseCount = GTDataManager.Instance.GetItemCountById(item.Id);
         SetCurrCount(1);
     }
 

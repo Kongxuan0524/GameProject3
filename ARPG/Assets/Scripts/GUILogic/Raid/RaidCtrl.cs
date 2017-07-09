@@ -77,7 +77,7 @@ public class RaidCtrl : ICtrl
         List<KStruct> list = AwardModule.Instance.GetAwardDataByID(awardID);
         for (int i = 0; i < list.Count; i++)
         {
-            DataManager.Instance.AddNewItem(list[i].Id, list[i].Num);
+            GTDataManager.Instance.AddNewItem(list[i].Id, list[i].Num);
         }
 
         GTEventCenter.FireEvent(GTEventID.TYPE_GET_CHAPTERAWARD);
@@ -109,7 +109,7 @@ public class RaidCtrl : ICtrl
         }
         DataDBSCopy.Update(copyID, copy);
         DCopy copyDB = ReadCfgCopy.GetDataById(copyID);
-        DataManager.Instance.UseAction(copyDB.CostActionId, copyDB.CostActionNum);
+        GTDataManager.Instance.UseAction(copyDB.CostActionId, copyDB.CostActionNum);
         int key = (int)copyType;
         XRaid raid;
         if (!DataDBSRaid.ContainsKey(key))
@@ -131,12 +131,12 @@ public class RaidCtrl : ICtrl
             XCharacter role = RoleModule.Instance.GetCurPlayer();
             RoleService.Instance.TryAddRoleExp(copyDB.GetExpRatio * role.Level);
 
-            DataManager.Instance.AddMoney(copyDB.GetMoneyId, copyDB.GetMoneyRatio * role.Level);
-            DataManager.Instance.UseAction(copyDB.CostActionId, copyDB.CostActionNum);
+            GTDataManager.Instance.AddMoney(copyDB.GetMoneyId, copyDB.GetMoneyRatio * role.Level);
+            GTDataManager.Instance.UseAction(copyDB.CostActionId, copyDB.CostActionNum);
             List<KStruct> list = AwardModule.Instance.GetAwardDataByID(copyDB.AwardId);
             if (list != null)
             {
-                DataManager.Instance.AddNewItemList(list, false);
+                GTDataManager.Instance.AddNewItemList(list, false);
             }
         }
 

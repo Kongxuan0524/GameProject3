@@ -32,8 +32,8 @@ public class EquipCtrl :  ICtrl
         int      starID = cfg.Quality * 1000 + equip.StarLevel + 1;
 
         DEquipStar db = ReadCfgEquipStar.GetDataById(starID);
-        DataManager.Instance.UseMoney(db.CostMoneyId, db.CostMoneyNum);
-        DataManager.Instance.UseItemById(db.CostItemId, db.CostItemNum);
+        GTDataManager.Instance.UseMoney(db.CostMoneyId, db.CostMoneyNum);
+        GTDataManager.Instance.UseItemById(db.CostItemId, db.CostItemNum);
         equip.StarLevel++;
         DataDBSEquip.Update(equip.Instance, equip);
 
@@ -54,13 +54,13 @@ public class EquipCtrl :  ICtrl
         int         advanceID = equipDB.Quality * 1000 + equip.AdvanceLevel + 1;
 
         DEquipAdvanceCost db = ReadCfgEquipAdvanceCost.GetDataById(advanceID);
-        DataManager.Instance.UseMoney(db.CostMoneyId, db.CostMoneyNum);
-        DataManager.Instance.UseItemById(db.CostItemId, db.CostItemNum);
+        GTDataManager.Instance.UseMoney(db.CostMoneyId, db.CostMoneyNum);
+        GTDataManager.Instance.UseItemById(db.CostItemId, db.CostItemNum);
         if (list != null)
         {
             for (int i = 0; i < list.Count; i++)
             {
-                DataManager.Instance.DelBagEquip(list[i].Pos);
+                GTDataManager.Instance.DelBagEquip(list[i].Pos);
             }
         }
         equip.AdvanceLevel++;
@@ -96,17 +96,17 @@ public class EquipCtrl :  ICtrl
         equip.StrengthenExp = addExpNum + db.RequireExp - expNum;
 
         DataDBSEquip.Update(equip.Instance, equip);
-        DataManager.Instance.UseMoney(DEquip.EQUIP_STRENGTHEN_MONEY_ID_1, expNum);
+        GTDataManager.Instance.UseMoney(DEquip.EQUIP_STRENGTHEN_MONEY_ID_1, expNum);
         for (int i = 0; i < list.Count; i++)
         {
             XItem item = list[i];
             if ((EPosType)item.PosType == EPosType.RoleMoney)
             {
-                DataManager.Instance.UseMoney(item.Id, item.Num);
+                GTDataManager.Instance.UseMoney(item.Id, item.Num);
             }
             else
             {
-                DataManager.Instance.DelBagEquip(item.Pos);
+                GTDataManager.Instance.DelBagEquip(item.Pos);
             }
         }
 

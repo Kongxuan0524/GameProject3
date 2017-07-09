@@ -331,8 +331,8 @@
         字符:834
 
         文件: DCFG.cs
-        行: 155
-        字符:3364
+        行: 164
+        字符:3642
 
         文件: DObj.cs
         行: 9
@@ -345,6 +345,10 @@
         文件: DCurve.cs
         行: 21
         字符:333
+
+        文件: DDialogue.cs
+        行: 53
+        字符:1169
 
         文件: DEffect.cs
         行: 22
@@ -498,10 +502,6 @@
         行: 35
         字符:725
 
-        文件: GTConfigManager.cs
-        行: 69
-        字符:2599
-
         文件: DPartner.cs
         行: 34
         字符:620
@@ -559,8 +559,8 @@
         字符:1261
 
         文件: DRole.cs
-        行: 29
-        字符:556
+        行: 31
+        字符:632
 
         文件: DRoleLevel.cs
         行: 29
@@ -690,25 +690,9 @@
         行: 17
         字符:230
 
-    文件: DataFactory.cs
-    行: 63
-    字符:962
-
-    文件: DataManager.cs
-    行: 672
-    字符:12652
-
-    文件: DataReadBase.cs
-    行: 148
-    字符:4064
-
-    文件: DataTimer.cs
-    行: 153
-    字符:3188
-
     文件: GTAudioKey.cs
-    行: 19
-    字符:964
+    行: 20
+    字符:965
 
     文件: GTDataKey.cs
     行: 33
@@ -803,12 +787,12 @@
     字符:3138
 
     文件: GTEventID.cs
-    行: 77
-    字符:2837
+    行: 79
+    字符:2915
 
     文件: GTGUID.cs
-    行: 11
-    字符:127
+    行: 16
+    字符:251
 
     文件: GTInputManager.cs
     行: 96
@@ -867,8 +851,8 @@
     字符:433
 
     文件: GTXmlHelper.cs
-    行: 253
-    字符:5540
+    行: 278
+    字符:5722
 
         文件: ActBuff.cs
         行: 155
@@ -1448,7 +1432,7 @@
 
             文件: GuideSystem.cs
             行: 137
-            字符:1960
+            字符:1963
 
             文件: GuideBuilder.cs
             行: 8
@@ -1464,7 +1448,7 @@
 
             文件: CheckItemAmount.cs
             行: 44
-            字符:987
+            字符:997
 
             文件: CheckMonsterAppear.cs
             行: 21
@@ -1496,63 +1480,47 @@
 
             文件: CheckScene.cs
             行: 24
-            字符:388
+            字符:386
 
             文件: CheckWeekday.cs
             行: 24
             字符:416
 
             文件: GuideDefine.cs
-            行: 50
-            字符:1391
+            行: 69
+            字符:1822
 
             文件: GuideBase.cs
-            行: 119
-            字符:2326
+            行: 92
+            字符:1715
 
             文件: GuideConfig.cs
             行: 26
             字符:503
 
-            文件: GuideCGTask.cs
-            行: 37
-            字符:436
+            文件: GuideDialogue.cs
+            行: 29
+            字符:670
 
-            文件: GuidePathTask.cs
-            行: 118
-            字符:3038
+            文件: GuideOperation.cs
+            行: 88
+            字符:2242
 
-            文件: GuidePlotTask.cs
+            文件: GuidePath.cs
+            行: 140
+            字符:3945
+
+            文件: GuidePlot.cs
             行: 30
-            字符:427
+            字符:458
 
-            文件: GuideTimeLimitTask.cs
-            行: 41
-            字符:592
-
-            文件: GuideUIClick.cs
-            行: 24
-            字符:405
-
-            文件: GuideUIDoubleClick.cs
-            行: 24
-            字符:417
-
-            文件: GuideUIEvent.cs
-            行: 23
-            字符:319
-
-            文件: GuideUIPress.cs
-            行: 24
-            字符:405
-
-            文件: GuideUISwap.cs
-            行: 24
-            字符:403
+            文件: GuideVideo.cs
+            行: 34
+            字符:465
 
         文件: Character.cs
         行: 1961
-        字符:34315
+        字符:34319
 
         文件: CharacterAttr.cs
         行: 283
@@ -1584,7 +1552,7 @@
 
         文件: CharacterManager.cs
         行: 192
-        字符:3660
+        字符:3662
 
         文件: CharacterMove.cs
         行: 133
@@ -1752,11 +1720,11 @@
 
         文件: EffectSystem.cs
         行: 50
-        字符:992
+        字符:1000
 
         文件: EffectUnit.cs
         行: 93
-        字符:1933
+        字符:1937
 
         文件: FlywordDefine.cs
         行: 13
@@ -1916,7 +1884,7 @@
 
             文件: LevelSystem.cs
             行: 390
-            字符:10542
+            字符:10558
 
             文件: LevelData.cs
             行: 16
@@ -1928,7 +1896,7 @@
 
             文件: LevelWave.cs
             行: 143
-            字符:3117
+            字符:3131
 
             文件: LevelDropObject.cs
             行: 8
@@ -2068,11 +2036,11 @@
 
         文件: UIBag.cs
         行: 320
-        字符:9065
+        字符:9073
 
         文件: UIRoleEquip.cs
         行: 212
-        字符:5666
+        字符:5672
 
         文件: UIRoleFashion.cs
         行: 36
@@ -2084,7 +2052,7 @@
 
         文件: UIRoleGem.cs
         行: 189
-        字符:4830
+        字符:4834
 
         文件: UIRoleRune.cs
         行: 35
@@ -2092,19 +2060,19 @@
 
         文件: GTItemHelper.cs
         行: 500
-        字符:12898
+        字符:12908
 
         文件: GTWindow.cs
         行: 121
         字符:2069
 
         文件: GTWindowDefine.cs
-        行: 101
-        字符:1066
+        行: 102
+        字符:1077
 
         文件: GTWindowManager.cs
-        行: 262
-        字符:7309
+        行: 263
+        字符:7362
 
         文件: UIAwardBox.cs
         行: 120
@@ -2114,13 +2082,17 @@
         行: 71
         字符:1624
 
+        文件: UIDialogue.cs
+        行: 158
+        字符:2978
+
         文件: UIMessageBox.cs
         行: 83
         字符:1738
 
         文件: UIMessageBoxForNetwork.cs
         行: 75
-        字符:1523
+        字符:1525
 
         文件: UIMessageTip.cs
         行: 46
@@ -2128,23 +2100,23 @@
 
         文件: UIEquip.cs
         行: 514
-        字符:19521
+        字符:19543
 
         文件: UIGem.cs
         行: 199
-        字符:6467
+        字符:6477
 
         文件: UIGuide.cs
-        行: 146
-        字符:3101
+        行: 241
+        字符:5852
 
         文件: UIHeroInfo.cs
         行: 140
-        字符:4934
+        字符:4948
 
         文件: UIHome.cs
         行: 616
-        字符:17694
+        字符:17688
 
         文件: UIReborn.cs
         行: 43
@@ -2159,12 +2131,12 @@
         字符:1095
 
         文件: UIAccount.cs
-        行: 106
-        字符:2573
+        行: 107
+        字符:2674
 
         文件: UILogin.cs
-        行: 147
-        字符:4041
+        行: 201
+        字符:6048
 
         文件: UINetWaiting.cs
         行: 36
@@ -2172,11 +2144,11 @@
 
         文件: UINotice.cs
         行: 41
-        字符:625
+        字符:626
 
         文件: UIServer.cs
         行: 75
-        字符:1841
+        字符:1867
 
         文件: UIMount.cs
         行: 178
@@ -2228,7 +2200,7 @@
 
         文件: UIPartnerStrength.cs
         行: 114
-        字符:3106
+        字符:3108
 
         文件: UIPartnerWake.cs
         行: 30
@@ -2240,7 +2212,7 @@
 
         文件: UIPet.cs
         行: 335
-        字符:8997
+        字符:8999
 
         文件: UIPlot.cs
         行: 30
@@ -2248,23 +2220,23 @@
 
         文件: UIChipInfo.cs
         行: 110
-        字符:3040
+        字符:3042
 
         文件: UIEquipInfo.cs
         行: 192
-        字符:6085
+        字符:6087
 
         文件: UIGemInfo.cs
         行: 207
-        字符:6048
+        字符:6050
 
         文件: UIItemInfo.cs
         行: 102
-        字符:2679
+        字符:2681
 
         文件: UIItemUse.cs
         行: 126
-        字符:3441
+        字符:3443
 
         文件: UIMainBossHP.cs
         行: 50
@@ -2280,19 +2252,19 @@
 
         文件: UIMainResult.cs
         行: 324
-        字符:8007
+        字符:8003
 
         文件: UIWorldMap.cs
-        行: 239
-        字符:7003
+        行: 240
+        字符:7078
 
         文件: UIRelics.cs
         行: 582
-        字符:13780
+        字符:13782
 
         文件: UIRole.cs
-        行: 208
-        字符:5358
+        行: 204
+        字符:5380
 
         文件: UISkill.cs
         行: 170
@@ -2304,7 +2276,7 @@
 
         文件: UISetting.cs
         行: 90
-        字符:2286
+        字符:2284
 
         文件: UITask.cs
         行: 255
@@ -2336,7 +2308,7 @@
 
         文件: BagCtrl.cs
         行: 245
-        字符:7532
+        字符:7339
 
         文件: BagModule.cs
         行: 130
@@ -2344,7 +2316,7 @@
 
         文件: BagService.cs
         行: 106
-        字符:2533
+        字符:2535
 
         文件: AttrHelper.cs
         行: 323
@@ -2352,11 +2324,11 @@
 
         文件: EquipCtrl.cs
         行: 100
-        字符:3579
+        字符:3508
 
         文件: EquipModule.cs
         行: 291
-        字符:5693
+        字符:5695
 
         文件: EquipService.cs
         行: 84
@@ -2364,31 +2336,31 @@
 
         文件: GemCtrl.cs
         行: 58
-        字符:1634
+        字符:1611
 
         文件: GemModule.cs
         行: 254
-        字符:4755
+        字符:4759
 
         文件: GemService.cs
         行: 29
         字符:609
 
         文件: LoginCtrl.cs
-        行: 59
-        字符:2281
+        行: 130
+        字符:4814
 
         文件: LoginModule.cs
-        行: 60
-        字符:1469
+        行: 76
+        字符:1893
 
         文件: LoginService.cs
-        行: 36
-        字符:755
+        行: 78
+        字符:1905
 
         文件: MountCtrl.cs
         行: 25
-        字符:645
+        字符:616
 
         文件: MountService.cs
         行: 12
@@ -2396,7 +2368,7 @@
 
         文件: PartnerCtrl.cs
         行: 91
-        字符:2583
+        字符:2496
 
         文件: PartnerService.cs
         行: 27
@@ -2404,11 +2376,11 @@
 
         文件: PetCtrl.cs
         行: 74
-        字符:2516
+        字符:2433
 
         文件: PetModule.cs
         行: 61
-        字符:887
+        字符:889
 
         文件: PetService.cs
         行: 69
@@ -2416,7 +2388,7 @@
 
         文件: RaidCtrl.cs
         行: 127
-        字符:3295
+        字符:3218
 
         文件: RaidModule.cs
         行: 144
@@ -2428,7 +2400,7 @@
 
         文件: RelicsCtrl.cs
         行: 93
-        字符:3452
+        字符:3338
 
         文件: RelicsModule.cs
         行: 20
@@ -2440,11 +2412,11 @@
 
         文件: RoleCtrl.cs
         行: 51
-        字符:1288
+        字符:1259
 
         文件: RoleModule.cs
         行: 116
-        字符:2173
+        字符:2175
 
         文件: RoleService.cs
         行: 20
@@ -2460,7 +2432,7 @@
 
         文件: StoreCtrl.cs
         行: 28
-        字符:835
+        字符:810
 
         文件: StoreModule.cs
         行: 57
@@ -2504,7 +2476,7 @@
 
     文件: IObj.cs
     行: 10
-    字符:158
+    字符:160
 
     文件: IState.cs
     行: 27
@@ -2518,13 +2490,37 @@
     行: 8
     字符:166
 
+    文件: GTConfigManager.cs
+    行: 70
+    字符:2647
+
     文件: GTCtrl.cs
     行: 45
     字符:808
 
+    文件: GTDataFactory.cs
+    行: 63
+    字符:964
+
+    文件: GTDataManager.cs
+    行: 678
+    字符:12706
+
+    文件: GTDataReadBase.cs
+    行: 160
+    字符:4353
+
+    文件: GTDataTimer.cs
+    行: 153
+    字符:3204
+
+    文件: GTGlobal.cs
+    行: 44
+    字符:501
+
     文件: GTLauncher.cs
-    行: 250
-    字符:5691
+    行: 223
+    字符:5428
 
     文件: GTTouchEffect.cs
     行: 86
@@ -2535,44 +2531,44 @@
     字符:1485
 
         文件: NetworkClient.cs
-        行: 126
-        字符:2023
+        行: 161
+        字符:2797
 
         文件: NetworkCtrl.cs
         行: 41
         字符:1242
 
         文件: NetworkManager.cs
-        行: 160
-        字符:2958
+        行: 226
+        字符:4570
 
         文件: PakcetHeader.cs
         行: 13
         字符:250
 
         文件: MessageCenter.cs
-        行: 358
-        字符:14663
+        行: 400
+        字符:16612
 
         文件: MessageHandler.cs
         行: 4
-        字符:126
+        字符:104
 
         文件: MessagePackType.cs
         行: 9
         字符:176
 
         文件: MessageRecv.cs
-        行: 8
-        字符:131
+        行: 12
+        字符:206
 
         文件: MessageSend.cs
         行: 12
         字符:229
 
         文件: Message.cs
-        行: 1546
-        字符:53605
+        行: 2147
+        字符:74282
 
         文件: MessageBag.cs
         行: 467
@@ -2580,7 +2576,7 @@
 
         文件: MessageCommon.cs
         行: 970
-        字符:29148
+        字符:29026
 
         文件: MessageCopy.cs
         行: 215
@@ -2593,10 +2589,6 @@
         文件: MessageGem.cs
         行: 63
         字符:1901
-
-        文件: MessageLogin.cs
-        行: 247
-        字符:8296
 
         文件: MessageMount.cs
         行: 49
@@ -2692,7 +2684,7 @@
 
         文件: SceneLoading.cs
         行: 95
-        字符:1965
+        字符:1963
 
         文件: SceneLogin.cs
         行: 12
@@ -2738,6 +2730,6 @@
     行: 38
     字符:786
 
-文件总数: 685
-全部行数: 47301
-全部字符数:1045466
+文件总数: 683
+全部行数: 48339
+全部字符数:1077378

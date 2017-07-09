@@ -311,8 +311,8 @@ public class GTItemHelper
 
     public static bool CheckBagFull(int addBagNum, EBagType bagType, bool showTip = true)
     {
-        Dictionary<int, XItem> itemData = DataManager.Instance.GetBagDataByBagType(bagType);
-        if (addBagNum + itemData.Count >= DataManager.Instance.GetBagNum())
+        Dictionary<int, XItem> itemData = GTDataManager.Instance.GetBagDataByBagType(bagType);
+        if (addBagNum + itemData.Count >= GTDataManager.Instance.GetBagNum())
         {
             if (showTip)
             {
@@ -343,7 +343,7 @@ public class GTItemHelper
         {
             return true;
         }
-        if (DataManager.Instance.GetItemCountById(itemID) < costNum)
+        if (GTDataManager.Instance.GetItemCountById(itemID) < costNum)
         {
             DItem itemDB = ReadCfgItem.GetDataById(itemID);
             GTItemHelper.ShowTip("物品不足：" + itemDB.Name);
@@ -392,7 +392,7 @@ public class GTItemHelper
 
     public static void ShowItemDialogByBagType(EBagType bagType, int pos)
     {
-        Dictionary<int, XItem> dict = DataManager.Instance.GetBagDataByBagType(bagType);
+        Dictionary<int, XItem> dict = GTDataManager.Instance.GetBagDataByBagType(bagType);
         if (!dict.ContainsKey(pos)) return;
         XItem item = dict[pos];
         DItem db = ReadCfgItem.GetDataById(item.Id);
@@ -432,7 +432,7 @@ public class GTItemHelper
 
     public static void ShowItemDialogByPosType(EPosType posType, int pos)
     {
-        Dictionary<int, XItem> dict = DataManager.Instance.GetItemDataByPosType(posType);
+        Dictionary<int, XItem> dict = GTDataManager.Instance.GetItemDataByPosType(posType);
         if (!dict.ContainsKey(pos)) return;
         switch (posType)
         {

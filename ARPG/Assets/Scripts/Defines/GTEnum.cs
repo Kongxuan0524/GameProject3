@@ -164,10 +164,6 @@ public enum EWeatherType
     STORM    =32,  //风暴
 }
 
-
-
-
-
 public enum EBattleCamp
 {
     A,//我方
@@ -175,7 +171,6 @@ public enum EBattleCamp
     C,//中立
     D,//其他
 }
-
 
 public enum EEntinyType
 {

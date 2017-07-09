@@ -41,7 +41,7 @@ public class LoginService : GTSingleton<LoginService>
     }
 
     //创建角色
-    public void TryCreateRole(string name, int roleID)
+    public void TryCreateRole(string name, int roleID, ulong accountID)
     {
         if (string.IsNullOrEmpty(name))
         {
@@ -49,9 +49,9 @@ public class LoginService : GTSingleton<LoginService>
             return;
         }
         RoleCreateReq req = new RoleCreateReq();
-        req.Name = name;
-        req.AccountID = 1;
-        req.RoleType = (uint)roleID;
+        req.Name      = name;
+        req.AccountID = accountID;
+        req.RoleType  = (uint)roleID;
         NetworkManager.Instance.Send(MessageID.MSG_ROLE_CREATE_REQ, req);
     }
 

@@ -185,7 +185,7 @@ public class MessageCenter
         AckUnloadGem ack = new AckUnloadGem();
         ack.TarPos = req.TarPos;
         ack.Index  = req.Index;
-        ack.NewPos = DataManager.Instance.GetNewPos(EBagType.GEM);
+        ack.NewPos = GTDataManager.Instance.GetNewPos(EBagType.GEM);
         NetworkManager.Instance.Send(MessageID.MSG_ACK_UNLOAD_GEM, ack, 0, 0);
     }
 
@@ -210,7 +210,7 @@ public class MessageCenter
 
         AckUnloadEquip ack = new AckUnloadEquip();
         ack.TarPos = req.TarPos;
-        ack.NewPos = DataManager.Instance.GetNewPos(EBagType.ITEM);
+        ack.NewPos = GTDataManager.Instance.GetNewPos(EBagType.ITEM);
         NetworkManager.Instance.Send(MessageID.MSG_ACK_UNLOAD_EQUIP, ack, 0, 0);
     }
 

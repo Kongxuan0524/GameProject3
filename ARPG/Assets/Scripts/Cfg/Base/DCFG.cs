@@ -91,6 +91,11 @@ public abstract class DCFG
         os.SetAttribute(name, v.ToString());
     }
 
+    public static void Write(XmlDocument doc, XmlElement os, string name, short v)
+    {
+        os.SetAttribute(name, v.ToString());
+    }
+
     public static void Write(XmlDocument doc, XmlElement os, string name, float v)
     {
         os.SetAttribute(name, v.ToString("0.00"));
@@ -104,6 +109,12 @@ public abstract class DCFG
     public static void Write(XmlDocument doc, XmlElement os, string name, Vector3 v)
     {
         string s = string.Format("({0},{1},{2})", v.x.ToString("0.00"), v.y.ToString("0.00"), v.z.ToString("0.00"));
+        os.SetAttribute(name, s);
+    }
+
+    public static void Write(XmlDocument doc, XmlElement os, string name, Vector2 v)
+    {
+        string s = string.Format("({0},{1})", v.x.ToString("0.00"), v.y.ToString("0.00"));
         os.SetAttribute(name, s);
     }
 

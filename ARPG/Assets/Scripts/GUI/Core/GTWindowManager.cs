@@ -63,6 +63,7 @@ public class GTWindowManager : GTSingleton<GTWindowManager>
         RegisterWindow(EWindowID.UIMessageBox, new UIMessageBox());
         RegisterWindow(EWindowID.UIMessageBoxForNetwork, new UIMessageBoxForNetwork());
         RegisterWindow(EWindowID.UIAwardTip, new UIAwardTip());
+        RegisterWindow(EWindowID.UIDialogue, new UIDialogue());
 
         RegisterWindow(EWindowID.UIMainRaid, new UIMainRaid());
         RegisterWindow(EWindowID.UIMainGate, new UIMainGate());

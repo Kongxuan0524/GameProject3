@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace BIE
 {
-    public class GuidePlotTask : GuideBase
+    public class GuidePlot : GuideBase
     {
         public Int16 PlotID;
 
@@ -13,12 +13,6 @@ namespace BIE
         {
             base.Enter();
             GTWorld.Instance.Plt.Trigger(PlotID, Stop, Finish);
-        }
-
-        public override void Stop()
-        {
-            base.Stop();
-            this.State = EGuideState.TYPE_FINISH;
         }
 
         public override void Finish()
@@ -30,6 +24,12 @@ namespace BIE
         {
             base.Read(os);
             this.PlotID = os.GetInt16("PlotID");
+        }
+
+        public override void Write(XmlDocument doc, XmlElement os)
+        {
+            base.Write(doc, os);
+            DCFG.Write(doc, os, "PlotID", PlotID);
         }
     }
 }

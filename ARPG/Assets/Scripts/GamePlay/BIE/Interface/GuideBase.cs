@@ -15,10 +15,6 @@ namespace BIE
         public bool                     IsPause                  = false;
         public bool                     IsShowSkip               = false;
         public bool                     IsSavePoint              = false;
-
-        public string                   TipSound                 = string.Empty;
-        public string                   TipText                  = string.Empty;
-        public Vector3                  TipPosition              = Vector3.zero;
         public EGuideConditionRelation  TriggerConditionRelation = EGuideConditionRelation.AND;
         public List<CheckCondition>     TriggerConditions        = new List<CheckCondition>();
 
@@ -27,19 +23,9 @@ namespace BIE
             get; set;
         }
 
-        public AudioSource              Audio
-        {
-            get; private set;
-        }
-
-        public GuideSystem              Manager
+        public GuideSystem              Container
         {
             get; set;
-        }
-
-        public UIGuide                  GuideWindow
-        {
-            get; private set;
         }
 
         public virtual bool Check()
@@ -70,10 +56,7 @@ namespace BIE
 
         public virtual void Enter()
         {
-            GTEventCenter.FireEvent(GTEventID.TYPE_GUIDE_ENTER, Id);
-            this.GuideWindow = (UIGuide)GTWindowManager.Instance.OpenWindow(EWindowID.UIGuide);
-            this.GuideWindow.ShowViewByGuideBaseData(this);
-            this.Audio = GTAudioManager.Instance.PlaySound(TipSound);
+
         }
 
         public virtual void Execute()
@@ -83,21 +66,11 @@ namespace BIE
         
         public virtual void Stop()
         {
-            if (this.Audio != null)
-            {
-                Audio.Stop();
-                Audio = null;
-            }
+            this.State = EGuideState.TYPE_FINISH;
         }
 
         public virtual void Finish()
         {
-            if (this.Audio != null)
-            {
-                Audio.Stop();
-                Audio = null;
-            }
-            GTEventCenter.FireEvent(GTEventID.TYPE_GUIDE_EXIT, Id);
             this.State = EGuideState.TYPE_FINISH;
         }
 
@@ -113,9 +86,7 @@ namespace BIE
             this.IsLocked                 = os.GetBool("IsLocked");
             this.IsPause                  = os.GetBool("IsPause");
             this.IsShowSkip               = os.GetBool("IsShowSkip");
-            this.TipSound                 = os.GetString("TipSound");
-            this.TipPosition              = os.GetVector3("TipPosition");
-            this.TipText                  = os.GetString("TipText");
+            this.IsSavePoint              = os.GetBool("IsSavePoint");
             this.TriggerConditionRelation = (EGuideConditionRelation)os.GetInt32("TriggerConditionRelation");
             foreach(var current in GetChilds(os))
             {

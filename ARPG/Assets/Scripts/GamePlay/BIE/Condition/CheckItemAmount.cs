@@ -31,15 +31,15 @@ namespace BIE
             switch(Compare)
             {
                 case ECompare.EQ:
-                    return DataManager.Instance.GetItemCountById(ItemID) == ItemNum;
+                    return GTDataManager.Instance.GetItemCountById(ItemID) == ItemNum;
                 case ECompare.GT:
-                    return DataManager.Instance.GetItemCountById(ItemID) >  ItemNum;
+                    return GTDataManager.Instance.GetItemCountById(ItemID) >  ItemNum;
                 case ECompare.LT:
-                    return DataManager.Instance.GetItemCountById(ItemID) <  ItemNum;
+                    return GTDataManager.Instance.GetItemCountById(ItemID) <  ItemNum;
                 case ECompare.GE:
-                    return DataManager.Instance.GetItemCountById(ItemID) >= ItemNum;
+                    return GTDataManager.Instance.GetItemCountById(ItemID) >= ItemNum;
                 case ECompare.LE:
-                    return DataManager.Instance.GetItemCountById(ItemID) <= ItemNum;
+                    return GTDataManager.Instance.GetItemCountById(ItemID) <= ItemNum;
                 default:
                     return true;
             }

@@ -132,10 +132,10 @@ public class UIWorldMap : GTWindow
         GTItemHelper.ShowItemTexture(resItemTexture2, 2);
         GTItemHelper.ShowItemTexture(resItemTexture3, 101);
         GTItemHelper.ShowItemTexture(resItemTexture4, 102);
-        resItemNum1.text = DataManager.Instance.GetItemCountById(1).ToString();
-        resItemNum2.text = DataManager.Instance.GetItemCountById(2).ToString();
-        resItemNum3.text = DataManager.Instance.GetItemCountById(101).ToString();
-        resItemNum4.text = DataManager.Instance.GetItemCountById(102).ToString();
+        resItemNum1.text = GTDataManager.Instance.GetItemCountById(1).ToString();
+        resItemNum2.text = GTDataManager.Instance.GetItemCountById(2).ToString();
+        resItemNum3.text = GTDataManager.Instance.GetItemCountById(101).ToString();
+        resItemNum4.text = GTDataManager.Instance.GetItemCountById(102).ToString();
     }
 
     protected override void OnAddHandler()

@@ -111,7 +111,7 @@ public class UIRoleEquip : GTWindow
         }
         for (int i = 1; i <= 8; i++)
         {
-            XEquip dressEquip = DataManager.Instance.GetEquipDataByPos(EPosType.RoleEquip, i);
+            XEquip dressEquip = GTDataManager.Instance.GetEquipDataByPos(EPosType.RoleEquip, i);
             int id = dressEquip == null ? 0 : dressEquip.Id;
             mAvatar.ChangeAvatar(i, id);
         }
@@ -215,7 +215,7 @@ public class UIRoleEquip : GTWindow
         {
             return;
         }
-        XEquip dressEquip = DataManager.Instance.GetEquipDataByPos(EPosType.RoleEquip, tarPos);
+        XEquip dressEquip = GTDataManager.Instance.GetEquipDataByPos(EPosType.RoleEquip, tarPos);
         mAvatar.ChangeAvatar(tarPos, 0);
     }
 
@@ -226,7 +226,7 @@ public class UIRoleEquip : GTWindow
         {
             return;
         }
-        XEquip dressEquip = DataManager.Instance.GetEquipDataByPos(EPosType.RoleEquip, tarPos);
+        XEquip dressEquip = GTDataManager.Instance.GetEquipDataByPos(EPosType.RoleEquip, tarPos);
         mAvatar.ChangeAvatar(tarPos, dressEquip == null ? 0 : dressEquip.Id);
     }
 

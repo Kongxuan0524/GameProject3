@@ -3,7 +3,7 @@ using System.Collections;
 using ProtoBuf;
 using Protocol;
 
-public class DataFactory
+public class GTDataFactory
 {
     public static XCharacter CreatePlayer(int id, string name)
     {

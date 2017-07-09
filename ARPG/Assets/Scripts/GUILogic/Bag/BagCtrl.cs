@@ -44,8 +44,8 @@ public class BagCtrl :  ICtrl
         switch (itemDB.ItemType)
         {
             case EItemType.DRUG:
-                DataManager.Instance.AddNewItem(itemDB.Data2, itemDB.Data1 * num);
-                DataManager.Instance.UseItemById(itemDB.Id, num);
+                GTDataManager.Instance.AddNewItem(itemDB.Data2, itemDB.Data1 * num);
+                GTDataManager.Instance.UseItemById(itemDB.Id, num);
                 break;
             case EItemType.BOX:
                 break;
@@ -64,8 +64,8 @@ public class BagCtrl :  ICtrl
 
         XItem item = DataDBSBagChip.Dict[srcPos];
         DItem itemDB = ReadCfgItem.GetDataById(item.Id);
-        DataManager.Instance.AddNewItem(itemDB.Data2, num);
-        DataManager.Instance.UseItemById(item.Id, itemDB.Data1 * num);
+        GTDataManager.Instance.AddNewItem(itemDB.Data2, num);
+        GTDataManager.Instance.UseItemById(item.Id, itemDB.Data1 * num);
 
         KStruct data = new KStruct(itemDB.Data2, num);
         GTItemHelper.ShowAwardTip(data);
@@ -216,7 +216,7 @@ public class BagCtrl :  ICtrl
         AckSortBag ack = Serializer.Deserialize<AckSortBag>(ms);
 
         EBagType bagType = (EBagType)ack.BagType;
-        Dictionary<int, XItem> items = DataManager.Instance.GetBagDataByBagType(bagType);
+        Dictionary<int, XItem> items = GTDataManager.Instance.GetBagDataByBagType(bagType);
         List<XItem> list = new List<XItem>();
         list.AddRange(items.Values);
         items.Clear();

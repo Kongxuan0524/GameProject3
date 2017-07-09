@@ -414,7 +414,7 @@ public class UIRelics : GTWindow
             GTItemHelper.ShowItemName(tab.itemName, itemID);
             GTItemHelper.ShowItemTexture(tab.itemTexture, itemID);
             GTItemHelper.ShowItemQuality(tab.itemQuality, itemID);
-            tab.itemNum.text = GTTools.Format("当前拥有：[d96016]{0}[-]", DataManager.Instance.GetItemCountById(itemID));
+            tab.itemNum.text = GTTools.Format("当前拥有：[d96016]{0}[-]", GTDataManager.Instance.GetItemCountById(itemID));
             tab.tip.text = GTTools.Format("充能一次加 [d96916]{0}[-] 点经验", itemDB.Data1);
 
             if (relics == null)

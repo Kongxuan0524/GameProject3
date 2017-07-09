@@ -41,7 +41,7 @@ public class UIBag : GTWindow
         itemPrefab = transform.Find("Pivot/Bag/View/Prefab").gameObject;
         itemGrid = transform.Find("Pivot/Bag/View/Grid").GetComponent<UIGrid>();
 
-        int bagNum = DataManager.Instance.GetBagNum();
+        int bagNum = GTDataManager.Instance.GetBagNum();
         itemPrefab.SetActive(false);
         for (int i = 1; i <= bagNum; i++)
         {
@@ -283,8 +283,8 @@ public class UIBag : GTWindow
 
     private void ShowBagNum()
     {
-        int maxNum = DataManager.Instance.GetBagNum();
-        int curNum = DataManager.Instance.GetBagDataByBagType(mShow).Count;
+        int maxNum = GTDataManager.Instance.GetBagNum();
+        int curNum = GTDataManager.Instance.GetBagDataByBagType(mShow).Count;
         labBagNum.text = GTTools.Format("{0}/{1}", curNum, maxNum);
     }
 
@@ -307,7 +307,7 @@ public class UIBag : GTWindow
 
     private void ShowCellView(int index)
     {
-        Dictionary<int, XItem> bagData = DataManager.Instance.GetBagDataByBagType(mShow);
+        Dictionary<int, XItem> bagData = GTDataManager.Instance.GetBagDataByBagType(mShow);
         ItemCell cell = mBagCells[index];
         int pos = index + 1;
         XItem item = null;

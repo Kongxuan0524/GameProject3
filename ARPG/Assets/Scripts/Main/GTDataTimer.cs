@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class DataTimer : GTSingleton<DataTimer>
+public class GTDataTimer : GTSingleton<GTDataTimer>
 {
     private List<int>    mActionKeyList   = new List<int>();
     private List<long>   mActionNextTimes = new List<long>();
@@ -63,7 +63,7 @@ public class DataTimer : GTSingleton<DataTimer>
         foreach(var id in mActionKeyList)
         {
             DItem db = ReadCfgItem.GetDataById(id);
-            int count = DataManager.Instance.GetItemCountById(id);
+            int count = GTDataManager.Instance.GetItemCountById(id);
             long timer = CurServerTime;
             if (count < db.Data1)
             {
@@ -86,7 +86,7 @@ public class DataTimer : GTSingleton<DataTimer>
             int key = mActionKeyList[i];
             DItem db = ReadCfgItem.GetDataById(key);
             EAction actionType = GetActionType(key);
-            int count =DataManager.Instance.GetActionCountByType(actionType);
+            int count =GTDataManager.Instance.GetActionCountByType(actionType);
             if (count >= db.Data1)
             {
                 mActionNextTimes[i] = CurServerTime;
@@ -95,7 +95,7 @@ public class DataTimer : GTSingleton<DataTimer>
             {
                 if (CurServerTime >= mActionNextTimes[i])
                 {
-                    DataManager.Instance.AddAction(key, 1);
+                    GTDataManager.Instance.AddAction(key, 1);
                     mActionNextTimes[i] = CurServerTime + db.Data2;
                 }
             }
@@ -111,14 +111,14 @@ public class DataTimer : GTSingleton<DataTimer>
     {
         DAction actDB = ReadCfgAction.GetDataById(type);
         DItem db      = ReadCfgItem.GetDataById(actDB.ItemID);
-        int count       = DataManager.Instance.GetActionCountByType(type);
+        int count       = GTDataManager.Instance.GetActionCountByType(type);
         return count >= db.Data1;
     }
 
     public  bool    IsActionFull(int key)
     {
         DItem db = ReadCfgItem.GetDataById(key);
-        int count  = DataManager.Instance.GetItemCountById(key);
+        int count  = GTDataManager.Instance.GetItemCountById(key);
         return count >= db.Data1;
     }
 
@@ -152,7 +152,7 @@ public class DataTimer : GTSingleton<DataTimer>
                 break;
             }
         }
-        int count = DataManager.Instance.GetActionCountByType(actionType);
+        int count = GTDataManager.Instance.GetActionCountByType(actionType);
         DAction actDB = ReadCfgAction.GetDataById(actionType);
         DItem db = ReadCfgItem.GetDataById(actDB.ItemID);
         return (int)((db.Data1 - count - 1) * db.Data2 + mActionNextTimes[index] - CurServerTime);

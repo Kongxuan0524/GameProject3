@@ -26,7 +26,7 @@ public class BagService: GTSingleton<BagService>
         {
             if (itemDB.Data1 != 0)
             {
-                if (DataManager.Instance.GetItemCountById(itemDB.Data1) < num)
+                if (GTDataManager.Instance.GetItemCountById(itemDB.Data1) < num)
                 {
                     GTItemHelper.ShowTip("需要足够的钥匙");
                     return;

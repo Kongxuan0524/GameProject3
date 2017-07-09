@@ -69,6 +69,7 @@ public class GTConfigManager : GTSingleton<GTConfigManager>
         ReadCfgMine.                  Read("Text/Data/Data_Mine");
         ReadCfgSkill.                 Read("Text/Data/Data_Skill");
         ReadCfgVideo.                 Read("Text/Data/Data_Video");
+        ReadCfgDialogue.              Read("Text/Data/Data_Dialogue");
 
         ReadCfgCurve.                 Read("Text/Curve/Data_Curve");
         ActBuffSystem.                Read("Text/Buff/Buff");
