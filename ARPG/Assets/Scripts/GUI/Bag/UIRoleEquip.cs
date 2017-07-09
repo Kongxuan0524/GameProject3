@@ -103,7 +103,6 @@ public class UIRoleEquip : GTWindow
         XCharacter role = RoleModule.Instance.GetCurPlayer();
         DActor db = ReadCfgActor.GetDataById(role.Id);
         mRender = ERender.AddRender(modelTexture);
-        mAvatar = CharacterManager.Instance.DelAvatar(mAvatar);
         mAvatar = CharacterManager.Instance.AddAvatar(db.Model);
         if (mAvatar == null)
         {
@@ -180,8 +179,15 @@ public class UIRoleEquip : GTWindow
     {
         mEquipCells.Clear();
         mPropertyItems.Clear();
-        mAvatar = CharacterManager.Instance.DelAvatar(mAvatar);
-        mRender = ERender.DelRender(mRender);
+        if (mAvatar != null)
+        {
+            mAvatar = null;
+        }
+        if (mRender != null)
+        {
+            mRender.Release();
+            mRender = null;
+        }
     }
 
     private void ShowCellView(int pos)

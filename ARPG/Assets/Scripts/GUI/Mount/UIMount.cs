@@ -88,7 +88,7 @@ public class UIMount : GTWindow
     protected override void OnClose()
     {
         SetSelectMountID(0);
-        mAvatar = CharacterManager.Instance.DelAvatar(mAvatar);
+        mAvatar = null;
         mRender = ERender.DelRender(mRender);
     }
 
@@ -140,7 +140,6 @@ public class UIMount : GTWindow
         {
             mRender = ERender.AddRender(modelTexture);
         }
-        mAvatar = CharacterManager.Instance.DelAvatar(mAvatar);
         mRender.DelAllModels();
         mAvatar = CharacterManager.Instance.AddAvatar(db.Model);
         mAvatar.PlayAnim("idle", null);

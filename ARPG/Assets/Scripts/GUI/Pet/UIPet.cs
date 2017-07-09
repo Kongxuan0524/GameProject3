@@ -286,7 +286,6 @@ public class UIPet : GTWindow
         {
             mRender = ERender.AddRender(mModelTexture);
         }
-        mAvatar = CharacterManager.Instance.DelAvatar(mAvatar);
         mRender.DelAllModels();
         mAvatar = CharacterManager.Instance.AddAvatar(db.Model);
         mAvatar.PlayAnim("idle", null);

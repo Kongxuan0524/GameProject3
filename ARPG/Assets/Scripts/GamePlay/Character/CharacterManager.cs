@@ -169,16 +169,16 @@ public class CharacterManager : GTMonoSingleton<CharacterManager>
         return avatar;
     }
 
-    public CharacterAvatar DelAvatar(CharacterAvatar avatar)
-    {
-        if (avatar == null)
-        {
-            return null;
-        }
-        avatar.Release();
-        GTResourceManager.Instance.DestroyObj(avatar.GetRootObj());
-        return null;
-    }
+    //public CharacterAvatar DelAvatar(CharacterAvatar avatar)
+    //{
+    //    if (avatar == null)
+    //    {
+    //        return null;
+    //    }
+    //    avatar.Release();
+    //    GTResourceManager.Instance.DestroyObj(avatar.GetRootObj());
+    //    return null;
+    //}
 
     public void SyncMainPlayerData(ESyncDataType type)
     {

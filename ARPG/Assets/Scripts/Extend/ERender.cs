@@ -91,7 +91,7 @@ public class ERender
         {
             Transform child = RenderCamera.transform.GetChild(0);
             child.parent = null;
-            GameObject.Destroy(child.gameObject);
+            GameObject.DestroyImmediate(child.gameObject);
         }
     }
 

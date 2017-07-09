@@ -2,23 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using Protocol;
 
 public class UIDialogue : GTWindow
 {
-    private GameObject btnNext;
-    private GameObject btnSkip;
-    private UILabel    dlgTitle;
-    private UILabel    dlgContent;
-    private UITexture  dlgTexture;
-    private int        dlgStID;
-    private int        dlgEdID;
-    private int        dlgCurID;
-    private Callback   onFinish;
- 
+    private GameObject      btnNext;
+    private GameObject      btnSkip;
+    private UILabel         dlgTitle;
+    private UILabel         dlgContent;
+    private UITexture       dlgTexture;
+    private int             dlgStID;
+    private int             dlgEdID;
+    private int             dlgCurID;
+    private ERender         dlgRenderer;
+    private CharacterAvatar dlgAvatar;
+    private Callback        onFinish;
 
     public UIDialogue()
     {
-        mResident = true;
+        mResident = false;
         mResPath = "Common/UIDialogue";
         Type = EWindowType.DIALOG;
     }
@@ -41,7 +43,15 @@ public class UIDialogue : GTWindow
 
     protected override void OnClose()
     {
-
+        if (dlgRenderer != null)
+        {
+            dlgRenderer.Release();
+            dlgRenderer = null;
+        }
+        if (dlgAvatar != null)
+        {
+            dlgAvatar = null;
+        }
     }
 
     protected override void OnAddButtonListener()
@@ -63,7 +73,7 @@ public class UIDialogue : GTWindow
     private void OnBtnNextClick(GameObject go)
     {
         this.GoNext();
-        this.ShowDialogueContent();
+        this.ShowDialogue();
     }
 
     private void OnBtnSkipClick(GameObject go)
@@ -86,6 +96,7 @@ public class UIDialogue : GTWindow
                 onFinish = null;
             }
             Hide();
+            dlgCurID = -1;
             return;
         }
 
@@ -100,13 +111,52 @@ public class UIDialogue : GTWindow
 
     }
 
-    private void ShowDialogueContent()
+    private void ShowDialogue()
     {
         DDialogue db = ReadCfgDialogue.GetDataById(dlgCurID);
         if (db == null)
         {
             return;
         }
+        ShowDialogueTitle(db);
+        ShowDialogueContent(db);
+        ShowDialogueModel(db);
+    }
+
+    private void ShowDialogueModel(DDialogue db)
+    {
+        DActor actorDB = null;
+        if (db.Actor == 0)
+        {
+            XCharacter role = RoleModule.Instance.GetCurPlayer();
+            actorDB = ReadCfgActor.GetDataById(role.Id);
+        }
+        else
+        {
+            actorDB = ReadCfgActor.GetDataById(db.Actor);
+        }
+
+        if (actorDB == null)
+        {
+            return;
+        }
+        if (dlgRenderer != null)
+        {
+            dlgRenderer.DelAllModels();
+        }
+        else
+        {
+            dlgRenderer = ERender.AddRender(dlgTexture);
+        }
+        dlgAvatar = CharacterManager.Instance.AddAvatar(actorDB.Model);
+        dlgAvatar.PlayAnim(db.Anim, null);
+        dlgRenderer.AddModel(dlgAvatar.GetRootObj());
+        dlgAvatar.GetRootObj().transform.localPosition = new Vector3(-0.22f, -1.61f, 1.0f);
+        dlgAvatar.GetRootObj().transform.localEulerAngles = new Vector3(0, 180, 0);
+    }
+
+    private void ShowDialogueTitle(DDialogue db)
+    {
         if (db.Actor == 0)
         {
             Character c = CharacterManager.Main;
@@ -117,9 +167,13 @@ public class UIDialogue : GTWindow
             DActor actorDB = ReadCfgActor.GetDataById(db.Actor);
             dlgTitle.text = actorDB == null ? string.Empty : actorDB.Name;
         }
+    }
+
+    private void ShowDialogueContent(DDialogue db)
+    {
 
         string replaceName = string.Empty;
-        switch(db.ContentType)
+        switch (db.ContentType)
         {
             case EDialogueContentType.TYPE_NONE:
                 {
@@ -163,7 +217,6 @@ public class UIDialogue : GTWindow
                 dlgContent.GetComponent<TypewriterEffect>().ResetToBeginning();
                 break;
         }
-
     }
 
     public void  ShowDialogue(int st, int ed, bool isCanSkip, Callback onFinish)
@@ -172,8 +225,7 @@ public class UIDialogue : GTWindow
         this.dlgEdID = ed;
         this.onFinish = onFinish;
         this.GoNext();
-        this.ShowDialogueContent();
+        this.ShowDialogue();
         this.btnSkip.SetActive(isCanSkip);
     }
-
 }
